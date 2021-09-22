@@ -3,7 +3,79 @@
   <entry>
     <title>2.基础</title>
     <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[]]></content>
+    <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
+<li><p>HTML：“超文本标记语言”，它是制作网页的标准语言，HTML不区分大小写。HTML的标记称为标签</p>
+</li>
+<li><p>标签：由尖括号包围，比如&lt;title&gt;,通常是成对出现的；&lt;title&gt;开始标签，&lt;/title&gt;结束标签；单独出现标签&lt;img&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;由/结束</p>
+<p> 标签注意缩进，外层标签靠外书写，内层标签向右缩进一段距离<br> <a href="https://imagelol.com/image/IFVoyU"><img src="https://s3.jpg.cm/2021/09/22/IFVoyU.png" alt="IFVoyU.png"></a><br> <a href="https://imagelol.com/image/IFVB5O"><img src="https://s3.jpg.cm/2021/09/22/IFVB5O.png" alt="IFVB5O.png"></a></p>
+</li>
+<li><p>标签、属性：标签内部可以有属性</p>
+<p> <a href="https://imagelol.com/image/IFVfNw"><img src="https://s3.jpg.cm/2021/09/22/IFVfNw.png" alt="IFVfNw.png"></a></p>
+</li>
+</ol>
+<h3 id="2-2-HTML文件结构"><a href="#2-2-HTML文件结构" class="headerlink" title="2.2 HTML文件结构"></a>2.2 HTML文件结构</h3><ol>
+<li><p>HTML文件结构：HTML文件后缀要是.htm或.html</p>
+<ol>
+<li>html基本结构<br><a href="https://imagelol.com/image/IFVhVr"><img src="https://s3.jpg.cm/2021/09/22/IFVhVr.png" alt="IFVhVr.png"></a></li>
+<li><!DOCTYPE html>：表示当前文档符合HTML5标准</li>
+<li>lang属性：language属性是提供给搜索引擎的信息，提示当前是英文网页（en）是中文网页（zh）</li>
+<li><meta>：元数据，包含这个网页的一些很基础的信息</li>
+</ol>
+<p> <a href="https://imagelol.com/image/IFVO44"><img src="https://s3.jpg.cm/2021/09/22/IFVO44.png" alt="IFVO44.png"></a></p>
+</li>
+<li><p>字符集与编码</p>
+<p> 源文件保存时的编码与源文件声明的编码方式不一致就会出现乱码问题</p>
+<p> <a href="https://imagelol.com/image/IF8Lkp"><img src="https://s3.jpg.cm/2021/09/22/IF8Lkp.png" alt="IF8Lkp.png"></a></p>
+</li>
+</ol>
+<h3 id="2-3-HTML标签（1）"><a href="#2-3-HTML标签（1）" class="headerlink" title="2.3 HTML标签（1）"></a>2.3 HTML标签（1）</h3><ol>
+<li><p>标题 h1~h6：一个页面建议只有一个h1</p>
+</li>
+<li><p>段落 p：每个段落都会被换行，多个空格合并为一个空格，多个空行也是合并为一个空格</p>
+<p> <a href="https://imagelol.com/image/IF8FCR"><img src="https://s3.jpg.cm/2021/09/22/IF8FCR.png" alt="IF8FCR.png" border="0"></a></p>
+</li>
+<li><p>段内换行 br：单独出现的标签，直接结束，&lt;br /&gt;,多个<br />可以产生空行</p>
+</li>
+<li><p>空格字符&amp;nbsp：段内要添加多个空格就是用多个&amp;nbsp;</p>
+</li>
+<li><p>预留格式 pre：定义预格式化的文本，文本中的空格和换行符会被保留；pre标签很适合显示计算机代码</p>
+<p> <a href="https://imagelol.com/image/IF8vfG"><img src="https://s3.jpg.cm/2021/09/22/IF8vfG.png" alt="IF8vfG.png"></a></p>
+</li>
+<li><p>段内分组 span：将需要特殊表示出来的文字放在span标签内，再利用CSS对span标签进行特殊样式设置</p>
+</li>
+<li><p>水平线 hr：hr标签也是单独出现的，&lt;hr /&gt;</p>
+<p> <a href="https://imagelol.com/image/IF8wO4"><img src="https://s3.jpg.cm/2021/09/22/IF8wO4.png" alt="IF8wO4.png"></a></p>
+</li>
+<li><p>注释内容:注释可以跨行，&lt;!–这是一段注释–&gt;</p>
+</li>
+</ol>
+<h3 id="2-4-HTML标签（2）"><a href="#2-4-HTML标签（2）" class="headerlink" title="2.4 HTML标签（2）"></a>2.4 HTML标签（2）</h3><ol>
+<li><p>超链接a：包含文字超链接和图片超链接，单击之后可以跳转到新的页面，格式：</p>
+<p> &lt;a href=”网址”&gt;文字或图片</a>（href是超链接的意思）<br> <a href="https://imagelol.com/image/IF8BmD"><img src="https://s3.jpg.cm/2021/09/22/IF8BmD.png" alt="IF8BmD.png"></a></p>
+</li>
+</ol>
+<h3 id="2-5-HTML标签（3）"><a href="#2-5-HTML标签（3）" class="headerlink" title="2.5 HTML标签（3）"></a>2.5 HTML标签（3）</h3><ol>
+<li><p>图像格式</p>
+<ol>
+<li>网页中常见的图像格式：</li>
+</ol>
+<p> jpg：有损压缩（去掉不关键的信息，保留大部分有用信息），支持色彩丰富图片，不会影响到用户的观看效果，而且文件非常小</p>
+<p> gif：简单动画，背景透明</p>
+<p> png：由gif发展而来，无损压缩（支持有损和无损两种情况）、透明、交错、动画</p>
+<p> <a href="https://imagelol.com/image/IFAeWR"><img src="https://s3.jpg.cm/2021/09/22/IFAeWR.jpg" alt="IFAeWR.jpg"></a></p>
+</li>
+<li><p>img标签&lt;img /&gt;：</p>
+<ol>
+<li><p>src属性：图片的来源，后跟路径名+文件名</p>
+<p>  路径名可以写绝对路径（不推荐）和相对路径，相对路径是以网页文件当前所在文件夹为查找的基准点<br>  <a href="https://imagelol.com/image/IFAAX4"><img src="https://s3.jpg.cm/2021/09/22/IFAAX4.png" alt="IFAAX4.png"></a></p>
+<p>  <a href="https://imagelol.com/image/IFAXvX"><img src="https://s3.jpg.cm/2021/09/22/IFAXvX.png" alt="IFAXvX.png"></a></p>
+</li>
+<li><p>alt属性：当因为图片丢失或者其他原因无法打开，浏览器就会找到alt属性，把这个文字显示出来，是图片的替换文本</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
       <categories>
         <category>web基础</category>
       </categories>
