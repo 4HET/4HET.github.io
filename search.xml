@@ -141,25 +141,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的blog配置</title>
-    <url>/2021/09/05/blog/</url>
-    <content><![CDATA[<h2 id="blog搭建"><a href="#blog搭建" class="headerlink" title="blog搭建"></a>blog搭建</h2><p>blog搭建我采用的是hexo+github，网上随处可找到教程，在搭建完成后自己设置主题，本来使用的是yilia主题，后来觉得有些单调就换成了next主题。</p>
-<h2 id="blog界面美化"><a href="#blog界面美化" class="headerlink" title="blog界面美化"></a>blog界面美化</h2><p>1.设置头像<br>在主题配置找到_config.yml,avater注释去掉，再在images下存入照片，即可设置头像<br><a href="https://imgtu.com/i/hxxXjK"><img src="https://z3.ax1x.com/2021/09/11/hxxXjK.md.png" alt="hxxXjK.md.png"></a><br>2.设置背景<br>进入主题设置source下，新建_data文件，在里面新建styles.styl文件，在里面输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 背景</span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/bk.jpg); // 可以是路径也可以是链接</span><br><span class="line">    background-repeat: no-repeat; // 不重复</span><br><span class="line">    background-attachment:fixed; // 固定住背景图片</span><br><span class="line">    background-position:50% 50%; // 图片位置：居中</span><br><span class="line">    background-size: 100% 100%; // 图片长宽扩充为100%</span><br><span class="line">&#125;</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.sidebar &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.header-inner &#123;</span><br><span class="line">      </span><br><span class="line">  background: rgba(255,255,255,0.7);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.popup &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>来设置背景以及透明度（source/_data/styles.styl 注释取消掉后我的博客出现格式丢失的问题，我就又把它注释上了）<br><a href="https://imgtu.com/i/hzSgyV"><img src="https://z3.ax1x.com/2021/09/11/hzSgyV.md.png" alt="hzSgyV.md.png"></a></p>
-<p>3.这样设置完后已进入主页就可以看到文章，显得版面有点乱，于是我通过控制首页文章显示字数来使版面整洁。这里有两种方法：一种是在文章开头加上“description:”，后面跟的是显示的内容，另一种是在文章中添加<code>&lt;!--more--&gt;</code>以显示从<code>&lt;!--more--&gt;</code>以前的内容<br><a href="https://imgtu.com/i/hzpD0O"><img src="https://z3.ax1x.com/2021/09/11/hzpD0O.md.png" alt="hzpD0O.md.png"></a></p>
-<p>4.可以看到下面还有分类和标签两个选项，但是自己打开是404，可以通过hexo new page xxx，来创建，这里自己创建了tags（标签）和catagories（分类），再在开头加上（如下），即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: c++map/multimap容器简介、构造以及赋值</span><br><span class="line">date: 2021-09-05 16:06:30</span><br><span class="line">tags: C++</span><br><span class="line">description: map与multimap并无太大区别，map/multimap属于关联式容器，底层结构是用二叉树实现。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p><a href="https://imgtu.com/i/hz9bVO"><img src="https://z3.ax1x.com/2021/09/11/hz9bVO.md.png" alt="hz9bVO.md.png"></a><br>但是在设置完后自己遇到了标签大小不一样的问题<br><a href="https://imgtu.com/i/hzPQXt"><img src="https://z3.ax1x.com/2021/09/11/hzPQXt.md.png" alt="hzPQXt.md.png"></a><br>自己有搜索后发现，原来neat主题的设置就是标签云标签的大小与文章数目有关，也确实是很人性化了。</p>
-]]></content>
-      <categories>
-        <category>blog配置</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c++string容器</title>
     <url>/2021/09/05/c++string%E5%AE%B9%E5%99%A8/</url>
     <content><![CDATA[<h1 id="c-string"><a href="#c-string" class="headerlink" title="c++string"></a>c++string</h1><h2 id="string与c语言char-区别"><a href="#string与c语言char-区别" class="headerlink" title="string与c语言char*区别"></a>string与c语言char*区别</h2><p>  char*是一个指针，而string是一个类，里面封装了char*。并且string类内部封装了很多成员方法，例如查找find，拷贝copy，删除delete，替换replace，插入insert。string不用担心复制越界和取值越界。</p>
@@ -187,6 +168,25 @@
       </categories>
       <tags>
         <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的blog配置</title>
+    <url>/2021/09/05/blog/</url>
+    <content><![CDATA[<h2 id="blog搭建"><a href="#blog搭建" class="headerlink" title="blog搭建"></a>blog搭建</h2><p>blog搭建我采用的是hexo+github，网上随处可找到教程，在搭建完成后自己设置主题，本来使用的是yilia主题，后来觉得有些单调就换成了next主题。</p>
+<h2 id="blog界面美化"><a href="#blog界面美化" class="headerlink" title="blog界面美化"></a>blog界面美化</h2><p>1.设置头像<br>在主题配置找到_config.yml,avater注释去掉，再在images下存入照片，即可设置头像<br><a href="https://imgtu.com/i/hxxXjK"><img src="https://z3.ax1x.com/2021/09/11/hxxXjK.md.png" alt="hxxXjK.md.png"></a><br>2.设置背景<br>进入主题设置source下，新建_data文件，在里面新建styles.styl文件，在里面输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 背景</span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/bk.jpg); // 可以是路径也可以是链接</span><br><span class="line">    background-repeat: no-repeat; // 不重复</span><br><span class="line">    background-attachment:fixed; // 固定住背景图片</span><br><span class="line">    background-position:50% 50%; // 图片位置：居中</span><br><span class="line">    background-size: 100% 100%; // 图片长宽扩充为100%</span><br><span class="line">&#125;</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.sidebar &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.header-inner &#123;</span><br><span class="line">      </span><br><span class="line">  background: rgba(255,255,255,0.7);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.popup &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来设置背景以及透明度（source/_data/styles.styl 注释取消掉后我的博客出现格式丢失的问题，我就又把它注释上了）<br><a href="https://imgtu.com/i/hzSgyV"><img src="https://z3.ax1x.com/2021/09/11/hzSgyV.md.png" alt="hzSgyV.md.png"></a></p>
+<p>3.这样设置完后已进入主页就可以看到文章，显得版面有点乱，于是我通过控制首页文章显示字数来使版面整洁。这里有两种方法：一种是在文章开头加上“description:”，后面跟的是显示的内容，另一种是在文章中添加<code>&lt;!--more--&gt;</code>以显示从<code>&lt;!--more--&gt;</code>以前的内容<br><a href="https://imgtu.com/i/hzpD0O"><img src="https://z3.ax1x.com/2021/09/11/hzpD0O.md.png" alt="hzpD0O.md.png"></a></p>
+<p>4.可以看到下面还有分类和标签两个选项，但是自己打开是404，可以通过hexo new page xxx，来创建，这里自己创建了tags（标签）和catagories（分类），再在开头加上（如下），即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: c++map/multimap容器简介、构造以及赋值</span><br><span class="line">date: 2021-09-05 16:06:30</span><br><span class="line">tags: C++</span><br><span class="line">description: map与multimap并无太大区别，map/multimap属于关联式容器，底层结构是用二叉树实现。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><a href="https://imgtu.com/i/hz9bVO"><img src="https://z3.ax1x.com/2021/09/11/hz9bVO.md.png" alt="hz9bVO.md.png"></a><br>但是在设置完后自己遇到了标签大小不一样的问题<br><a href="https://imgtu.com/i/hzPQXt"><img src="https://z3.ax1x.com/2021/09/11/hzPQXt.md.png" alt="hzPQXt.md.png"></a><br>自己有搜索后发现，原来neat主题的设置就是标签云标签的大小与文章数目有关，也确实是很人性化了。</p>
+]]></content>
+      <categories>
+        <category>blog配置</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
