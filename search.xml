@@ -1,60 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>1.概论</title>
-    <url>/2021/09/20/HTML%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h3 id="1-1-web开发概述"><a href="#1-1-web开发概述" class="headerlink" title="1.1 web开发概述"></a>1.1 web开发概述</h3><ol>
-<li><p>web系统是以网站形式呈现出来的，web前端是以网页形式呈现出来的</p>
-</li>
-<li><p>前端：网页上为用户呈现的部分</p>
-<p> 后端：与数据库进行交互，完成数据存储</p>
-</li>
-</ol>
-<h3 id="1-2-网站与网页"><a href="#1-2-网站与网页" class="headerlink" title="1.2 网站与网页"></a>1.2 网站与网页</h3><ol>
-<li>网站 web site：互联网上用于展示特定内容的相关网页的集合</li>
-<li>网页 web page：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起</li>
-<li>主页 homepage：进入网站看到的第一个网页，主页的文件名通常是index</li>
-<li>网页元素：<ol>
-<li>表单：用来采集或者传递客户信息</li>
-<li>logo 站标：通常放在左上角</li>
-<li>导航栏：用来进入各个板块，超链接的集合</li>
-</ol>
-</li>
-<li>从开发者的角度来看，网站就是文件夹，网页就是文件</li>
-<li>做好的网站放在服务器端，用户就可以通过浏览器使用自己的设备（客户端）来访问服务器端所提供的网站文件夹里面的网页文件了</li>
-<li>浏览器作用：解析网页文件里的代码（源代码），将网页显示出来（渲染网页）</li>
-</ol>
-<h3 id="1-3-web前端开发技术"><a href="#1-3-web前端开发技术" class="headerlink" title="1.3 web前端开发技术"></a>1.3 web前端开发技术</h3><ol>
-<li><p>前端技术构成：</p>
-<ol>
-<li>结构：HTML</li>
-</ol>
-<p> 从语义角度，描述页面结构（决定网页包含哪些内容，图片、标题、表格等）</p>
-<ol start="2">
-<li>样式：CSS</li>
-</ol>
-<p> 从审美角度，美化页面（字体字号，页面布局，元素位置等）</p>
-<ol start="3">
-<li>行为：JavaScript</li>
-</ol>
-<p> 从交互角度，提升用户体验</p>
-</li>
-<li><p>前端技术标准</p>
-<ol>
-<li>W3C标准：<a href="http://www.w3.org/">www.w3.org</a></li>
-</ol>
-<p> 目前是HTML5，CSS3以及JavaScript</p>
-<ol start="2">
-<li>W3C教程：<a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2.基础</title>
     <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
@@ -187,6 +133,60 @@
       <categories>
         <category>web前端</category>
       </categories>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1.概论</title>
+    <url>/2021/09/20/HTML%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h3 id="1-1-web开发概述"><a href="#1-1-web开发概述" class="headerlink" title="1.1 web开发概述"></a>1.1 web开发概述</h3><ol>
+<li><p>web系统是以网站形式呈现出来的，web前端是以网页形式呈现出来的</p>
+</li>
+<li><p>前端：网页上为用户呈现的部分</p>
+<p> 后端：与数据库进行交互，完成数据存储</p>
+</li>
+</ol>
+<h3 id="1-2-网站与网页"><a href="#1-2-网站与网页" class="headerlink" title="1.2 网站与网页"></a>1.2 网站与网页</h3><ol>
+<li>网站 web site：互联网上用于展示特定内容的相关网页的集合</li>
+<li>网页 web page：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起</li>
+<li>主页 homepage：进入网站看到的第一个网页，主页的文件名通常是index</li>
+<li>网页元素：<ol>
+<li>表单：用来采集或者传递客户信息</li>
+<li>logo 站标：通常放在左上角</li>
+<li>导航栏：用来进入各个板块，超链接的集合</li>
+</ol>
+</li>
+<li>从开发者的角度来看，网站就是文件夹，网页就是文件</li>
+<li>做好的网站放在服务器端，用户就可以通过浏览器使用自己的设备（客户端）来访问服务器端所提供的网站文件夹里面的网页文件了</li>
+<li>浏览器作用：解析网页文件里的代码（源代码），将网页显示出来（渲染网页）</li>
+</ol>
+<h3 id="1-3-web前端开发技术"><a href="#1-3-web前端开发技术" class="headerlink" title="1.3 web前端开发技术"></a>1.3 web前端开发技术</h3><ol>
+<li><p>前端技术构成：</p>
+<ol>
+<li>结构：HTML</li>
+</ol>
+<p> 从语义角度，描述页面结构（决定网页包含哪些内容，图片、标题、表格等）</p>
+<ol start="2">
+<li>样式：CSS</li>
+</ol>
+<p> 从审美角度，美化页面（字体字号，页面布局，元素位置等）</p>
+<ol start="3">
+<li>行为：JavaScript</li>
+</ol>
+<p> 从交互角度，提升用户体验</p>
+</li>
+<li><p>前端技术标准</p>
+<ol>
+<li>W3C标准：<a href="http://www.w3.org/">www.w3.org</a></li>
+</ol>
+<p> 目前是HTML5，CSS3以及JavaScript</p>
+<ol start="2">
+<li>W3C教程：<a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></li>
+</ol>
+</li>
+</ol>
+]]></content>
       <tags>
         <tag>web前端</tag>
       </tags>
