@@ -1,6 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>3.CSS样式</title>
+    <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
+<li><p>CSS概述：</p>
+<ol>
+<li>HTML负责网页的内容</li>
+<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
+</ol>
+</li>
+<li><p>CSS语法：</p>
+<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1.概论</title>
+    <url>/2021/09/20/HTML%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h3 id="1-1-web开发概述"><a href="#1-1-web开发概述" class="headerlink" title="1.1 web开发概述"></a>1.1 web开发概述</h3><ol>
+<li><p>web系统是以网站形式呈现出来的，web前端是以网页形式呈现出来的</p>
+</li>
+<li><p>前端：网页上为用户呈现的部分</p>
+<p> 后端：与数据库进行交互，完成数据存储</p>
+</li>
+</ol>
+<h3 id="1-2-网站与网页"><a href="#1-2-网站与网页" class="headerlink" title="1.2 网站与网页"></a>1.2 网站与网页</h3><ol>
+<li>网站 web site：互联网上用于展示特定内容的相关网页的集合</li>
+<li>网页 web page：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起</li>
+<li>主页 homepage：进入网站看到的第一个网页，主页的文件名通常是index</li>
+<li>网页元素：<ol>
+<li>表单：用来采集或者传递客户信息</li>
+<li>logo 站标：通常放在左上角</li>
+<li>导航栏：用来进入各个板块，超链接的集合</li>
+</ol>
+</li>
+<li>从开发者的角度来看，网站就是文件夹，网页就是文件</li>
+<li>做好的网站放在服务器端，用户就可以通过浏览器使用自己的设备（客户端）来访问服务器端所提供的网站文件夹里面的网页文件了</li>
+<li>浏览器作用：解析网页文件里的代码（源代码），将网页显示出来（渲染网页）</li>
+</ol>
+<h3 id="1-3-web前端开发技术"><a href="#1-3-web前端开发技术" class="headerlink" title="1.3 web前端开发技术"></a>1.3 web前端开发技术</h3><ol>
+<li><p>前端技术构成：</p>
+<ol>
+<li>结构：HTML</li>
+</ol>
+<p> 从语义角度，描述页面结构（决定网页包含哪些内容，图片、标题、表格等）</p>
+<ol start="2">
+<li>样式：CSS</li>
+</ol>
+<p> 从审美角度，美化页面（字体字号，页面布局，元素位置等）</p>
+<ol start="3">
+<li>行为：JavaScript</li>
+</ol>
+<p> 从交互角度，提升用户体验</p>
+</li>
+<li><p>前端技术标准</p>
+<ol>
+<li>W3C标准：<a href="http://www.w3.org/">www.w3.org</a></li>
+</ol>
+<p> 目前是HTML5，CSS3以及JavaScript</p>
+<ol start="2">
+<li>W3C教程：<a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2.基础</title>
     <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
@@ -138,60 +214,6 @@
       </tags>
   </entry>
   <entry>
-    <title>1.概论</title>
-    <url>/2021/09/20/HTML%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h3 id="1-1-web开发概述"><a href="#1-1-web开发概述" class="headerlink" title="1.1 web开发概述"></a>1.1 web开发概述</h3><ol>
-<li><p>web系统是以网站形式呈现出来的，web前端是以网页形式呈现出来的</p>
-</li>
-<li><p>前端：网页上为用户呈现的部分</p>
-<p> 后端：与数据库进行交互，完成数据存储</p>
-</li>
-</ol>
-<h3 id="1-2-网站与网页"><a href="#1-2-网站与网页" class="headerlink" title="1.2 网站与网页"></a>1.2 网站与网页</h3><ol>
-<li>网站 web site：互联网上用于展示特定内容的相关网页的集合</li>
-<li>网页 web page：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起</li>
-<li>主页 homepage：进入网站看到的第一个网页，主页的文件名通常是index</li>
-<li>网页元素：<ol>
-<li>表单：用来采集或者传递客户信息</li>
-<li>logo 站标：通常放在左上角</li>
-<li>导航栏：用来进入各个板块，超链接的集合</li>
-</ol>
-</li>
-<li>从开发者的角度来看，网站就是文件夹，网页就是文件</li>
-<li>做好的网站放在服务器端，用户就可以通过浏览器使用自己的设备（客户端）来访问服务器端所提供的网站文件夹里面的网页文件了</li>
-<li>浏览器作用：解析网页文件里的代码（源代码），将网页显示出来（渲染网页）</li>
-</ol>
-<h3 id="1-3-web前端开发技术"><a href="#1-3-web前端开发技术" class="headerlink" title="1.3 web前端开发技术"></a>1.3 web前端开发技术</h3><ol>
-<li><p>前端技术构成：</p>
-<ol>
-<li>结构：HTML</li>
-</ol>
-<p> 从语义角度，描述页面结构（决定网页包含哪些内容，图片、标题、表格等）</p>
-<ol start="2">
-<li>样式：CSS</li>
-</ol>
-<p> 从审美角度，美化页面（字体字号，页面布局，元素位置等）</p>
-<ol start="3">
-<li>行为：JavaScript</li>
-</ol>
-<p> 从交互角度，提升用户体验</p>
-</li>
-<li><p>前端技术标准</p>
-<ol>
-<li>W3C标准：<a href="http://www.w3.org/">www.w3.org</a></li>
-</ol>
-<p> 目前是HTML5，CSS3以及JavaScript</p>
-<ol start="2">
-<li>W3C教程：<a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>我的blog配置</title>
     <url>/2021/09/05/blog/</url>
     <content><![CDATA[<h2 id="blog搭建"><a href="#blog搭建" class="headerlink" title="blog搭建"></a>blog搭建</h2><p>blog搭建我采用的是hexo+github，网上随处可找到教程，在搭建完成后自己设置主题，本来使用的是yilia主题，后来觉得有些单调就换成了next主题。</p>
@@ -208,6 +230,45 @@
       </categories>
       <tags>
         <tag>blog</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021/9/19/icpc网络赛补题</title>
+    <url>/2021/09/20/icpc%E7%BD%91%E7%BB%9C%E8%B5%9B9.19%E8%A1%A5%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="I题"><a href="#I题" class="headerlink" title="I题"></a>I题</h3><p>这个题刚开始自己补的时候，自己想用getline+stringstream，结果发现将字符串转化为一个个小字符串后，还是需要再转化为数字，时间复杂度大，所以采用了看到数字就相加然后遇到空格就计下一个数字的方法。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e8</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x, n = <span class="number">0</span>, num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"></span><br><span class="line">string s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">getline</span>(cin, s);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">length</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            a[n++] = num;</span><br><span class="line">            num = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            num = num * <span class="number">10</span> + s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> o, r;</span><br><span class="line">    cin &gt;&gt; o &gt;&gt; r;</span><br><span class="line">    <span class="keyword">bool</span> stu = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">sort</span>(a, a + n, cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">abs</span>(a[i] - o) &lt;= r)</span><br><span class="line">        &#123;</span><br><span class="line">            stu = <span class="literal">true</span>;</span><br><span class="line">            cout &lt;&lt; a[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="F题"><a href="#F题" class="headerlink" title="F题"></a>F题</h3><p>签到题</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;t);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        ll a, b, r;</span><br><span class="line"></span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; r;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (r &gt; b)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Case #%d: %.2f&quot;</span>, flag++, <span class="number">2.0</span> * a - r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Case #%d: %.2f&quot;</span>, flag++, <span class="number">2.0</span> * <span class="built_in">sqrt</span>(a * a + (b - r) * (b - r)) - r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (t) <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>ACM补题</category>
+      </categories>
+      <tags>
+        <tag>ACM补题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/09/05/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>测试文档</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
   <entry>
@@ -241,41 +302,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021/9/19/icpc网络赛补题</title>
-    <url>/2021/09/20/icpc%E7%BD%91%E7%BB%9C%E8%B5%9B9.19%E8%A1%A5%E9%A2%98/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>ACM补题</category>
-      </categories>
-      <tags>
-        <tag>ACM补题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/09/05/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>测试文档</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>c++map/multimap容器简介、构造以及赋值</title>
     <url>/2021/09/05/multimap%E5%AE%B9%E5%99%A8/</url>
     <content><![CDATA[<h1 id="c-map-multimap容器简介、构造以及赋值"><a href="#c-map-multimap容器简介、构造以及赋值" class="headerlink" title="c++map/multimap容器简介、构造以及赋值"></a>c++map/multimap容器简介、构造以及赋值</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1.map中所以元素都是pair(两两的)。<br>2.pair中第一个元素为key(键值)，起到索引作用，第二个元素为value(实值)。<br>3.所有元素都会根据元素的键值自动排序。</p>
@@ -306,6 +332,17 @@
       </tags>
   </entry>
   <entry>
+    <title>排序</title>
+    <url>/2021/09/05/%E6%8E%92%E5%BA%8F/</url>
+    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i ++)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i; j ++)</span><br><span class="line">            <span class="keyword">if</span> (a[i] &gt; a[j])</span><br><span class="line">                <span class="built_in">swap</span>(a[i], a[j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序就像摸牌一样，将数列从第二个数开始逐个插入应该存在的位置，时间复杂度与冒泡排序相当。</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//升序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">isort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> t = a[i];</span><br><span class="line">		<span class="keyword">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (t &lt; a[j] &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		a[j+<span class="number">1</span>] = t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//降序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">isort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> t = a[i];</span><br><span class="line">		<span class="keyword">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (t &gt; a[j] &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		a[j+<span class="number">1</span>] = t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>my new blog</title>
     <url>/2021/09/05/my-new-blog/</url>
     <content><![CDATA[<p>first</p>
@@ -319,49 +356,66 @@
       </tags>
   </entry>
   <entry>
-    <title>test</title>
-    <url>/2021/09/05/test/</url>
-    <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
-<ul>
-<li>这是无序列表</li>
-</ul>
-<p>文本之间必须加空行，不然会被认为是一段</p>
-<p>1.这是有序列表</p>
-<hr>
-<p><strong>黑体</strong></p>
-<p><em>斜体</em></p>
-<hr>
-<p>这样会被认为是代码或者纯文本</p>
-<hr>
-<blockquote>
-<p>这样是引用</p>
-</blockquote>
-<p><code>print(&#39;hello&#39;)</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
-
+    <title>物理层</title>
+    <url>/2021/09/24/%E7%89%A9%E7%90%86%E5%B1%82/</url>
+    <content><![CDATA[<h3 id="2-1-物理层的基本概念"><a href="#2-1-物理层的基本概念" class="headerlink" title="2.1 物理层的基本概念"></a>2.1 物理层的基本概念</h3><ol>
+<li>物理层解决如何在连接各种计算机的传输媒体上传输数据比特流而不是指任何具体的传输媒体</li>
+<li>物理层的主要任务描述为：确定与传输媒体的接口上的一些特性，即：<ol>
+<li>机械特性：例如接口形状、大小、引线数目</li>
+<li>电气特性：例如规定电压范围</li>
+<li>功能特性：例如规定-5V表示0，+5V表示1</li>
+<li>过程特性：也称规程特性，规定建立连接时各个相关部件的工作步骤</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-2-数据通信的基础知识"><a href="#2-2-数据通信的基础知识" class="headerlink" title="2.2 数据通信的基础知识"></a>2.2 数据通信的基础知识</h3><ol>
+<li>典型的数据通信模型（通过电话网实现）：</li>
+</ol>
+<p><a href="https://imagelol.com/image/IFTn1k"><img src="https://s3.jpg.cm/2021/09/24/IFTn1k.jpg" alt="IFTn1k.jpg"></a></p>
+<ol start="2">
+<li><p>数据通信相关术语（通信的目的是传送消息）：</p>
+<ol>
+<li>数据（data）：运送消息的实体（数据不一定有实际意义，但当很多数据组成消息就具有实际意义）</li>
+<li>信号（signal）：数据的电气或电磁的表现（红绿灯、电压高低等）</li>
+<li>模拟信号：代表消息的参数的取值是连续的（声波）</li>
+<li>数字信号：代表消息的参数的取值是离散的</li>
+<li>码元（code）：在使用时间域的波形（在一个时间段内）表示数字信号时，则代表不同离散数据值的基本波形就称为码元</li>
+</ol>
+<p> 在数字通信中常常用时间间隔相同的符号来表示一个二进制数字，这样的时间间隔内的信号称为二进制码元。而这个时间间隔被称为码元长度。1码元可以携带nbit的信息量</p>
+</li>
+<li><p>有关信道的几个概念：</p>
+<p> 信道一般表示向一个方向传送信息的媒体。所以咱们说平常的通信线路往往包含一条发送信息的信道和一条接受信息的信道</p>
+<ol>
+<li>单向通信（单工通信）：只能有一个方向的通信而没有反方向的交互</li>
+<li>双向交替通信(半双工通信)：通信双方都可以发送信息，但不能双方同时发送，也不没能同时接收</li>
+<li>双向同时通信（全双工通信）：通信双方可以同时发送和接收信息</li>
+<li>基带信号（baseband即基本频带信号）：来自信源的信号。像计算机输出的代表各种文字或图像文件的数据信号都属于基带信号。基带信号就是发出的直接表达了要传输的信息的信号，比如我们说话的声波就是基带信号</li>
+<li>带通信号（band pass）：把基带信号经过载波调制后，把信号的频率范围搬移到较高的频段以便在信道中传输(即仅在一段频率范围内能供通过信道)</li>
+</ol>
+<p> <a href="https://imagelol.com/image/IFTKGe"><img src="https://s3.jpg.cm/2021/09/24/IFTKGe.jpg" alt="IFTKGe.jpg"></a></p>
+<p> 因此在传输距离较近时，计算机网络都采用基带传输方式。由于在近距离范围内基带信号的衰减不大，从而信号内容不会发生变化。因此在传输距离较近时，计算机网络都采用基带传输方式。如从计算机到监视器、打印机等外设的信号就是几代传输的。</p>
+</li>
+<li><p>几种最基本的调制方法：</p>
+<ol>
+<li>调幅（AM）：载波的振幅随基带数字信号变化而变化</li>
+<li>调频（FM）：载波的频率随基带数字信号而变化</li>
+<li>调相（PM）：载波的初始相位随基带数字信号而变化</li>
+</ol>
+<p> <a href="https://imagelol.com/image/IFa6c2"><img src="https://s3.jpg.cm/2021/09/24/IFa6c2.png" alt="IFa6c2.png"></a></p>
+</li>
+<li><p>常用编码：</p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>测试文档</category>
+        <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>test</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
-    <title>排序</title>
-    <url>/2021/09/05/%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i ++)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i; j ++)</span><br><span class="line">            <span class="keyword">if</span> (a[i] &gt; a[j])</span><br><span class="line">                <span class="built_in">swap</span>(a[i], a[j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序就像摸牌一样，将数列从第二个数开始逐个插入应该存在的位置，时间复杂度与冒泡排序相当。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//升序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">isort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> t = a[i];</span><br><span class="line">		<span class="keyword">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (t &lt; a[j] &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		a[j+<span class="number">1</span>] = t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//降序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">isort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> t = a[i];</span><br><span class="line">		<span class="keyword">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (t &gt; a[j] &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		a[j+<span class="number">1</span>] = t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络概述上</title>
+    <title>计算机网络概述</title>
     <url>/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/</url>
     <content><![CDATA[<h3 id="1-1-计算机网络在信息时代的作用"><a href="#1-1-计算机网络在信息时代的作用" class="headerlink" title="1.1 计算机网络在信息时代的作用"></a>1.1 计算机网络在信息时代的作用</h3><ol>
 <li><p>信息化时代的特征：数字化、网络化、信息化</p>
@@ -514,17 +568,58 @@
 </li>
 </ol>
 <h3 id="1-7-计算机网络体系结构"><a href="#1-7-计算机网络体系结构" class="headerlink" title="1.7 计算机网络体系结构"></a>1.7 计算机网络体系结构</h3><ol>
-<li>几个基本概念：<ol>
-<li>ISO：国际标准化组织</li>
-<li>OSI/RM：互联网法律上的国际标准，分七层<ol>
-<li>应用层：能够产生网络流量和用户交互的应用程序</li>
-<li>表示层：</li>
+<li><p>几个基本概念：</p>
+<ol>
+<li><p>ISO：国际标准化组织</p>
+</li>
+<li><p>OSI/RM：互联网法律上的国际标准，分七层，每一层都不会影响其他层</p>
+<ol>
+<li>应用层：能够产生网络流量和用户交互的应用程序（暴风影音、qq等）</li>
+<li>表示层：数据通信时要考虑数据是不是要加密或者压缩，ASCII码还是二进制，这是表示层要解决的问题（就比如说一个视频很大，开发程序员想上传的时候需要压缩一下，是开发人员需要考虑的问题）</li>
+<li>会话层：应用程序之间建立的会话/服务和客户端建立的会话，利用会话层可以查看木马（netstat -nb）</li>
+</ol>
+<p>以上是开发人员要考虑的问题，以下是网络工程师要考虑的问题</p>
+<ol start="4">
+<li>传输层：可以进行可靠传输（建立会话，丢包必须重传）、不可靠传输（不建立会话，没必要一直建立连接，一个包就可以解决，会多试几次）、流量控制功能（流量太多传不过来了，告诉服务器暂停一下）</li>
+<li>网络层：负责选择最佳路径、IP地址编址</li>
+<li>数据链路层：数据如何封装、添加物理层地址（MAC地址）</li>
+<li>物理层：电压、接口标准</li>
+<li>网络排错：从底层向高层排错，比如说上不了网了，先看看网线插没插好，再往上看</li>
 </ol>
 </li>
-<li>TCP/IP Suite：因特网事实上的国际标准</li>
-<li>Network Protocols：数据交换的规则、标准或约定</li>
-<li>网络体系结构：计算机网络各层及其协议的集合</li>
+<li><p>网络安全和OSI参考模型：</p>
+<ol>
+<li>物理层安全：在一个大厦上安装网线，别的人接上网线就可以看到整座楼的网了，就没有安全</li>
+<li>数据链路层安全：ADSL输入账号密码网才能通，AP密码层安全</li>
+<li>网络层安全：在交换机上设置，哪个网段IP可以出去，哪个出不去</li>
+<li>应用层安全：应用程序开发时的安全，比如SQL注入漏洞、上传漏洞等</li>
 </ol>
+</li>
+<li><p>TCP/IP Suite：因特网事实上的国际标准</p>
+</li>
+<li><p>Network Protocols：数据交换的规则、标准或约定</p>
+</li>
+<li><p>网络体系结构：计算机网络各层及其协议的集合</p>
+</li>
+</ol>
+</li>
+<li><p>开放系统信息交换涉及的几个概念：</p>
+<ol>
+<li>实体 entity：交换信息的硬件或软件过程</li>
+<li>协议 protocol：控制两个对等实体通信规则</li>
+<li>服务 service：下层向上层提供服务，上层需要使用下层的服务来实现本层的功能</li>
+<li>服务访问点 SAP：相邻两层实体间交换信息的地方</li>
+</ol>
+</li>
+<li><p>计算机网络五层协议对应的数据单元：</p>
+<ol>
+<li>应用层：应用层</li>
+<li>运输层：运输层报文</li>
+<li>网络层：IP数据报</li>
+<li>数据链路层：数据帧</li>
+<li>物理层：bit，010101</li>
+</ol>
+<p><a href="https://imagelol.com/image/IF98PW"><img src="https://s3.jpg.cm/2021/09/24/IF98PW.jpg" alt="IF98PW.jpg"></a><br><a href="https://imagelol.com/image/IF9J7w"><img src="https://s3.jpg.cm/2021/09/24/IF9J7w.jpg" alt="IF9J7w.jpg"></a></p>
 </li>
 </ol>
 ]]></content>
@@ -533,6 +628,37 @@
       </categories>
       <tags>
         <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/09/05/test/</url>
+    <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
+<ul>
+<li>这是无序列表</li>
+</ul>
+<p>文本之间必须加空行，不然会被认为是一段</p>
+<p>1.这是有序列表</p>
+<hr>
+<p><strong>黑体</strong></p>
+<p><em>斜体</em></p>
+<hr>
+<p>这样会被认为是代码或者纯文本</p>
+<hr>
+<blockquote>
+<p>这样是引用</p>
+</blockquote>
+<p><code>print(&#39;hello&#39;)</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>测试文档</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
       </tags>
   </entry>
 </search>
