@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>3.CSS样式</title>
+    <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
+<li><p>CSS概述：</p>
+<ol>
+<li>HTML负责网页的内容</li>
+<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
+</ol>
+</li>
+<li><p>CSS语法：</p>
+<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>3.CSS</title>
     <url>/2021/09/20/CSS/</url>
     <content><![CDATA[<h3 id="1-CSS简介"><a href="#1-CSS简介" class="headerlink" title="1. CSS简介"></a>1. CSS简介</h3><ol>
@@ -138,60 +160,39 @@
       </tags>
   </entry>
   <entry>
-    <title>3.CSS样式</title>
-    <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
-<li><p>CSS概述：</p>
-<ol>
-<li>HTML负责网页的内容</li>
-<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
-</ol>
-</li>
-<li><p>CSS语法：</p>
-<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2.基础</title>
     <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
 <li><p>HTML：“超文本标记语言”，它是制作网页的标准语言，HTML不区分大小写。HTML的标记称为标签</p>
 </li>
 <li><p>标签：由尖括号包围，比如&lt;title&gt;,通常是成对出现的；&lt;title&gt;开始标签，&lt;/title&gt;结束标签；单独出现标签&lt;img&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;由/结束</p>
-<p> 标签注意缩进，外层标签靠外书写，内层标签向右缩进一段距离<br> <a href="https://imagelol.com/image/IFVoyU"><img src="https://s3.jpg.cm/2021/09/22/IFVoyU.png" alt="IFVoyU.png"></a><br> <a href="https://imagelol.com/image/IFVB5O"><img src="https://s3.jpg.cm/2021/09/22/IFVB5O.png" alt="IFVB5O.png"></a></p>
+<p> 标签注意缩进，外层标签靠外书写，内层标签向右缩进一段距离<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072251967.png" alt="QQ图片20210922170026"></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252724.png" alt="QQ图片20210922170407"></p>
 </li>
 <li><p>标签、属性：标签内部可以有属性</p>
-<p> <a href="https://imagelol.com/image/IFVfNw"><img src="https://s3.jpg.cm/2021/09/22/IFVfNw.png" alt="IFVfNw.png"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252228.png" alt="QQ图片20210922170649"></p>
 </li>
 </ol>
 <h3 id="2-2-HTML文件结构"><a href="#2-2-HTML文件结构" class="headerlink" title="2.2 HTML文件结构"></a>2.2 HTML文件结构</h3><ol>
 <li><p>HTML文件结构：HTML文件后缀要是.htm或.html</p>
 <ol>
-<li>html基本结构<br><a href="https://imagelol.com/image/IFVhVr"><img src="https://s3.jpg.cm/2021/09/22/IFVhVr.png" alt="IFVhVr.png"></a></li>
+<li>html基本结构<br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252105.png" alt="QQ图片20210922171534"></li>
 <li><!DOCTYPE html>：表示当前文档符合HTML5标准</li>
 <li>lang属性：language属性是提供给搜索引擎的信息，提示当前是英文网页（en）是中文网页（zh）</li>
 <li><meta>：元数据，包含这个网页的一些很基础的信息</li>
 </ol>
-<p> <a href="https://imagelol.com/image/IFVO44"><img src="https://s3.jpg.cm/2021/09/22/IFVO44.png" alt="IFVO44.png"></a></p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252200.png" alt="QQ图片20210922172602"></p>
 </li>
 <li><p>字符集与编码</p>
 <p> 源文件保存时的编码与源文件声明的编码方式不一致就会出现乱码问题</p>
-<p> <a href="https://imagelol.com/image/IF8Lkp"><img src="https://s3.jpg.cm/2021/09/22/IF8Lkp.png" alt="IF8Lkp.png"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252041.png" alt="QQ图片20210922173016"></p>
 </li>
 </ol>
 <h3 id="2-3-HTML标签（1）"><a href="#2-3-HTML标签（1）" class="headerlink" title="2.3 HTML标签（1）"></a>2.3 HTML标签（1）</h3><ol>
 <li><p>标题 h1~h6：一个页面建议只有一个h1</p>
 </li>
 <li><p>段落 p：每个段落都会被换行，多个空格合并为一个空格，多个空行也是合并为一个空格</p>
-<p> <a href="https://imagelol.com/image/IF8FCR"><img src="https://s3.jpg.cm/2021/09/22/IF8FCR.png" alt="IF8FCR.png" border="0"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253012.png" alt="QQ图片20210922181655"></p>
 </li>
 <li><p>段内换行 br：单独出现的标签，直接结束，&lt;br /&gt;,多个<br />可以产生空行</p>
 </li>
@@ -203,14 +204,14 @@
 <li><p>段内分组 span：将需要特殊表示出来的文字放在span标签内，再利用CSS对span标签进行特殊样式设置</p>
 </li>
 <li><p>水平线 hr：hr标签也是单独出现的，&lt;hr /&gt;</p>
-<p> <a href="https://imagelol.com/image/IF8wO4"><img src="https://s3.jpg.cm/2021/09/22/IF8wO4.png" alt="IF8wO4.png"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253557.png" alt="QQ图片20210922183613"></p>
 </li>
 <li><p>注释内容:注释可以跨行，&lt;!–这是一段注释–&gt;</p>
 </li>
 </ol>
 <h3 id="2-4-HTML标签（2）"><a href="#2-4-HTML标签（2）" class="headerlink" title="2.4 HTML标签（2）"></a>2.4 HTML标签（2）</h3><ol>
 <li><p>超链接a：包含文字超链接和图片超链接，单击之后可以跳转到新的页面，格式：</p>
-<p> &lt;a href=”网址”&gt;文字或图片</a>（href是超链接的意思）<br> <a href="https://imagelol.com/image/IF8BmD"><img src="https://s3.jpg.cm/2021/09/22/IF8BmD.png" alt="IF8BmD.png"></a></p>
+<p> &lt;a href=”网址”&gt;文字或图片</a>（href是超链接的意思）<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253432.png" alt="QQ图片20210922184914"></p>
 </li>
 </ol>
 <h3 id="2-5-HTML标签（3）"><a href="#2-5-HTML标签（3）" class="headerlink" title="2.5 HTML标签（3）"></a>2.5 HTML标签（3）</h3><ol>
@@ -221,13 +222,13 @@
 <p> jpg：有损压缩（去掉不关键的信息，保留大部分有用信息），支持色彩丰富图片，不会影响到用户的观看效果，而且文件非常小</p>
 <p> gif：简单动画，背景透明</p>
 <p> png：由gif发展而来，无损压缩（支持有损和无损两种情况）、透明、交错、动画</p>
-<p> <a href="https://imagelol.com/image/IFAeWR"><img src="https://s3.jpg.cm/2021/09/22/IFAeWR.jpg" alt="IFAeWR.jpg"></a></p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253608.jpg" alt="QQ图片20210922201039"></p>
 </li>
 <li><p>img标签&lt;img /&gt;：</p>
 <ol>
 <li><p>src属性：图片的来源，后跟路径名+文件名</p>
-<p>  路径名可以写绝对路径（不推荐）和相对路径，相对路径是以网页文件当前所在文件夹为查找的基准点<br>  <a href="https://imagelol.com/image/IFAAX4"><img src="https://s3.jpg.cm/2021/09/22/IFAAX4.png" alt="IFAAX4.png"></a></p>
-<p>  <a href="https://imagelol.com/image/IFAXvX"><img src="https://s3.jpg.cm/2021/09/22/IFAXvX.png" alt="IFAXvX.png"></a></p>
+<p>  路径名可以写绝对路径（不推荐）和相对路径，相对路径是以网页文件当前所在文件夹为查找的基准点<br>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254054.png" alt="QQ图片20210922202516"></p>
+<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254969.png" alt="QQ图片20210922202613"></p>
 </li>
 <li><p>alt属性：当因为图片丢失或者其他原因无法打开，浏览器就会找到alt属性，把这个文字显示出来，是图片的替换文本</p>
 </li>
@@ -236,20 +237,20 @@
 </ol>
 <h3 id="2-6-HTML标签（4）"><a href="#2-6-HTML标签（4）" class="headerlink" title="2.6 HTML标签（4）"></a>2.6 HTML标签（4）</h3><ol>
 <li><p>区域 div：页面上的板块或者简单的元素组合，使用的时候成对使用&lt;div&gt;&lt;/div&gt;</p>
-<p> <a href="https://imagelol.com/image/IFYibL"><img src="https://s3.jpg.cm/2021/09/23/IFYibL.png" alt="IFYibL.png"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254084.png" alt="QQ图片20210923164504"></p>
 </li>
 <li><p>无序列表 ul：每个超链接就是一个列表项，整个超链接的组合就是一个无序列表（因为它的每个列表项先后顺序是无关的），ul标签成对出现&lt;ul&gt;&lt;/ul&gt;</p>
 </li>
 <li><p>列表项 li：无序列表内部添加列表项，每个列表项都用li标签对来表示&lt;li&gt;&lt;/li&gt;</p>
 </li>
 <li><p>有序列表 ol：成对出现，&lt;ol&gt;&lt;/ol&gt;，在其内部使用li标签项</p>
-<p> <a href="https://imagelol.com/image/IFr2uy"><img src="https://s3.jpg.cm/2021/09/23/IFr2uy.png" alt="IFr2uy.png"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254098.png" alt="QQ图片20210923170033"></p>
 </li>
 <li><p>表格 table tr td：table标签出现就表示要绘制一张表格，tr标签表示有几行，td标签表示一行有几个单元格，要添加数据的时候就把数据加在td标签内就行了</p>
-<p> <a href="https://imagelol.com/image/IFr3Br"><img src="https://s3.jpg.cm/2021/09/23/IFr3Br.png" alt="IFr3Br.png"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255455.png" alt="QQ图片20210923170134"></p>
 </li>
 <li><p>表头单元格 th：</p>
-<p> <a href="https://imagelol.com/image/IFrh8C"><img src="https://s3.jpg.cm/2021/09/23/IFrh8C.png" alt="IFrh8C.png"></a></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255248.png" alt="QQ图片20210923170520"></p>
 </li>
 <li><p>表格嵌套：</p>
 <p> 表格嵌套实际上是将一个表格插入到一个单元格中，在th标签中本来应该出现文字，现在出现table标签，就实现了标签嵌套</p>
@@ -434,9 +435,13 @@
       </tags>
   </entry>
   <entry>
-    <title>2021/9/25/icpc网络赛补题</title>
-    <url>/2021/09/20/icpc_9_25/</url>
-    <content><![CDATA[]]></content>
+    <title>icpc第二场网络赛补题</title>
+    <url>/2021/09/20/icpc%E7%AC%AC%E4%BA%8C%E5%9C%BA%E7%BD%91%E7%BB%9C%E8%B5%9B%E8%A1%A5%E9%A2%98/</url>
+    <content><![CDATA[<h3 id="G题"><a href="#G题" class="headerlink" title="G题"></a>G题</h3><p>这个题属于签到题，用洛必达求导然后直接进行计算就行了，但是当时由于我们队求导求错了，而且wa的时候也没往这方面想，一直以为是特判，就没做出来</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[<span class="number">15</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100005</span>], b[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">int</span> t, n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    cin &gt;&gt; n &gt;&gt; t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a[i] &gt;&gt; b[i];</span><br><span class="line">        g[<span class="number">1</span>] += a[i]*b[i];</span><br><span class="line">        g[<span class="number">2</span>] += a[i]*b[i]*b[i]*<span class="number">-1</span>;</span><br><span class="line">        g[<span class="number">3</span>] += a[i]*b[i]*b[i]*b[i];</span><br><span class="line">        g[<span class="number">4</span>] += a[i]*b[i]*b[i]*b[i]*b[i]*<span class="number">-1</span>;</span><br><span class="line">        g[<span class="number">5</span>] += a[i]*b[i]*b[i]*b[i]*b[i]*b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; t; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(g[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;infinity&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; g[t]/t;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="J题"><a href="#J题" class="headerlink" title="J题"></a>J题</h3><p>这题大意就是房顶有很多区域，高度为0表示漏水，水会从高往低流，求每个区域漏水的多少。实际上只要排序完然后模拟就好了</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> h[<span class="number">505</span>][<span class="number">505</span>],cnt,n,m;</span><br><span class="line"><span class="keyword">double</span> s[<span class="number">505</span>][<span class="number">505</span>];</span><br><span class="line"><span class="keyword">int</span> x[<span class="number">5</span>]=&#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> y[<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> i,j,h;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node p)&#123;</span><br><span class="line">        <span class="keyword">return</span> h&gt;p.h;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;a[<span class="number">300005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">judge</span><span class="params">(node t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> di=t.i+x[i];</span><br><span class="line">        <span class="keyword">int</span> dj=t.j+y[i];</span><br><span class="line">        <span class="keyword">if</span>(di&gt;<span class="number">0</span>&amp;&amp;di&lt;=n&amp;&amp;dj&gt;<span class="number">0</span>&amp;&amp;dj&lt;=n&amp;&amp;h[t.i][t.j]&gt;h[di][dj])&#123;</span><br><span class="line">            sum++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sum)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> di=t.i+x[i];</span><br><span class="line">            <span class="keyword">int</span> dj=t.j+y[i];</span><br><span class="line">            <span class="keyword">if</span>(di&gt;<span class="number">0</span>&amp;&amp;di&lt;=n&amp;&amp;dj&gt;<span class="number">0</span>&amp;&amp;dj&lt;=n&amp;&amp;h[t.i][t.j]&gt;h[di][dj])&#123;</span><br><span class="line">                s[di][dj]+=s[t.i][t.j]/sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            cin&gt;&gt;h[i][j];</span><br><span class="line">            cnt++;</span><br><span class="line">            a[cnt].i=i;</span><br><span class="line">            a[cnt].j=j;</span><br><span class="line">            a[cnt].h=h[i][j];</span><br><span class="line">            s[i][j]=m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> maxn=n*n;</span><br><span class="line">    <span class="built_in">sort</span>(a+<span class="number">1</span>,a+maxn+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=maxn;i++)&#123;</span><br><span class="line">        <span class="built_in">judge</span>(a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h[i][j]!=<span class="number">0</span>)&#123;</span><br><span class="line">                cout&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%.6lf &quot;</span>,s[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>ACM补题</category>
       </categories>
@@ -445,13 +450,9 @@
       </tags>
   </entry>
   <entry>
-    <title>icpc第二场网络赛补题</title>
-    <url>/2021/09/20/icpc%E7%AC%AC%E4%BA%8C%E5%9C%BA%E7%BD%91%E7%BB%9C%E8%B5%9B%E8%A1%A5%E9%A2%98/</url>
-    <content><![CDATA[<h3 id="G题"><a href="#G题" class="headerlink" title="G题"></a>G题</h3><p>这个题属于签到题，用洛必达求导然后直接进行计算就行了，但是当时由于我们队求导求错了，而且wa的时候也没往这方面想，一直以为是特判，就没做出来</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[<span class="number">15</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100005</span>], b[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">int</span> t, n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    cin &gt;&gt; n &gt;&gt; t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a[i] &gt;&gt; b[i];</span><br><span class="line">        g[<span class="number">1</span>] += a[i]*b[i];</span><br><span class="line">        g[<span class="number">2</span>] += a[i]*b[i]*b[i]*<span class="number">-1</span>;</span><br><span class="line">        g[<span class="number">3</span>] += a[i]*b[i]*b[i]*b[i];</span><br><span class="line">        g[<span class="number">4</span>] += a[i]*b[i]*b[i]*b[i]*b[i]*<span class="number">-1</span>;</span><br><span class="line">        g[<span class="number">5</span>] += a[i]*b[i]*b[i]*b[i]*b[i]*b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; t; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(g[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;infinity&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; g[t]/t;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="J题"><a href="#J题" class="headerlink" title="J题"></a>J题</h3><p>这题大意就是房顶有很多区域，高度为0表示漏水，水会从高往低流，求每个区域漏水的多少。实际上只要排序完然后模拟就好了</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> h[<span class="number">505</span>][<span class="number">505</span>],cnt,n,m;</span><br><span class="line"><span class="keyword">double</span> s[<span class="number">505</span>][<span class="number">505</span>];</span><br><span class="line"><span class="keyword">int</span> x[<span class="number">5</span>]=&#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> y[<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> i,j,h;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node p)&#123;</span><br><span class="line">        <span class="keyword">return</span> h&gt;p.h;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;a[<span class="number">300005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">judge</span><span class="params">(node t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> di=t.i+x[i];</span><br><span class="line">        <span class="keyword">int</span> dj=t.j+y[i];</span><br><span class="line">        <span class="keyword">if</span>(di&gt;<span class="number">0</span>&amp;&amp;di&lt;=n&amp;&amp;dj&gt;<span class="number">0</span>&amp;&amp;dj&lt;=n&amp;&amp;h[t.i][t.j]&gt;h[di][dj])&#123;</span><br><span class="line">            sum++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sum)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> di=t.i+x[i];</span><br><span class="line">            <span class="keyword">int</span> dj=t.j+y[i];</span><br><span class="line">            <span class="keyword">if</span>(di&gt;<span class="number">0</span>&amp;&amp;di&lt;=n&amp;&amp;dj&gt;<span class="number">0</span>&amp;&amp;dj&lt;=n&amp;&amp;h[t.i][t.j]&gt;h[di][dj])&#123;</span><br><span class="line">                s[di][dj]+=s[t.i][t.j]/sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            cin&gt;&gt;h[i][j];</span><br><span class="line">            cnt++;</span><br><span class="line">            a[cnt].i=i;</span><br><span class="line">            a[cnt].j=j;</span><br><span class="line">            a[cnt].h=h[i][j];</span><br><span class="line">            s[i][j]=m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> maxn=n*n;</span><br><span class="line">    <span class="built_in">sort</span>(a+<span class="number">1</span>,a+maxn+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=maxn;i++)&#123;</span><br><span class="line">        <span class="built_in">judge</span>(a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h[i][j]!=<span class="number">0</span>)&#123;</span><br><span class="line">                cout&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%.6lf &quot;</span>,s[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>2021/9/25/icpc网络赛补题</title>
+    <url>/2021/09/20/icpc_9_25/</url>
+    <content><![CDATA[]]></content>
       <categories>
         <category>ACM补题</category>
       </categories>
