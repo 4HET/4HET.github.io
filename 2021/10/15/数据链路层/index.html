@@ -20,23 +20,29 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="shell">
+  <meta name="description" content="计算机网络">
 <meta property="og:type" content="article">
-<meta property="og:title" content="shell学习笔记">
-<meta property="og:url" content="http://example.com/2021/10/15/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:title" content="数据链路层">
+<meta property="og:url" content="http://example.com/2021/10/15/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/index.html">
 <meta property="og:site_name" content="4HET">
-<meta property="og:description" content="shell">
+<meta property="og:description" content="计算机网络">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151040955.png">
-<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151210019.png">
-<meta property="article:published_time" content="2021-10-15T02:15:20.000Z">
-<meta property="article:modified_time" content="2021-10-15T04:30:28.438Z">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151445882.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151521023.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151534389.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151538727.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151539409.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151548105.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151616545.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151617368.png">
+<meta property="article:published_time" content="2021-10-15T06:41:21.000Z">
+<meta property="article:modified_time" content="2021-10-15T09:06:43.020Z">
 <meta property="article:author" content="4HET">
-<meta property="article:tag" content="shell">
+<meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151040955.png">
+<meta name="twitter:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110151445882.png">
 
-<link rel="canonical" href="http://example.com/2021/10/15/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+<link rel="canonical" href="http://example.com/2021/10/15/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
 
 
 <script id="page-configurations">
@@ -49,7 +55,7 @@
   };
 </script>
 
-  <title>shell学习笔记 | 4HET</title>
+  <title>数据链路层 | 4HET</title>
   
 
 
@@ -164,7 +170,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/15/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/15/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -177,7 +183,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          shell学习笔记
+          数据链路层
         </h1>
 
         <div class="post-meta">
@@ -188,7 +194,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-10-15 10:15:20 / 修改时间：12:30:28" itemprop="dateCreated datePublished" datetime="2021-10-15T10:15:20+08:00">2021-10-15</time>
+              <time title="创建时间：2021-10-15 14:41:21 / 修改时间：17:06:43" itemprop="dateCreated datePublished" datetime="2021-10-15T14:41:21+08:00">2021-10-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -196,12 +202,12 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/shell/" itemprop="url" rel="index"><span itemprop="name">shell</span></a>
+                  <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">计算机网络</span></a>
                 </span>
             </span>
 
           
-            <div class="post-description">shell</div>
+            <div class="post-description">计算机网络</div>
 
         </div>
       </header>
@@ -212,77 +218,75 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h3 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h3><p>日常运维工作大部分是一些繁琐的重复的工作，每天80%的工作就是重复干昨天的事，而且工作量还比较大，因此运维有两个选择：</p>
-<ul>
-<li>自己搞定一切</li>
-<li>让机器搞定一切</li>
-</ul>
-<p>学习shell分为几个阶段：</p>
-<ol>
-<li> 能看懂shell脚本</li>
-<li>能改shell脚本</li>
-<li>能自己写shell脚本</li>
-<li>能优化shell脚本</li>
-</ol>
-<h3 id="shell介绍"><a href="#shell介绍" class="headerlink" title="shell介绍"></a>shell介绍</h3><ol>
-<li><p>什么是shell</p>
-<p>shell是一个程序，采用c语言编写，是用户和linux内核沟通的桥梁。它既是一种命令语言，又是一种解释性的编程语言。通过一个图表来查看一下shell的作用：</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151040955.png" alt="image-20211015104057796"></p>
-<p>kernel：为软件服务，接收用户或软件指令驱动硬件，完成工作，只能识别01</p>
-<p>shell：命令解释器，会将用户的高级语言转化为二进制</p>
-<p>user：用户接口，对接用户</p>
+        <h3 id="数据链路层的几个概念"><a href="#数据链路层的几个概念" class="headerlink" title="数据链路层的几个概念"></a>数据链路层的几个概念</h3><ol>
+<li><p>数据发送模型</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151445882.png" alt="image-20211015144459603"></p>
+<p>本章只从链路层观察帧的流动</p>
 </li>
-<li><p>shell的功能</p>
+<li><p>数据链路层的信道类型</p>
+<p>数据链路层使用的信道主要有一下两种类型：</p>
 <ul>
-<li>命令行解释功能</li>
-<li>启动程序</li>
-<li>输入输出重定向</li>
-<li>管道连接</li>
-<li>文件名置换（echo/*）</li>
-<li>变量维护</li>
-<li>环境控制</li>
-<li>shell编程</li>
+<li>点对点信道。这种信道使用一对一的点对点通信方式</li>
+<li>广播信道。这种信道使用一对多的广播通信方式，因此过程比较复杂。广播信道上连接的主机很多，因此必须使用专用的共享信道协议来协调这些主机的数据发送</li>
 </ul>
 </li>
-</ol>
-<h3 id="shell语法"><a href="#shell语法" class="headerlink" title="shell语法"></a>shell语法</h3><p>shell脚本就是将完成一个任务的所有命令按照执行先后的顺序，自上而下写入到一个文本文件中，然后给予执行权限</p>
-<ol>
-<li><p>如何书写一个shell脚本</p>
-<ol>
-<li><p>shell脚本命名：</p>
-<p>名字要有意义，最好不要用a、b、c、1、2、3这种方式命名；虽然linux系统中，文件没有扩展名的概念，仍然建议用.sh结尾；名字不要太长，最好能30个自己以内解决</p>
-</li>
-<li><p>shell脚本格式：</p>
+<li><p>链路与数据链路</p>
+<p>链路是一条点到点的物理线路段，一条链路只是一条通路的一个部分</p>
+<p>数据链路除了物理链路外，还必须有通信协议来控制这些数据的传输。若把实现这些协议的硬件和软件加到链路上，就构成了数据链路</p>
 <ul>
-<li><p>shell脚本开头必须指定脚本运行环境，以 #! 这个特殊符号组合来组成。如： #!/bin/bash 指定该脚本是运行解析有/bin/bash来完成的</p>
+<li>现最常用的方法是使用适配器（即网卡）来实现这些协议的硬件和软件</li>
+<li>一般的适配器都包括了数据链路层和物理层这两层的功能</li>
+</ul>
 </li>
-<li><p>#代表注释</p>
+<li><p>帧</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151521023.png" alt="image-20211015152138720"></p>
 </li>
-<li><p>在脚本中加上：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">Author: xxx 作者</span></span><br><span class="line"><span class="meta">#</span><span class="bash">Created Time: xxxx/xx/xx xx:xx 创建时间</span></span><br><span class="line"><span class="meta">#</span><span class="bash">Release: xx 脚本版本</span></span><br><span class="line"><span class="meta">#</span><span class="bash">Script Description: xxxxxx 脚本描述</span></span><br></pre></td></tr></table></figure></li>
-<li><p>脚本组成</p>
-<p>解释环境：也可以这样写：#! /usr/bin/env bash |python|perl</p>
-<p>注释说明</p>
-<p>执行代码</p>
+<li><p>数据链路层像个数字管道</p>
+<p>常常在两个对等的数据链路层之间画出一个数字管道，而在这条数字管道上传输的数据单位是帧</p>
+</li>
+</ol>
+<h3 id="三个基本问题"><a href="#三个基本问题" class="headerlink" title="三个基本问题"></a>三个基本问题</h3><ol>
+<li><p>封装成帧</p>
+<ul>
+<li><p>封装成帧就是在一段数据的前后分别添加首部和尾部，然后就构成了一个帧。确定帧的界限</p>
+</li>
+<li><p>首部和尾部的一个重要作用就是进行帧界定</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151534389.png" alt="image-20211015153451076"></p>
+<p>MTU：最大传输单元，在以太网中最大不超过1500字节</p>
+</li>
+<li><p>用控制字符进行帧定界的方法举例：</p>
+<p>帧还未发送完，发送端出了问题，只能重发该帧。接收端却接收到了前面的”半截子帧“，他由于没有找到帧结束符，会抛弃掉</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151538727.png" alt="image-20211015153855510"></p>
 </li>
 </ul>
 </li>
-</ol>
-</li>
-<li><p>如何运行shell脚本</p>
+<li><p>透明传输</p>
+<p>若传输的数据是ASCII码中的”可打印字符（共95个）“集时，若传输的数据不是仅由“可打印字符”组成时，就会出问题（帧开始符和帧结束符由不可打印字符组成），如下：</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151539409.png" alt="image-20211015153958099"></p>
 <ol>
-<li><p>给执行权限</p>
-<p>chmod 700 filename + ./xxx.sh</p>
-</li>
-<li><p>解释器直接运行，不需要给权限</p>
-<p>sh xxx.sh</p>
+<li><p>用字节填充法解决透明传输的问题</p>
+<p>发送端的数据链路层在数据中出现控制字符“SOH”或“EOT”的前面插入转义字符字符“ESC”（其十六进制编码是1B）</p>
+<p>字节填充或字符填充–接收端的数据链路层在将数据送往网络层之前删除插入的转义字符</p>
+<p>如果转义字符也出现在数据当中，那么应在转义字符前插入一个转义字符。当接收端收到连续两个转义字符时，就删除其中前面的一个</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151548105.png" alt="image-20211015154810739"></p>
 </li>
 </ol>
 </li>
-<li><p>shell中的特殊符号</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151210019.png" alt="image-20211015121054893"></p>
-<p>注：</p>
-<p>​    !表示上个指令，!!表示上上个指令，也可以通过history查看历史命令的序号，通过!+序号来执行历史命令</p>
+<li><p>差错控制</p>
+<p>传输过程中可能会产生比特差错：1可能会变成0而0也可能变成1。</p>
+<p>在一段时间内，传输错误的比特占所传输比特总数的比率称为误码率BER（bit error rate）</p>
+<p>误码率与信噪比有很大的关系</p>
+<p>为保证数据传输的可靠性，在计算机网络传输数据时，必须采用各种差错检测措施</p>
+<ol>
+<li><p>循环冗余检验CRC</p>
+<p>在数据链路层传送的帧中，广泛使用了循环冗余检验CRC的技术</p>
+<p>在发送端，先把数据划分为组。假设每组k个比特</p>
+<p>假设待传送的一组数据M=101001（现在k=6）。我们在M后面再添加供差错检测的n位冗余码一起发送</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151616545.png" alt="image-20211015161632378"></p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151617368.png" alt="image-20211015161714103"></p>
+<p>计算方法：11得0，01得1，最后传数据M+R，也就是101001001，到接收端用（M+R）/P，如果余数为0则表示没有出错，否则表示数据出错要扔掉（数据链路层决定除数p以及加多少位0）</p>
+</li>
+</ol>
 </li>
 </ol>
 
@@ -294,7 +298,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/shell/" rel="tag"># shell</a>
+              <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" rel="tag"># 计算机网络</a>
           </div>
 
         
@@ -303,13 +307,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/24/AcWing%20803/" rel="prev" title="AcWing基础算法">
-      <i class="fa fa-chevron-left"></i> AcWing基础算法
+    <a href="/2021/10/15/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="shell学习笔记">
+      <i class="fa fa-chevron-left"></i> shell学习笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/10/15/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/" rel="next" title="数据链路层">
-      数据链路层 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -368,7 +369,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#shell%E8%84%9A%E6%9C%AC"><span class="nav-number">1.</span> <span class="nav-text">shell脚本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell%E4%BB%8B%E7%BB%8D"><span class="nav-number">2.</span> <span class="nav-text">shell介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">shell语法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82%E7%9A%84%E5%87%A0%E4%B8%AA%E6%A6%82%E5%BF%B5"><span class="nav-number">1.</span> <span class="nav-text">数据链路层的几个概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E4%B8%AA%E5%9F%BA%E6%9C%AC%E9%97%AE%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">三个基本问题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

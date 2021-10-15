@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AcWing数据结构</title>
-    <url>/2021/09/24/AcWing%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<p>3</p>
-]]></content>
-      <categories>
-        <category>AcWing学习笔记</category>
-      </categories>
-      <tags>
-        <tag>AcWing学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AcWing基础算法</title>
     <url>/2021/09/24/AcWing%20803/</url>
     <content><![CDATA[<h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><p><a href="https://www.acwing.com/problem/content/804/">原题链接</a></p>
@@ -34,25 +22,15 @@
       </tags>
   </entry>
   <entry>
-    <title>3.CSS样式</title>
-    <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
-<li><p>CSS概述：</p>
-<ol>
-<li>HTML负责网页的内容</li>
-<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
-</ol>
-</li>
-<li><p>CSS语法：</p>
-<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
-</li>
-</ol>
+    <title>AcWing数据结构</title>
+    <url>/2021/09/24/AcWing%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<p>3</p>
 ]]></content>
       <categories>
-        <category>web前端</category>
+        <category>AcWing学习笔记</category>
       </categories>
       <tags>
-        <tag>web前端</tag>
+        <tag>AcWing学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -211,79 +189,6 @@
       </tags>
   </entry>
   <entry>
-    <title>我的blog配置</title>
-    <url>/2021/09/05/blog/</url>
-    <content><![CDATA[<h2 id="blog搭建"><a href="#blog搭建" class="headerlink" title="blog搭建"></a>blog搭建</h2><p>blog搭建我采用的是hexo+github，网上随处可找到教程，在搭建完成后自己设置主题，本来使用的是yilia主题，后来觉得有些单调就换成了next主题。</p>
-<h2 id="blog界面美化"><a href="#blog界面美化" class="headerlink" title="blog界面美化"></a>blog界面美化</h2><p>1.设置头像<br>在主题配置找到_config.yml,avater注释去掉，再在images下存入照片，即可设置头像<br><a href="https://imgtu.com/i/hxxXjK"><img src="https://z3.ax1x.com/2021/09/11/hxxXjK.md.png" alt="hxxXjK.md.png"></a><br>2.设置背景<br>进入主题设置source下，新建_data文件，在里面新建styles.styl文件，在里面输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 背景</span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/bk.jpg); // 可以是路径也可以是链接</span><br><span class="line">    background-repeat: no-repeat; // 不重复</span><br><span class="line">    background-attachment:fixed; // 固定住背景图片</span><br><span class="line">    background-position:50% 50%; // 图片位置：居中</span><br><span class="line">    background-size: 100% 100%; // 图片长宽扩充为100%</span><br><span class="line">&#125;</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.sidebar &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.header-inner &#123;</span><br><span class="line">      </span><br><span class="line">  background: rgba(255,255,255,0.7);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.popup &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>来设置背景以及透明度（source/_data/styles.styl 注释取消掉后我的博客出现格式丢失的问题，我就又把它注释上了）<br><a href="https://imgtu.com/i/hzSgyV"><img src="https://z3.ax1x.com/2021/09/11/hzSgyV.md.png" alt="hzSgyV.md.png"></a></p>
-<p>3.这样设置完后已进入主页就可以看到文章，显得版面有点乱，于是我通过控制首页文章显示字数来使版面整洁。这里有两种方法：一种是在文章开头加上“description:”，后面跟的是显示的内容，另一种是在文章中添加<code>&lt;!--more--&gt;</code>以显示从<code>&lt;!--more--&gt;</code>以前的内容<br><a href="https://imgtu.com/i/hzpD0O"><img src="https://z3.ax1x.com/2021/09/11/hzpD0O.md.png" alt="hzpD0O.md.png"></a></p>
-<p>4.可以看到下面还有分类和标签两个选项，但是自己打开是404，可以通过hexo new page xxx，来创建，这里自己创建了tags（标签）和catagories（分类），再在开头加上（如下），即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: c++map/multimap容器简介、构造以及赋值</span><br><span class="line">date: 2021-09-05 16:06:30</span><br><span class="line">tags: C++</span><br><span class="line">description: map与multimap并无太大区别，map/multimap属于关联式容器，底层结构是用二叉树实现。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p><a href="https://imgtu.com/i/hz9bVO"><img src="https://z3.ax1x.com/2021/09/11/hz9bVO.md.png" alt="hz9bVO.md.png"></a><br>但是在设置完后自己遇到了标签大小不一样的问题<br><a href="https://imgtu.com/i/hzPQXt"><img src="https://z3.ax1x.com/2021/09/11/hzPQXt.md.png" alt="hzPQXt.md.png"></a><br>自己有搜索后发现，原来neat主题的设置就是标签云标签的大小与文章数目有关，也确实是很人性化了。</p>
-]]></content>
-      <categories>
-        <category>blog配置</category>
-      </categories>
-      <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>1.概论</title>
-    <url>/2021/09/20/HTML%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h3 id="1-1-web开发概述"><a href="#1-1-web开发概述" class="headerlink" title="1.1 web开发概述"></a>1.1 web开发概述</h3><ol>
-<li><p>web系统是以网站形式呈现出来的，web前端是以网页形式呈现出来的</p>
-</li>
-<li><p>前端：网页上为用户呈现的部分</p>
-<p> 后端：与数据库进行交互，完成数据存储</p>
-</li>
-</ol>
-<h3 id="1-2-网站与网页"><a href="#1-2-网站与网页" class="headerlink" title="1.2 网站与网页"></a>1.2 网站与网页</h3><ol>
-<li>网站 web site：互联网上用于展示特定内容的相关网页的集合</li>
-<li>网页 web page：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起</li>
-<li>主页 homepage：进入网站看到的第一个网页，主页的文件名通常是index</li>
-<li>网页元素：<ol>
-<li>表单：用来采集或者传递客户信息</li>
-<li>logo 站标：通常放在左上角</li>
-<li>导航栏：用来进入各个板块，超链接的集合</li>
-</ol>
-</li>
-<li>从开发者的角度来看，网站就是文件夹，网页就是文件</li>
-<li>做好的网站放在服务器端，用户就可以通过浏览器使用自己的设备（客户端）来访问服务器端所提供的网站文件夹里面的网页文件了</li>
-<li>浏览器作用：解析网页文件里的代码（源代码），将网页显示出来（渲染网页）</li>
-</ol>
-<h3 id="1-3-web前端开发技术"><a href="#1-3-web前端开发技术" class="headerlink" title="1.3 web前端开发技术"></a>1.3 web前端开发技术</h3><ol>
-<li><p>前端技术构成：</p>
-<ol>
-<li>结构：HTML</li>
-</ol>
-<p> 从语义角度，描述页面结构（决定网页包含哪些内容，图片、标题、表格等）</p>
-<ol start="2">
-<li>样式：CSS</li>
-</ol>
-<p> 从审美角度，美化页面（字体字号，页面布局，元素位置等）</p>
-<ol start="3">
-<li>行为：JavaScript</li>
-</ol>
-<p> 从交互角度，提升用户体验</p>
-</li>
-<li><p>前端技术标准</p>
-<ol>
-<li>W3C标准：<a href="http://www.w3.org/">www.w3.org</a></li>
-</ol>
-<p> 目前是HTML5，CSS3以及JavaScript</p>
-<ol start="2">
-<li>W3C教程：<a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2.基础</title>
     <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
@@ -429,6 +334,101 @@
       </categories>
       <tags>
         <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>3.CSS样式</title>
+    <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
+<li><p>CSS概述：</p>
+<ol>
+<li>HTML负责网页的内容</li>
+<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
+</ol>
+</li>
+<li><p>CSS语法：</p>
+<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>1.概论</title>
+    <url>/2021/09/20/HTML%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h3 id="1-1-web开发概述"><a href="#1-1-web开发概述" class="headerlink" title="1.1 web开发概述"></a>1.1 web开发概述</h3><ol>
+<li><p>web系统是以网站形式呈现出来的，web前端是以网页形式呈现出来的</p>
+</li>
+<li><p>前端：网页上为用户呈现的部分</p>
+<p> 后端：与数据库进行交互，完成数据存储</p>
+</li>
+</ol>
+<h3 id="1-2-网站与网页"><a href="#1-2-网站与网页" class="headerlink" title="1.2 网站与网页"></a>1.2 网站与网页</h3><ol>
+<li>网站 web site：互联网上用于展示特定内容的相关网页的集合</li>
+<li>网页 web page：网站中的一页，一个网站中的网页通过“超链接”的方式被组织在一起</li>
+<li>主页 homepage：进入网站看到的第一个网页，主页的文件名通常是index</li>
+<li>网页元素：<ol>
+<li>表单：用来采集或者传递客户信息</li>
+<li>logo 站标：通常放在左上角</li>
+<li>导航栏：用来进入各个板块，超链接的集合</li>
+</ol>
+</li>
+<li>从开发者的角度来看，网站就是文件夹，网页就是文件</li>
+<li>做好的网站放在服务器端，用户就可以通过浏览器使用自己的设备（客户端）来访问服务器端所提供的网站文件夹里面的网页文件了</li>
+<li>浏览器作用：解析网页文件里的代码（源代码），将网页显示出来（渲染网页）</li>
+</ol>
+<h3 id="1-3-web前端开发技术"><a href="#1-3-web前端开发技术" class="headerlink" title="1.3 web前端开发技术"></a>1.3 web前端开发技术</h3><ol>
+<li><p>前端技术构成：</p>
+<ol>
+<li>结构：HTML</li>
+</ol>
+<p> 从语义角度，描述页面结构（决定网页包含哪些内容，图片、标题、表格等）</p>
+<ol start="2">
+<li>样式：CSS</li>
+</ol>
+<p> 从审美角度，美化页面（字体字号，页面布局，元素位置等）</p>
+<ol start="3">
+<li>行为：JavaScript</li>
+</ol>
+<p> 从交互角度，提升用户体验</p>
+</li>
+<li><p>前端技术标准</p>
+<ol>
+<li>W3C标准：<a href="http://www.w3.org/">www.w3.org</a></li>
+</ol>
+<p> 目前是HTML5，CSS3以及JavaScript</p>
+<ol start="2">
+<li>W3C教程：<a href="http://www.w3school.com.cn/">http://www.w3school.com.cn/</a></li>
+</ol>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>我的blog配置</title>
+    <url>/2021/09/05/blog/</url>
+    <content><![CDATA[<h2 id="blog搭建"><a href="#blog搭建" class="headerlink" title="blog搭建"></a>blog搭建</h2><p>blog搭建我采用的是hexo+github，网上随处可找到教程，在搭建完成后自己设置主题，本来使用的是yilia主题，后来觉得有些单调就换成了next主题。</p>
+<h2 id="blog界面美化"><a href="#blog界面美化" class="headerlink" title="blog界面美化"></a>blog界面美化</h2><p>1.设置头像<br>在主题配置找到_config.yml,avater注释去掉，再在images下存入照片，即可设置头像<br><a href="https://imgtu.com/i/hxxXjK"><img src="https://z3.ax1x.com/2021/09/11/hxxXjK.md.png" alt="hxxXjK.md.png"></a><br>2.设置背景<br>进入主题设置source下，新建_data文件，在里面新建styles.styl文件，在里面输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 背景</span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/bk.jpg); // 可以是路径也可以是链接</span><br><span class="line">    background-repeat: no-repeat; // 不重复</span><br><span class="line">    background-attachment:fixed; // 固定住背景图片</span><br><span class="line">    background-position:50% 50%; // 图片位置：居中</span><br><span class="line">    background-size: 100% 100%; // 图片长宽扩充为100%</span><br><span class="line">&#125;</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.sidebar &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.header-inner &#123;</span><br><span class="line">      </span><br><span class="line">  background: rgba(255,255,255,0.7);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.popup &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>来设置背景以及透明度（source/_data/styles.styl 注释取消掉后我的博客出现格式丢失的问题，我就又把它注释上了）<br><a href="https://imgtu.com/i/hzSgyV"><img src="https://z3.ax1x.com/2021/09/11/hzSgyV.md.png" alt="hzSgyV.md.png"></a></p>
+<p>3.这样设置完后已进入主页就可以看到文章，显得版面有点乱，于是我通过控制首页文章显示字数来使版面整洁。这里有两种方法：一种是在文章开头加上“description:”，后面跟的是显示的内容，另一种是在文章中添加<code>&lt;!--more--&gt;</code>以显示从<code>&lt;!--more--&gt;</code>以前的内容<br><a href="https://imgtu.com/i/hzpD0O"><img src="https://z3.ax1x.com/2021/09/11/hzpD0O.md.png" alt="hzpD0O.md.png"></a></p>
+<p>4.可以看到下面还有分类和标签两个选项，但是自己打开是404，可以通过hexo new page xxx，来创建，这里自己创建了tags（标签）和catagories（分类），再在开头加上（如下），即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: c++map/multimap容器简介、构造以及赋值</span><br><span class="line">date: 2021-09-05 16:06:30</span><br><span class="line">tags: C++</span><br><span class="line">description: map与multimap并无太大区别，map/multimap属于关联式容器，底层结构是用二叉树实现。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<p><a href="https://imgtu.com/i/hz9bVO"><img src="https://z3.ax1x.com/2021/09/11/hz9bVO.md.png" alt="hz9bVO.md.png"></a><br>但是在设置完后自己遇到了标签大小不一样的问题<br><a href="https://imgtu.com/i/hzPQXt"><img src="https://z3.ax1x.com/2021/09/11/hzPQXt.md.png" alt="hzPQXt.md.png"></a><br>自己有搜索后发现，原来neat主题的设置就是标签云标签的大小与文章数目有关，也确实是很人性化了。</p>
+]]></content>
+      <categories>
+        <category>blog配置</category>
+      </categories>
+      <tags>
+        <tag>blog</tag>
       </tags>
   </entry>
   <entry>
@@ -581,6 +581,36 @@
       </tags>
   </entry>
   <entry>
+    <title>c++map/multimap容器简介、构造以及赋值</title>
+    <url>/2021/09/05/multimap%E5%AE%B9%E5%99%A8/</url>
+    <content><![CDATA[<h1 id="c-map-multimap容器简介、构造以及赋值"><a href="#c-map-multimap容器简介、构造以及赋值" class="headerlink" title="c++map/multimap容器简介、构造以及赋值"></a>c++map/multimap容器简介、构造以及赋值</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1.map中所以元素都是pair(两两的)。<br>2.pair中第一个元素为key(键值)，起到索引作用，第二个元素为value(实值)。<br>3.所有元素都会根据元素的键值自动排序。</p>
+<h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>map/multimap属于关联式容器，底层结构是用二叉树实现。</p>
+<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>可以根据key值快速找到value值。</p>
+<h2 id="map与multimap区别"><a href="#map与multimap区别" class="headerlink" title="map与multimap区别"></a>map与multimap区别</h2><p>1.map不允许容器中有重复key值元素。<br>2.multimap允许容器中有重复key值元素。</p>
+<h2 id="map构造和赋值"><a href="#map构造和赋值" class="headerlink" title="map构造和赋值"></a>map构造和赋值</h2><p>map中所有元素都是成对出现，插入数据的时候要使用对组。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//默认构造 </span></span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1;<span class="comment">//map默认构造函数 </span></span><br><span class="line">	<span class="comment">//插入</span></span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>, <span class="number">10</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>, <span class="number">20</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>, <span class="number">30</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">4</span>, <span class="number">40</span>));</span><br><span class="line">	<span class="built_in">printmap</span>(m1);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//拷贝构造</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;<span class="built_in">m2</span>(m1);</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//赋值</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m3; </span><br><span class="line">	m3 = m2;</span><br><span class="line">	<span class="built_in">printmap</span>(m3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="map大小和交换"><a href="#map大小和交换" class="headerlink" title="map大小和交换"></a>map大小和交换</h2><p>函数原型</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">size</span>();<span class="comment">//返回容器中元素的数目</span></span><br><span class="line"><span class="built_in">empty</span>();<span class="comment">//判断容器是否为空</span></span><br><span class="line"><span class="built_in">swap</span>();<span class="comment">//交换两个集合容器 </span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//大小</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>) );</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>,<span class="number">20</span>) );</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>,<span class="number">30</span>) );</span><br><span class="line">	<span class="keyword">if</span> (m.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m为空&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m不为空&quot;</span> &lt;&lt;endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m的大小为：&quot;</span> &lt;&lt; m.<span class="built_in">size</span>() &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//交换 </span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m2;</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">4</span>,<span class="number">100</span>) );</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">5</span>,<span class="number">200</span>) );</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">6</span>,<span class="number">300</span>) );</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换前：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">	m.<span class="built_in">swap</span>(m2);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换后：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="map插入和删除"><a href="#map插入和删除" class="headerlink" title="map插入和删除"></a>map插入和删除</h2><p>函数原型</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">insert</span>();<span class="comment">//在容器中插入元素</span></span><br><span class="line"><span class="built_in">clear</span>();<span class="comment">//清除所有元素</span></span><br><span class="line"><span class="built_in">erase</span>(pos);<span class="comment">//返回pos迭代器所指的元素，返回下一个元素的迭代器</span></span><br><span class="line"><span class="built_in">erase</span>(beg,end);<span class="comment">//删除区间[beg,end)中所有的元素，返回下一个元素的迭代器</span></span><br><span class="line"><span class="built_in">erase</span>(key);<span class="comment">//删除容器中值位可以的元素 </span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;</span><br><span class="line">	<span class="comment">//插入</span></span><br><span class="line">	<span class="comment">//第一种</span></span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>));</span><br><span class="line">	<span class="comment">//第二种</span></span><br><span class="line">	m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="number">2</span>,<span class="number">20</span>));<span class="comment">//不用写模板参数</span></span><br><span class="line">	<span class="comment">//第三种</span></span><br><span class="line">	m[<span class="number">4</span>] = <span class="number">40</span>;</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//删除</span></span><br><span class="line">	m.<span class="built_in">erase</span>(m.<span class="built_in">begin</span>());</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">erase</span>(<span class="number">3</span>);<span class="comment">//按照key删除,没有就不删 </span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">erase</span>(m.<span class="built_in">begin</span>(),m.<span class="built_in">end</span>());<span class="comment">//按照区间删</span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">clear</span>();<span class="comment">//清空容器 </span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="map查找和统计"><a href="#map查找和统计" class="headerlink" title="map查找和统计"></a>map查找和统计</h2><p>函数原型</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">find</span>(key);<span class="comment">//查找key是否存在，若存在，返回 该键元素的迭代器，若不存在，返回set.end();</span></span><br><span class="line"><span class="built_in">count</span>(key);<span class="comment">//统计key的元素个数</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//查找</span></span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>));</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>,<span class="number">20</span>));</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>,<span class="number">30</span>));</span><br><span class="line">	</span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator pos = m.<span class="built_in">find</span>(<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">if</span> (pos != m.<span class="built_in">end</span>())&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;找到了key：&quot;</span> &lt;&lt; (*pos).first &lt;&lt; <span class="string">&quot;找到了value：&quot;</span> &lt;&lt; (*pos).second;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;未找到元素&quot;</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//统计 </span></span><br><span class="line">	<span class="keyword">int</span> num = m.<span class="built_in">count</span>(<span class="number">3</span>);</span><br><span class="line">	cout &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="map容器排序"><a href="#map容器排序" class="headerlink" title="map容器排序"></a>map容器排序</h2><p>map容器默认排序规则为按照key值进行从小到大排序，利用仿函数可以改变排序规则。</p>
+]]></content>
+      <categories>
+        <category>C++</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>my new blog</title>
     <url>/2021/09/05/my-new-blog/</url>
     <content><![CDATA[<p>first</p>
@@ -678,36 +708,6 @@
       </tags>
   </entry>
   <entry>
-    <title>c++map/multimap容器简介、构造以及赋值</title>
-    <url>/2021/09/05/multimap%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="c-map-multimap容器简介、构造以及赋值"><a href="#c-map-multimap容器简介、构造以及赋值" class="headerlink" title="c++map/multimap容器简介、构造以及赋值"></a>c++map/multimap容器简介、构造以及赋值</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1.map中所以元素都是pair(两两的)。<br>2.pair中第一个元素为key(键值)，起到索引作用，第二个元素为value(实值)。<br>3.所有元素都会根据元素的键值自动排序。</p>
-<h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>map/multimap属于关联式容器，底层结构是用二叉树实现。</p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>可以根据key值快速找到value值。</p>
-<h2 id="map与multimap区别"><a href="#map与multimap区别" class="headerlink" title="map与multimap区别"></a>map与multimap区别</h2><p>1.map不允许容器中有重复key值元素。<br>2.multimap允许容器中有重复key值元素。</p>
-<h2 id="map构造和赋值"><a href="#map构造和赋值" class="headerlink" title="map构造和赋值"></a>map构造和赋值</h2><p>map中所有元素都是成对出现，插入数据的时候要使用对组。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//默认构造 </span></span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1;<span class="comment">//map默认构造函数 </span></span><br><span class="line">	<span class="comment">//插入</span></span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>, <span class="number">10</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>, <span class="number">20</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>, <span class="number">30</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">4</span>, <span class="number">40</span>));</span><br><span class="line">	<span class="built_in">printmap</span>(m1);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//拷贝构造</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;<span class="built_in">m2</span>(m1);</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//赋值</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m3; </span><br><span class="line">	m3 = m2;</span><br><span class="line">	<span class="built_in">printmap</span>(m3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map大小和交换"><a href="#map大小和交换" class="headerlink" title="map大小和交换"></a>map大小和交换</h2><p>函数原型</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">size</span>();<span class="comment">//返回容器中元素的数目</span></span><br><span class="line"><span class="built_in">empty</span>();<span class="comment">//判断容器是否为空</span></span><br><span class="line"><span class="built_in">swap</span>();<span class="comment">//交换两个集合容器 </span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//大小</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>) );</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>,<span class="number">20</span>) );</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>,<span class="number">30</span>) );</span><br><span class="line">	<span class="keyword">if</span> (m.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m为空&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m不为空&quot;</span> &lt;&lt;endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m的大小为：&quot;</span> &lt;&lt; m.<span class="built_in">size</span>() &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//交换 </span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m2;</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">4</span>,<span class="number">100</span>) );</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">5</span>,<span class="number">200</span>) );</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">6</span>,<span class="number">300</span>) );</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换前：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">	m.<span class="built_in">swap</span>(m2);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换后：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map插入和删除"><a href="#map插入和删除" class="headerlink" title="map插入和删除"></a>map插入和删除</h2><p>函数原型</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">insert</span>();<span class="comment">//在容器中插入元素</span></span><br><span class="line"><span class="built_in">clear</span>();<span class="comment">//清除所有元素</span></span><br><span class="line"><span class="built_in">erase</span>(pos);<span class="comment">//返回pos迭代器所指的元素，返回下一个元素的迭代器</span></span><br><span class="line"><span class="built_in">erase</span>(beg,end);<span class="comment">//删除区间[beg,end)中所有的元素，返回下一个元素的迭代器</span></span><br><span class="line"><span class="built_in">erase</span>(key);<span class="comment">//删除容器中值位可以的元素 </span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;</span><br><span class="line">	<span class="comment">//插入</span></span><br><span class="line">	<span class="comment">//第一种</span></span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>));</span><br><span class="line">	<span class="comment">//第二种</span></span><br><span class="line">	m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="number">2</span>,<span class="number">20</span>));<span class="comment">//不用写模板参数</span></span><br><span class="line">	<span class="comment">//第三种</span></span><br><span class="line">	m[<span class="number">4</span>] = <span class="number">40</span>;</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//删除</span></span><br><span class="line">	m.<span class="built_in">erase</span>(m.<span class="built_in">begin</span>());</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">erase</span>(<span class="number">3</span>);<span class="comment">//按照key删除,没有就不删 </span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">erase</span>(m.<span class="built_in">begin</span>(),m.<span class="built_in">end</span>());<span class="comment">//按照区间删</span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">clear</span>();<span class="comment">//清空容器 </span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map查找和统计"><a href="#map查找和统计" class="headerlink" title="map查找和统计"></a>map查找和统计</h2><p>函数原型</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">find</span>(key);<span class="comment">//查找key是否存在，若存在，返回 该键元素的迭代器，若不存在，返回set.end();</span></span><br><span class="line"><span class="built_in">count</span>(key);<span class="comment">//统计key的元素个数</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//查找</span></span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>));</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>,<span class="number">20</span>));</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>,<span class="number">30</span>));</span><br><span class="line">	</span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator pos = m.<span class="built_in">find</span>(<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">if</span> (pos != m.<span class="built_in">end</span>())&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;找到了key：&quot;</span> &lt;&lt; (*pos).first &lt;&lt; <span class="string">&quot;找到了value：&quot;</span> &lt;&lt; (*pos).second;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;未找到元素&quot;</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//统计 </span></span><br><span class="line">	<span class="keyword">int</span> num = m.<span class="built_in">count</span>(<span class="number">3</span>);</span><br><span class="line">	cout &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map容器排序"><a href="#map容器排序" class="headerlink" title="map容器排序"></a>map容器排序</h2><p>map容器默认排序规则为按照key值进行从小到大排序，利用仿函数可以改变排序规则。</p>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>test</title>
     <url>/2021/09/05/test/</url>
     <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
@@ -739,6 +739,17 @@
       </tags>
   </entry>
   <entry>
+    <title>ACM基础算法（三）</title>
+    <url>/2021/09/20/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排序</title>
     <url>/2021/09/05/%E6%8E%92%E5%BA%8F/</url>
     <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i ++)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i; j ++)</span><br><span class="line">            <span class="keyword">if</span> (a[i] &gt; a[j])</span><br><span class="line">                <span class="built_in">swap</span>(a[i], a[j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -750,14 +761,85 @@
       </tags>
   </entry>
   <entry>
-    <title>ACM基础算法（三）</title>
-    <url>/2021/09/20/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
+    <title>数据链路层</title>
+    <url>/2021/10/15/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/</url>
+    <content><![CDATA[<h3 id="数据链路层的几个概念"><a href="#数据链路层的几个概念" class="headerlink" title="数据链路层的几个概念"></a>数据链路层的几个概念</h3><ol>
+<li><p>数据发送模型</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151445882.png" alt="image-20211015144459603"></p>
+<p>本章只从链路层观察帧的流动</p>
+</li>
+<li><p>数据链路层的信道类型</p>
+<p>数据链路层使用的信道主要有一下两种类型：</p>
+<ul>
+<li>点对点信道。这种信道使用一对一的点对点通信方式</li>
+<li>广播信道。这种信道使用一对多的广播通信方式，因此过程比较复杂。广播信道上连接的主机很多，因此必须使用专用的共享信道协议来协调这些主机的数据发送</li>
+</ul>
+</li>
+<li><p>链路与数据链路</p>
+<p>链路是一条点到点的物理线路段，一条链路只是一条通路的一个部分</p>
+<p>数据链路除了物理链路外，还必须有通信协议来控制这些数据的传输。若把实现这些协议的硬件和软件加到链路上，就构成了数据链路</p>
+<ul>
+<li>现最常用的方法是使用适配器（即网卡）来实现这些协议的硬件和软件</li>
+<li>一般的适配器都包括了数据链路层和物理层这两层的功能</li>
+</ul>
+</li>
+<li><p>帧</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151521023.png" alt="image-20211015152138720"></p>
+</li>
+<li><p>数据链路层像个数字管道</p>
+<p>常常在两个对等的数据链路层之间画出一个数字管道，而在这条数字管道上传输的数据单位是帧</p>
+</li>
+</ol>
+<h3 id="三个基本问题"><a href="#三个基本问题" class="headerlink" title="三个基本问题"></a>三个基本问题</h3><ol>
+<li><p>封装成帧</p>
+<ul>
+<li><p>封装成帧就是在一段数据的前后分别添加首部和尾部，然后就构成了一个帧。确定帧的界限</p>
+</li>
+<li><p>首部和尾部的一个重要作用就是进行帧界定</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151534389.png" alt="image-20211015153451076"></p>
+<p>MTU：最大传输单元，在以太网中最大不超过1500字节</p>
+</li>
+<li><p>用控制字符进行帧定界的方法举例：</p>
+<p>帧还未发送完，发送端出了问题，只能重发该帧。接收端却接收到了前面的”半截子帧“，他由于没有找到帧结束符，会抛弃掉</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151538727.png" alt="image-20211015153855510"></p>
+</li>
+</ul>
+</li>
+<li><p>透明传输</p>
+<p>若传输的数据是ASCII码中的”可打印字符（共95个）“集时，若传输的数据不是仅由“可打印字符”组成时，就会出问题（帧开始符和帧结束符由不可打印字符组成），如下：</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151539409.png" alt="image-20211015153958099"></p>
+<ol>
+<li><p>用字节填充法解决透明传输的问题</p>
+<p>发送端的数据链路层在数据中出现控制字符“SOH”或“EOT”的前面插入转义字符字符“ESC”（其十六进制编码是1B）</p>
+<p>字节填充或字符填充–接收端的数据链路层在将数据送往网络层之前删除插入的转义字符</p>
+<p>如果转义字符也出现在数据当中，那么应在转义字符前插入一个转义字符。当接收端收到连续两个转义字符时，就删除其中前面的一个</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151548105.png" alt="image-20211015154810739"></p>
+</li>
+</ol>
+</li>
+<li><p>差错控制</p>
+<p>传输过程中可能会产生比特差错：1可能会变成0而0也可能变成1。</p>
+<p>在一段时间内，传输错误的比特占所传输比特总数的比率称为误码率BER（bit error rate）</p>
+<p>误码率与信噪比有很大的关系</p>
+<p>为保证数据传输的可靠性，在计算机网络传输数据时，必须采用各种差错检测措施</p>
+<ol>
+<li><p>循环冗余检验CRC</p>
+<p>在数据链路层传送的帧中，广泛使用了循环冗余检验CRC的技术</p>
+<p>在发送端，先把数据划分为组。假设每组k个比特</p>
+<p>假设待传送的一组数据M=101001（现在k=6）。我们在M后面再添加供差错检测的n位冗余码一起发送</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151616545.png" alt="image-20211015161632378"></p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151617368.png" alt="image-20211015161714103"></p>
+<p>计算方法：11得0，01得1，最后传数据M+R，也就是101001001，到接收端用（M+R）/P，如果余数为0则表示没有出错，否则表示数据出错要扔掉（数据链路层决定除数p以及加多少位0）</p>
+</li>
+</ol>
+</li>
+</ol>
+]]></content>
       <categories>
-        <category>ACM</category>
+        <category>计算机网络</category>
       </categories>
       <tags>
-        <tag>ACM</tag>
+        <tag>计算机网络</tag>
       </tags>
   </entry>
   <entry>
@@ -933,8 +1015,41 @@
 <li><p>CDMA的工作原理</p>
 <p>每个站被指派一个唯一的m bit码片序列，如果发送比特1，则发送自己的m bit码片序列；如果发送比特0，则发送该码片序列的二进制反码</p>
 <p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081629378.png" alt="image-20211008162917849"></p>
+<p>如果一部手机接收到信号，需要用自己的码片进行格式化内积运算，以得到要接收的信号，不同手机的码片序列必须正交</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151406707.png" alt="image-20211015140605553"></p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151406443.png" alt="image-20211015140632243"></p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151407882.png" alt="image-20211015140734778"></p>
+</li>
+<li><p>码分复用缺点：发送一个数据码元比特需要m个码片</p>
 </li>
 </ol>
+</li>
+</ol>
+<h3 id="2-5-数字传输系统"><a href="#2-5-数字传输系统" class="headerlink" title="2.5 数字传输系统"></a>2.5 数字传输系统</h3><p>脉码调制PCM体制最初是为了在电话局之间的中继线上传送多路电话。由于历史的原因，PCM有两个互不兼容的国际标准，即北美的24路PCM（简称为T1）和欧洲的30路PCM（简称为E1）.我国采用的是欧洲的E1标准。</p>
+<p>E1的速率是2.048Mb/s，而T1的速率是1.544Mb/s，当需要有更高的数据率时，可采用复用的方法</p>
+<h3 id="2-6-宽带接入技术"><a href="#2-6-宽带接入技术" class="headerlink" title="2.6 宽带接入技术"></a>2.6 宽带接入技术</h3><ol>
+<li><p>xDSL（用数字技术对现有的模拟电话用户进行）</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151421383.png" alt="image-20211015142125220"></p>
+<p>标准模拟电话信号的频带被限制在300~3400Hz的范围内，但用户线本身实际可通过的信号频率仍然超过1MHz</p>
+<p>xDSL技术就把0~4kHz低端频谱留给传统电话使用，而把原来没有被利用的高端频谱留给用户上网使用</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151426938.png" alt="image-20211015142604768"></p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151426478.png" alt="image-20211015142644271"></p>
+</li>
+<li><p>光纤同轴混合网HFC</p>
+<p>HFC网是在目前覆盖面很广的有限电视网CATV的基础上开发的一种居民宽带接入网</p>
+<p>HFC网除可传送CATV外，还提供电话、数据和其他宽带交互型业务</p>
+<p>现有的CATV网是树形拓扑结构的同轴电缆网络，它采用模拟技术的频分复用对电视节目进行单向传输。而HFC网则需要对CATV网进行改造</p>
+<p>HFC网采用结点体系结构</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151430776.png" alt="image-20211015143002296"></p>
+</li>
+<li><p>FTTx技术</p>
+<p>FTT也是一种实现宽带居民接入网的方案。这里的字母x可代表不同的意思。</p>
+<p>光纤到家FTTH：</p>
+<p>​    光纤一直铺设到用户家庭可能是居民接入网最后的解决方法（155Mb/s）</p>
+<p>光纤到大楼FTTB：</p>
+<p>​    光纤进入大楼后就转换为电信号，然后用电缆或双绞线分配到各用户</p>
+<p>光纤到路边FTTC：</p>
+<p>​    从路边到各用户可使用星形结构双绞线作为传输媒体（155Mb/s）</p>
 </li>
 </ol>
 ]]></content>
