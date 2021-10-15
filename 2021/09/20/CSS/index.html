@@ -28,7 +28,7 @@
 <meta property="og:description" content="CSS">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-09-20T01:18:47.000Z">
-<meta property="article:modified_time" content="2021-10-08T00:35:37.780Z">
+<meta property="article:modified_time" content="2021-10-12T03:22:02.331Z">
 <meta property="article:author" content="4HET">
 <meta property="article:tag" content="web前端">
 <meta name="twitter:card" content="summary">
@@ -191,7 +191,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2021-10-08 08:35:37" itemprop="dateModified" datetime="2021-10-08T08:35:37+08:00">2021-10-08</time>
+                <time title="修改时间：2021-10-12 11:22:02" itemprop="dateModified" datetime="2021-10-12T11:22:02+08:00">2021-10-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -226,20 +226,14 @@
 <li><p>第一种(内联样式/行内样式):在标签内部通过style属性来设置元素的样式，style后跟名，名后跟值，值和值之间用;结尾</p>
 <p>  问题:使用内联样式，样式只能对一个标签生效，如果希望影响到多个元素必须在每一个元素中都复制一遍,并且当样式发生变化时，必须一个个修改，非常不便，开发时一定不要使用内联样式</p>
 <p>  &lt;p style=”color:red; font-size: 20px”&gt;test&lt;/p&gt;</p>
-  <p style="color:red; font-size: 20px">test</p></li>
+  <p style="color:red; font-size: 20px">test</p>
+  </li>
 <li><p>第二种（内部样式表）：将样式编写到head中的style标签里,然后通过CSS选择器来选中元素并为其设置各种样式，可以同时为多个标签设置样式，并且修改时只需要修改一处即可全部应用</p>
+<p>  内部样式表更加方便对样式进行复用</p>
+<p>  问题：内部样式表只能对一个网页起作用，它里面的样式不能跨网页进行复用</p>
 </li>
 </ol>
-<pre><code> \&lt;style&gt;
-     p &#123;
-         color: yello;
-     &#125;
- \&lt;/style&gt;
-
- 内部样式表更加方便对样式进行复用
-
- 问题：内部样式表只能对一个网页起作用，它里面的样式不能跨网页进行复用
-</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="selector-tag">p</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">color</span>: yello;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ol start="3">
 <li><p>第三种（外部样式表）：可以将CSS样式编写到一个外部的CSS文件中（名字是啥不重要，扩展名必须是css），然后通过link标签来引入外部的CSS文件(写head里)</p>
 <p>  p {</p>
@@ -330,6 +324,42 @@
 <li>选择属性值中含有abc的元素：标签名[属性名*=属性值]</li>
 </ol>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p[title]&#123;&#125;</span><br><span class="line">p[title=abc]&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&quot;abc&quot;</span>&gt;</span>test01<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&quot;abcdef&quot;</span>&gt;</span>test02<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span> <span class="attr">title</span>=<span class="string">&quot;hello&quot;</span>&gt;</span>test03<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>test04<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>test05<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span>test06<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="8-伪类选择器"><a href="#8-伪类选择器" class="headerlink" title="8.  伪类选择器"></a>8.  伪类选择器</h3><p>伪类选择器两个:，伪元素选择器两个:</p>
+<p>伪类（不存在的类，特殊的类）</p>
+<ul>
+<li><p>伪类用来描述一个元素的状态</p>
+<ul>
+<li>比如：第一个子元素、被点击的子元素、鼠标移入的元素</li>
+</ul>
+</li>
+<li><p>伪类一般情况下都是:开头</p>
+<p>:first-child 第一个子元素</p>
+<p>:last-child 最后一个子元素</p>
+<p>:nth-child() 第n个子元素</p>
+<ul>
+<li>以上的这些伪类都是根据所有子元素进行排序，ul &gt; li:first-child指所有元素中的第一个子元素，还得是li</li>
+</ul>
+<p>:first-of-type</p>
+<p>:last-of-type</p>
+<p>:nth-of-type()</p>
+<ul>
+<li>这几个伪类功能和上述的类似，不同点是他们是在同类元素中进行排序</li>
+</ul>
+<p>:not() 否定伪类</p>
+<p>​    - 将符合条件的元素从选择器中去除</p>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--将ul里的第一个li设置为红色--&gt;</span></span><br><span class="line">ul &gt; li:first-child&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">&lt;!--将ul里的最后一个li设置为红色--&gt;</span></span><br><span class="line">ul &gt; li:last-child&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">&lt;!--</span></span><br><span class="line"><span class="comment">将ul里的第1个li设置为红色</span></span><br><span class="line"><span class="comment">特殊值：</span></span><br><span class="line"><span class="comment">	n 第n个 n的范围0到正无穷</span></span><br><span class="line"><span class="comment">	2n 表示选中偶数位的元素</span></span><br><span class="line"><span class="comment">	even 表示选中偶数位的元素</span></span><br><span class="line"><span class="comment">	2n+1 表示选中奇数位的元素</span></span><br><span class="line"><span class="comment">	odd 表示选中奇数位的元素</span></span><br><span class="line"><span class="comment">--&gt;</span></span><br><span class="line">ul &gt; li:nth-child(1)&#123;</span><br><span class="line">	color: red;</span><br><span class="line">&#125;</span><br><span class="line">//将第三个子元素元素从符合条件中筛去</span><br><span class="line">ul &gt; li:not(:nth-of-type(3))&#123;</span><br><span class="line">	color: green</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>第一个<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>第二个<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>第三个<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>第四个<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">li</span>&gt;</span>第五个<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-a元素的伪类"><a href="#9-a元素的伪类" class="headerlink" title="9. a元素的伪类"></a>9. a元素的伪类</h3><p>a标签的状态:</p>
+<ul>
+<li>没有访问过的链接</li>
+<li>访问过的链接</li>
+</ul>
+
     </div>
 
     
@@ -347,8 +377,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/09/20/HTML%E5%9F%BA%E7%A1%80/" rel="prev" title="2.基础">
-      <i class="fa fa-chevron-left"></i> 2.基础
+    <a href="/2021/09/20/HTML%E6%A6%82%E8%BF%B0/" rel="prev" title="1.概论">
+      <i class="fa fa-chevron-left"></i> 1.概论
     </a></div>
       <div class="post-nav-item">
     <a href="/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/" rel="next" title="3.CSS样式">
@@ -412,7 +442,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">1. CSS简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CSS%E7%BC%96%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">2. CSS编写位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-CSS%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">3.CSS基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-CSS%E5%B8%B8%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">4.CSS常用选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">5. 复合选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%85%B3%E7%B3%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">6.</span> <span class="nav-text">6. 关系选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">7. 属性选择器</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS%E7%AE%80%E4%BB%8B"><span class="nav-number">1.</span> <span class="nav-text">1. CSS简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CSS%E7%BC%96%E5%86%99%E4%BD%8D%E7%BD%AE"><span class="nav-number">2.</span> <span class="nav-text">2. CSS编写位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-CSS%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">3.CSS基本语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-CSS%E5%B8%B8%E7%94%A8%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">4.</span> <span class="nav-text">4.CSS常用选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-%E5%A4%8D%E5%90%88%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">5. 复合选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-%E5%85%B3%E7%B3%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">6.</span> <span class="nav-text">6. 关系选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-%E5%B1%9E%E6%80%A7%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">7.</span> <span class="nav-text">7. 属性选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-%E4%BC%AA%E7%B1%BB%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-number">8.</span> <span class="nav-text">8.  伪类选择器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-a%E5%85%83%E7%B4%A0%E7%9A%84%E4%BC%AA%E7%B1%BB"><span class="nav-number">9.</span> <span class="nav-text">9. a元素的伪类</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -428,20 +458,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
