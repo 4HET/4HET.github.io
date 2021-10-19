@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="HTML基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2.基础">
+<meta property="og:url" content="http://example.com/2021/09/20/HTML%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="4HET">
+<meta property="og:description" content="HTML基础">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072251967.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072252724.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072252228.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072252105.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072252200.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072252041.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072253012.png">
+<meta property="og:image" content="https://s3.jpg.cm/2021/09/22/IF8vfG.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072253557.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072253432.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072253608.jpg">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072254054.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072254969.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072254084.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072254098.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072255455.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072255248.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072246777.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110162224738.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110162224602.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110162225714.png">
+<meta property="og:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110162225944.png">
+<meta property="article:published_time" content="2021-09-20T01:18:47.000Z">
+<meta property="article:modified_time" content="2021-10-16T14:25:41.962Z">
+<meta property="article:author" content="4HET">
+<meta property="article:tag" content="web前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://gitee.com/s4het/picgo/raw/master/img/202110072251967.png">
+
+<link rel="canonical" href="http://example.com/2021/09/20/HTML%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>2.基础 | 4HET</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">4HET</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/09/20/HTML%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="4HET">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="4HET">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2.基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-09-20 09:18:47" itemprop="dateCreated datePublished" datetime="2021-09-20T09:18:47+08:00">2021-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-10-16 22:25:41" itemprop="dateModified" datetime="2021-10-16T22:25:41+08:00">2021-10-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">web前端</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">HTML基础</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
+<li><p>HTML：“超文本标记语言”，它是制作网页的标准语言，HTML不区分大小写。HTML的标记称为标签</p>
+</li>
+<li><p>标签：由尖括号包围，比如&lt;title&gt;,通常是成对出现的；&lt;title&gt;开始标签，&lt;/title&gt;结束标签；单独出现标签&lt;img&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;由/结束</p>
+<p> 标签注意缩进，外层标签靠外书写，内层标签向右缩进一段距离<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072251967.png" alt="QQ图片20210922170026"></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252724.png" alt="QQ图片20210922170407"></p>
+</li>
+<li><p>标签、属性：标签内部可以有属性</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252228.png" alt="QQ图片20210922170649"></p>
+</li>
+</ol>
+<h3 id="2-2-HTML文件结构"><a href="#2-2-HTML文件结构" class="headerlink" title="2.2 HTML文件结构"></a>2.2 HTML文件结构</h3><ol>
+<li><p>HTML文件结构：HTML文件后缀要是.htm或.html</p>
+<ol>
+<li>html基本结构<br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252105.png" alt="QQ图片20210922171534"></li>
+<li><!DOCTYPE html>：表示当前文档符合HTML5标准</li>
+<li>lang属性：language属性是提供给搜索引擎的信息，提示当前是英文网页（en）是中文网页（zh）</li>
+<li><meta>：元数据，包含这个网页的一些很基础的信息</li>
+</ol>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252200.png" alt="QQ图片20210922172602"></p>
+</li>
+<li><p>字符集与编码</p>
+<p> 源文件保存时的编码与源文件声明的编码方式不一致就会出现乱码问题</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252041.png" alt="QQ图片20210922173016"></p>
+</li>
+</ol>
+<h3 id="2-3-HTML标签（1）"><a href="#2-3-HTML标签（1）" class="headerlink" title="2.3 HTML标签（1）"></a>2.3 HTML标签（1）</h3><ol>
+<li><p>标题 h1~h6：一个页面建议只有一个h1</p>
+</li>
+<li><p>段落 p：每个段落都会被换行，多个空格合并为一个空格，多个空行也是合并为一个空格</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253012.png" alt="QQ图片20210922181655"></p>
+</li>
+<li><p>段内换行 br：单独出现的标签，直接结束，&lt;br /&gt;,多个<br />可以产生空行</p>
+</li>
+<li><p>空格字符&amp;nbsp：段内要添加多个空格就是用多个&amp;nbsp;</p>
+</li>
+<li><p>预留格式 pre：定义预格式化的文本，文本中的空格和换行符会被保留；pre标签很适合显示计算机代码</p>
+<p> <a target="_blank" rel="noopener" href="https://imagelol.com/image/IF8vfG"><img src="https://s3.jpg.cm/2021/09/22/IF8vfG.png" alt="IF8vfG.png"></a></p>
+</li>
+<li><p>段内分组 span：将需要特殊表示出来的文字放在span标签内，再利用CSS对span标签进行特殊样式设置</p>
+</li>
+<li><p>水平线 hr：hr标签也是单独出现的，&lt;hr /&gt;</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253557.png" alt="QQ图片20210922183613"></p>
+</li>
+<li><p>注释内容:注释可以跨行，&lt;!–这是一段注释–&gt;</p>
+</li>
+</ol>
+<h3 id="2-4-HTML标签（2）"><a href="#2-4-HTML标签（2）" class="headerlink" title="2.4 HTML标签（2）"></a>2.4 HTML标签（2）</h3><ol>
+<li><p>超链接a：包含文字超链接和图片超链接，单击之后可以跳转到新的页面，格式：</p>
+<p> &lt;a href=”网址”&gt;文字或图片</a>（href是超链接的意思）<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253432.png" alt="QQ图片20210922184914"></p>
+</li>
+</ol>
+<h3 id="2-5-HTML标签（3）"><a href="#2-5-HTML标签（3）" class="headerlink" title="2.5 HTML标签（3）"></a>2.5 HTML标签（3）</h3><ol>
+<li><p>图像格式</p>
+<ol>
+<li>网页中常见的图像格式：</li>
+</ol>
+<p> jpg：有损压缩（去掉不关键的信息，保留大部分有用信息），支持色彩丰富图片，不会影响到用户的观看效果，而且文件非常小</p>
+<p> gif：简单动画，背景透明</p>
+<p> png：由gif发展而来，无损压缩（支持有损和无损两种情况）、透明、交错、动画</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253608.jpg" alt="QQ图片20210922201039"></p>
+</li>
+<li><p>img标签&lt;img /&gt;：</p>
+<ol>
+<li><p>src属性：图片的来源，后跟路径名+文件名</p>
+<p>  路径名可以写绝对路径（不推荐）和相对路径，相对路径是以网页文件当前所在文件夹为查找的基准点<br>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254054.png" alt="QQ图片20210922202516"></p>
+<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254969.png" alt="QQ图片20210922202613"></p>
+</li>
+<li><p>alt属性：当因为图片丢失或者其他原因无法打开，浏览器就会找到alt属性，把这个文字显示出来，是图片的替换文本</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-6-HTML标签（4）"><a href="#2-6-HTML标签（4）" class="headerlink" title="2.6 HTML标签（4）"></a>2.6 HTML标签（4）</h3><ol>
+<li><p>区域 div：页面上的板块或者简单的元素组合，使用的时候成对使用&lt;div&gt;&lt;/div&gt;</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254084.png" alt="QQ图片20210923164504"></p>
+</li>
+<li><p>无序列表 ul：每个超链接就是一个列表项，整个超链接的组合就是一个无序列表（因为它的每个列表项先后顺序是无关的），ul标签成对出现&lt;ul&gt;&lt;/ul&gt;</p>
+</li>
+<li><p>列表项 li：无序列表内部添加列表项，每个列表项都用li标签对来表示&lt;li&gt;&lt;/li&gt;</p>
+</li>
+<li><p>有序列表 ol：成对出现，&lt;ol&gt;&lt;/ol&gt;，在其内部使用li标签项</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254098.png" alt="QQ图片20210923170033"></p>
+</li>
+<li><p>表格 table tr td：table标签出现就表示要绘制一张表格，tr标签表示有几行，td标签表示一行有几个单元格，要添加数据的时候就把数据加在td标签内就行了</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255455.png" alt="QQ图片20210923170134"></p>
+</li>
+<li><p>表头单元格 th：</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255248.png" alt="QQ图片20210923170520"></p>
+</li>
+<li><p>表格嵌套：</p>
+<p> 表格嵌套实际上是将一个表格插入到一个单元格中，在th标签中本来应该出现文字，现在出现table标签，就实现了标签嵌套</p>
+ <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 100%;height: 100%;&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span>界面导航<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;width: 10%;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">&quot;height: 100%;width: 100%;&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://4het.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>我的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://a-c-dream.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://sakuragi01.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>另一个大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://lqh827821562.gitee.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>另二个大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;form.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>表单元素<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;img_vid.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>音视频<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;stu.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>学习笔记<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;img_vid.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>音视频<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;stu.html&quot;</span> <span class="attr">name</span>=<span class="string">&quot;test&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> ​    最终结果：</p>
+<p> ​    <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072246777.png" alt="image-20211007224647258"></p>
+</li>
+<li><p>单元格的合并：</p>
+<p> 单元格通过添加属性colspan（合并列）以及rowspan（合并行）来实现</p>
+</li>
+</ol>
+<h3 id="2-7-HTML标签（5）"><a href="#2-7-HTML标签（5）" class="headerlink" title="2.7 HTML标签（5）"></a>2.7 HTML标签（5）</h3><ol>
+<li><p>表单与表单元素</p>
+<ol>
+<li>表单：是一个区域，采集用户信息</li>
+<li>表单元素：文本框、按钮、单选、复拉、下拉列表、文本域</li>
+</ol>
+</li>
+<li><p>表单form标签：成对出现&lt;form&gt;&lt;/form&gt;，表单内部可以放置一些表单元素，表单元素是为了收集用户信息的，form标签有一个action属性，表示收集来的数据交由哪个页面处理</p>
+</li>
+<li><p>表单元素input：</p>
+<ol>
+<li><p>利用input标签将type属性设置为text（文本框，所有文本是由明文显示的）或password（密码框，所有文本都是由*显示的）</p>
+</li>
+<li><p>name属性：表单元素通常会带有name属性，当表单元素的属性需要提供给后端界面处理时，后端需要知道这个数据来源于哪个表单元素，这时就是通过name属性读取到的</p>
+</li>
+<li><p>提交按钮submit：需要将type属性设置为submit，value是指按钮上显示的字</p>
+</li>
+<li><p>重置按钮reset：需要将type属性设置为reset，value是指按钮上显示的字</p>
+</li>
+<li><p>单选框radio：只能选择一项，当设置checked=”checked”时，该选项默认被选中，当name被设置为一样的时，只能有一个被选中</p>
+</li>
+<li><p>复选框checkbox：任意选择多项，当设置checked=”checked”时，该选项默认被选中</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162224738.png" alt="QQ图片20210923174322"></p>
+</li>
+</ol>
+</li>
+<li><p>下拉列表框select option：为了节省页面空间时，所有的选项都放在一个下拉列表里，selected=”selected”表示被默认选择的那一项</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162224602.png" alt="QQ图片20210923174738"></p>
+</li>
+<li><p>文本域textarea：成对出现</p>
+<ol>
+<li>rows属性规定行数</li>
+<li>cols属性规定列数</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162225714.png" alt="QQ图片20210923182542"><br>6. 小结</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162225944.png" alt="QQ图片20210923182705"></p>
+<h3 id="2-8-web语义化"><a href="#2-8-web语义化" class="headerlink" title="2.8 web语义化"></a>2.8 web语义化</h3><ol>
+<li><p>web语义化：让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容</p>
+<p> 结构清晰，利于团队开发、维护<br> 有利于搜索引擎理解<br> SEO搜索引擎优化<br> 容易兼容不同设备</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>语义化标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">em</span>&gt;</span>强调<span class="tag">&lt;/<span class="name">em</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">i</span>&gt;</span>斜体，无语义<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">strong</span>&gt;</span>重点强调<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">b</span>&gt;</span>粗体，无语义<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>自定义列表<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>超文本标记语言<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>层叠样式表<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/web%E5%89%8D%E7%AB%AF/" rel="tag"># web前端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/09/20/HTML%E6%A6%82%E8%BF%B0/" rel="prev" title="1.概论">
+      <i class="fa fa-chevron-left"></i> 1.概论
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/09/20/CSS/" rel="next" title="3.CSS">
+      3.CSS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-HTML%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">2.1 HTML概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-HTML%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">2.2 HTML文件结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-HTML%E6%A0%87%E7%AD%BE%EF%BC%881%EF%BC%89"><span class="nav-number">3.</span> <span class="nav-text">2.3 HTML标签（1）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-HTML%E6%A0%87%E7%AD%BE%EF%BC%882%EF%BC%89"><span class="nav-number">4.</span> <span class="nav-text">2.4 HTML标签（2）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-HTML%E6%A0%87%E7%AD%BE%EF%BC%883%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">2.5 HTML标签（3）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-6-HTML%E6%A0%87%E7%AD%BE%EF%BC%884%EF%BC%89"><span class="nav-number">6.</span> <span class="nav-text">2.6 HTML标签（4）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-7-HTML%E6%A0%87%E7%AD%BE%EF%BC%885%EF%BC%89"><span class="nav-number">7.</span> <span class="nav-text">2.7 HTML标签（5）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-8-web%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="nav-number">8.</span> <span class="nav-text">2.8 web语义化</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="4HET"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">4HET</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">4HET</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+-->
+<!-- 不蒜子统计 -->
+<span id="busuanzi_container_site_pv">
+        本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span class="post-meta-divider">|</span>
+<span id="busuanzi_container_site_uv" style='display:none'>
+        本站访客数<span id="busuanzi_value_site_uv"></span>人
+</span>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
