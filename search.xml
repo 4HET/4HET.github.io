@@ -431,6 +431,10 @@
 <p>4.可以看到下面还有分类和标签两个选项，但是自己打开是404，可以通过hexo new page xxx，来创建，这里自己创建了tags（标签）和catagories（分类），再在开头加上（如下），即可。</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: c++map/multimap容器简介、构造以及赋值</span><br><span class="line">date: 2021-09-05 16:06:30</span><br><span class="line">tags: C++</span><br><span class="line">description: map与multimap并无太大区别，map/multimap属于关联式容器，底层结构是用二叉树实现。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
 <p><a href="https://imgtu.com/i/hz9bVO"><img src="https://z3.ax1x.com/2021/09/11/hz9bVO.md.png" alt="hz9bVO.md.png"></a><br>但是在设置完后自己遇到了标签大小不一样的问题<br><a href="https://imgtu.com/i/hzPQXt"><img src="https://z3.ax1x.com/2021/09/11/hzPQXt.md.png" alt="hzPQXt.md.png"></a><br>自己有搜索后发现，原来neat主题的设置就是标签云标签的大小与文章数目有关，也确实是很人性化了。</p>
+<h3 id="bug修改"><a href="#bug修改" class="headerlink" title="bug修改"></a>bug修改</h3><p>在自己给自己的博客更新了访问量统计后不知道由于自己的什么操作，导致自己的博客404</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201248677.png" alt="image-20211020124803553"></p>
+<p>通过报错发现是因为自己博客的index.html找不到，于是自己登陆到github仓库，果然自己的index.html不见了，通过查阅资料得知，在git输入npm install hexo-generator-index –save即可，于是index.html就被恢复了</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201251731.png" alt="image-20211020125113526"></p>
 ]]></content>
       <categories>
         <category>blog配置</category>
@@ -563,17 +567,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021/9/25/icpc网络赛补题</title>
-    <url>/2021/09/20/icpc_9_25/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>ACM补题</category>
-      </categories>
-      <tags>
-        <tag>ACM补题</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2021/9/19/icpc网络赛补题</title>
     <url>/2021/09/20/icpc%E7%BD%91%E7%BB%9C%E8%B5%9B9.19%E8%A1%A5%E9%A2%98/</url>
     <content><![CDATA[<h3 id="I题"><a href="#I题" class="headerlink" title="I题"></a>I题</h3><p>这个题刚开始自己补的时候，自己想用getline+stringstream，结果发现将字符串转化为一个个小字符串后，还是需要再转化为数字，时间复杂度大，所以采用了看到数字就相加然后遇到空格就计下一个数字的方法。</p>
@@ -619,10 +612,52 @@
       </tags>
   </entry>
   <entry>
+    <title>2021/9/25/icpc网络赛补题</title>
+    <url>/2021/09/20/icpc_9_25/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>ACM补题</category>
+      </categories>
+      <tags>
+        <tag>ACM补题</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>my new blog</title>
     <url>/2021/09/05/my-new-blog/</url>
     <content><![CDATA[<p>first</p>
 <p>second</p>
+]]></content>
+      <categories>
+        <category>测试文档</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/09/05/test/</url>
+    <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
+<ul>
+<li>这是无序列表</li>
+</ul>
+<p>文本之间必须加空行，不然会被认为是一段</p>
+<p>1.这是有序列表</p>
+<hr>
+<p><strong>黑体</strong></p>
+<p><em>斜体</em></p>
+<hr>
+<p>这样会被认为是代码或者纯文本</p>
+<hr>
+<blockquote>
+<p>这样是引用</p>
+</blockquote>
+<p><code>print(&#39;hello&#39;)</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
       <categories>
         <category>测试文档</category>
@@ -713,37 +748,6 @@
       </categories>
       <tags>
         <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2021/09/05/test/</url>
-    <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
-<ul>
-<li>这是无序列表</li>
-</ul>
-<p>文本之间必须加空行，不然会被认为是一段</p>
-<p>1.这是有序列表</p>
-<hr>
-<p><strong>黑体</strong></p>
-<p><em>斜体</em></p>
-<hr>
-<p>这样会被认为是代码或者纯文本</p>
-<hr>
-<blockquote>
-<p>这样是引用</p>
-</blockquote>
-<p><code>print(&#39;hello&#39;)</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>测试文档</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
       </tags>
   </entry>
   <entry>
