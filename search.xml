@@ -22,15 +22,25 @@
       </tags>
   </entry>
   <entry>
-    <title>AcWing数据结构</title>
-    <url>/2021/09/24/AcWing%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<p>3</p>
+    <title>3.CSS样式</title>
+    <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
+<li><p>CSS概述：</p>
+<ol>
+<li>HTML负责网页的内容</li>
+<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
+</ol>
+</li>
+<li><p>CSS语法：</p>
+<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>AcWing学习笔记</category>
+        <category>web前端</category>
       </categories>
       <tags>
-        <tag>AcWing学习笔记</tag>
+        <tag>web前端</tag>
       </tags>
   </entry>
   <entry>
@@ -180,28 +190,6 @@
 <li>没有访问过的链接</li>
 <li>访问过的链接</li>
 </ul>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>3.CSS样式</title>
-    <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
-<li><p>CSS概述：</p>
-<ol>
-<li>HTML负责网页的内容</li>
-<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
-</ol>
-</li>
-<li><p>CSS语法：</p>
-<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
-</li>
-</ol>
 ]]></content>
       <categories>
         <category>web前端</category>
@@ -364,6 +352,18 @@
       </categories>
       <tags>
         <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AcWing数据结构</title>
+    <url>/2021/09/24/AcWing%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<p>3</p>
+]]></content>
+      <categories>
+        <category>AcWing学习笔记</category>
+      </categories>
+      <tags>
+        <tag>AcWing学习笔记</tag>
       </tags>
   </entry>
   <entry>
@@ -632,6 +632,48 @@
       </tags>
   </entry>
   <entry>
+    <title>test</title>
+    <url>/2021/09/05/test/</url>
+    <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
+<ul>
+<li>这是无序列表</li>
+</ul>
+<p>文本之间必须加空行，不然会被认为是一段</p>
+<p>1.这是有序列表</p>
+<hr>
+<p><strong>黑体</strong></p>
+<p><em>斜体</em></p>
+<hr>
+<p>这样会被认为是代码或者纯文本</p>
+<hr>
+<blockquote>
+<p>这样是引用</p>
+</blockquote>
+<p><code>print(&#39;hello&#39;)</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>测试文档</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ACM基础算法（三）</title>
+    <url>/2021/09/20/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>ACM</category>
+      </categories>
+      <tags>
+        <tag>ACM</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>shell学习笔记</title>
     <url>/2021/10/15/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h3 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h3><p>日常运维工作大部分是一些繁琐的重复的工作，每天80%的工作就是重复干昨天的事，而且工作量还比较大，因此运维有两个选择：</p>
@@ -713,48 +755,6 @@
       </categories>
       <tags>
         <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2021/09/05/test/</url>
-    <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
-<ul>
-<li>这是无序列表</li>
-</ul>
-<p>文本之间必须加空行，不然会被认为是一段</p>
-<p>1.这是有序列表</p>
-<hr>
-<p><strong>黑体</strong></p>
-<p><em>斜体</em></p>
-<hr>
-<p>这样会被认为是代码或者纯文本</p>
-<hr>
-<blockquote>
-<p>这样是引用</p>
-</blockquote>
-<p><code>print(&#39;hello&#39;)</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>测试文档</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACM基础算法（三）</title>
-    <url>/2021/09/20/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>ACM</category>
-      </categories>
-      <tags>
-        <tag>ACM</tag>
       </tags>
   </entry>
   <entry>
@@ -840,6 +840,222 @@
 <p>计算方法：11得0，01得1，最后传数据M+R，也就是101001001，到接收端用（M+R）/P，如果余数为0则表示没有出错，否则表示数据出错要扔掉（数据链路层决定除数p以及加多少位0）</p>
 </li>
 </ol>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>计算机网络</category>
+      </categories>
+      <tags>
+        <tag>计算机网络</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>计算机网络概述</title>
+    <url>/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/</url>
+    <content><![CDATA[<h3 id="1-1-计算机网络在信息时代的作用"><a href="#1-1-计算机网络在信息时代的作用" class="headerlink" title="1.1 计算机网络在信息时代的作用"></a>1.1 计算机网络在信息时代的作用</h3><ol>
+<li><p>信息化时代的特征：数字化、网络化、信息化</p>
+<p>数字化是指任何信息都能转化为01串，信息化实现信息交互，二者都离不开网络化</p>
+</li>
+<li><p>网络分为三网：电信网络、计算机网络（因特网、其他网络）、有线电视网络</p>
+</li>
+<li><p>计算机网络的重要功能：</p>
+<p> 连通性：彼此连通，交换信息</p>
+<p> 共享性：信息共享，软硬件共享</p>
+</li>
+</ol>
+<h3 id="1-2-因特网概述"><a href="#1-2-因特网概述" class="headerlink" title="1.2 因特网概述"></a>1.2 因特网概述</h3><ol>
+<li><p>网络（network）、互联网（internet）、因特网（Internet）</p>
+<p> 网络：由结点和链路组成，链路不超过100m,交换机在中心连接着一台台计算机（许多计算机连接在一起）</p>
+<p> 互联网：网络和网络连起来，路由器在中心连接着交换机（许多网络连接在一起）</p>
+<p> 因特网：全球最大的一个互联网，使用的TCP/IP协议</p>
+</li>
+<li><p>互联网发展的三个阶段：</p>
+<ol>
+<li><p>ARPANET向互联网发展，1983年美国国防部发明的TCP/IP协议成为互联网标准协议；因特网起源于1983年，当时并未考虑过多的安全因素，ipv6考虑了安全问题</p>
+</li>
+<li><p>三级结构的因特网，开始于1985年；家庭网、校园网需要用地区网连起来，地区网需要用主干网连起来</p>
+</li>
+<li><p>多层次ISP（Internet服务提供商）结构的因特网。1993年美国政府将Internet交给公司运营</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-3-因特网的组成"><a href="#1-3-因特网的组成" class="headerlink" title="1.3 因特网的组成"></a>1.3 因特网的组成</h3><ol>
+<li><p>因特网可以分为边缘部分和核心部分两部分，边缘部分包括客户服务器方式和对等方式，核心部分包括电路交换、报文交换和分组交换</p>
+</li>
+<li><p>能够让计算机进行通信的网络被称为核心部分，接到因特网上的计算机是边缘部分</p>
+</li>
+<li><p>因特网的边缘部分</p>
+<ol>
+<li>主机之间的通信方式<ol>
+<li>客户服务器方式（C/S方式） </li>
+<li>对等方式（P2P方式），每一台计算机既是服务器又是客户</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>因特网的核心部分</p>
+<ol>
+<li><p>数据交换方式</p>
+<ol>
+<li><p>电路交换，由电话交换机和电话组成，连接过程：</p>
+<ol>
+<li>建立连接，申请占用通信资源</li>
+<li>通话，一直占用通信资源</li>
+<li>释放连接，释放通信资源</li>
+</ol>
+<p>电路交换适合于数据量很大的实时性传输：核心路由器之间可以使用电路交换</p>
+</li>
+<li><p>报文交换</p>
+<p>  报文一般比分组长的多，报文交换的时延比较长</p>
+</li>
+<li><p>分组交换，计算机网络使用分组交换实现数据通信。分组交换发送端将报文分成几部分，并且加上地址，接收端将报文去掉地址，组装在一起。路由器有存储转发的功能，可以先将到达路由器的信息进行存储，排队发送。</p>
+<ol>
+<li>优点：高效、灵活、迅速、可靠</li>
+<li>时延（有可能卡）、开销</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>三种交换方式比较：<br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826423.png" alt="QQ图片20210920160324"></p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="1-4-计算机网络在我国的发展"><a href="#1-4-计算机网络在我国的发展" class="headerlink" title="1.4 计算机网络在我国的发展"></a>1.4 计算机网络在我国的发展</h3><ol>
+<li><p>中国在1994年4月20日正式接入互联网</p>
+</li>
+<li><p>计算机网络最简单的定义：一些相互连接的、自治的计算机的集合</p>
+</li>
+<li><p>计算机网络按照作用范围分类：</p>
+<ol>
+<li>广域网WAN 跨城市网络，现在出现了新的定义，使用了广域网技术的网络成为广域网，而不单单从网络覆盖的范围上分类</li>
+<li>局域网LAN 教室或者学校多间教室连起来，现在的定义是应用了局域网技术的网络称为局域网，再远的距离如果使用了局域网技术也成为局域网<br>局域网与广域网区别：</li>
+<li>局域网由企业自己购买设备，自己维护，带宽固定，距离100m以内</li>
+<li>广域网花钱买服务，花钱买带宽</li>
+<li>城域网MAN 覆盖一个城市的网络</li>
+<li>个人区域网PAN 自己两台电脑找交换机连起来</li>
+</ol>
+</li>
+<li><p>按照使用者分类：</p>
+<ol>
+<li>公用网Public Network</li>
+<li>专用网Private Network（政府办公网，公司内网等）</li>
+</ol>
+</li>
+<li><p>按照拓扑结构：</p>
+<p> 总线型（一根线把所有计算机连起来）、环型、星型（所有计算机接到交换机上）、树型（有根交换机和分支交换机）、网状（许多交换机连起来，容错高，挂一个没事）</p>
+</li>
+<li><p>按照交换方式</p>
+<ol>
+<li>电路交换网</li>
+<li>报文交换网</li>
+<li>分组交换网</li>
+</ol>
+</li>
+<li><p>按照工作方式</p>
+<ol>
+<li>资源子网</li>
+<li>通信子网</li>
+<li>接入网<h3 id="1-6-计算机网络的性能"><a href="#1-6-计算机网络的性能" class="headerlink" title="1.6 计算机网络的性能"></a>1.6 计算机网络的性能</h3></li>
+</ol>
+</li>
+<li><p>性能指标：</p>
+<ol>
+<li><p>速率</p>
+<p>  连接在计算机网络上的主机在数字信道上传送数据位数的速率，也成为data rate或bit rate</p>
+<p>  单位是b/s,kb/s,Mb/s,Gb/s</p>
+</li>
+<li><p>带宽</p>
+<p>  数据通信领域中，数字信道所能传送的最高数据率</p>
+<p>  单位是b/s,kb/s,Mb/s,Gb/s</p>
+</li>
+<li><p>吞吐量</p>
+<p>  即在单位时间内通过某个网络的数据量</p>
+<p>  单位b/s，Mb/s等</p>
+</li>
+<li><p>时延</p>
+<ol>
+<li>发送时延</li>
+</ol>
+<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826944.png" alt="QQ图片20210920184505"></p>
+</li>
+<li><p>传播时延</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826303.png" alt="QQ图片20210920184736"></p>
+</li>
+<li><p>处理时延</p>
+<p> 网络结点存储和转发处理时间</p>
+</li>
+<li><p>排队时延</p>
+</li>
+<li><p>时延带宽积</p>
+<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826394.jpg" alt="QQ图片20210920185405"></p>
+</li>
+<li><p>往返时间</p>
+<p>  从发送方发送数据开始，到发送方收到接收方确认</p>
+</li>
+<li><p>利用率</p>
+<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080829914.png" alt="QQ图片20210920190223"></p>
+</li>
+</ol>
+</li>
+<li><p>非性能指标：费用、质量、标准化、可靠性、可扩展性、可升级性、管理与维护</p>
+</li>
+</ol>
+<h3 id="1-7-计算机网络体系结构"><a href="#1-7-计算机网络体系结构" class="headerlink" title="1.7 计算机网络体系结构"></a>1.7 计算机网络体系结构</h3><ol>
+<li><p>几个基本概念：</p>
+<ol>
+<li><p>ISO：国际标准化组织</p>
+</li>
+<li><p>OSI/RM：互联网法律上的国际标准，分七层，每一层都不会影响其他层</p>
+<ol>
+<li>应用层：能够产生网络流量和用户交互的应用程序（暴风影音、qq等）</li>
+<li>表示层：数据通信时要考虑数据是不是要加密或者压缩，ASCII码还是二进制，这是表示层要解决的问题（就比如说一个视频很大，开发程序员想上传的时候需要压缩一下，是开发人员需要考虑的问题）</li>
+<li>会话层：应用程序之间建立的会话/服务和客户端建立的会话，利用会话层可以查看木马（netstat -nb）</li>
+</ol>
+<p>以上是开发人员要考虑的问题，以下是网络工程师要考虑的问题</p>
+<ol start="4">
+<li>传输层：可以进行可靠传输（建立会话，丢包必须重传）、不可靠传输（不建立会话，没必要一直建立连接，一个包就可以解决，会多试几次）、流量控制功能（流量太多传不过来了，告诉服务器暂停一下）</li>
+<li>网络层：负责选择最佳路径、IP地址编址</li>
+<li>数据链路层：数据如何封装、添加物理层地址（MAC地址）</li>
+<li>物理层：电压、接口标准</li>
+<li>网络排错：从底层向高层排错，比如说上不了网了，先看看网线插没插好，再往上看</li>
+</ol>
+</li>
+<li><p>网络安全和OSI参考模型：</p>
+<ol>
+<li>物理层安全：在一个大厦上安装网线，别的人接上网线就可以看到整座楼的网了，就没有安全</li>
+<li>数据链路层安全：ADSL输入账号密码网才能通，AP密码层安全</li>
+<li>网络层安全：在交换机上设置，哪个网段IP可以出去，哪个出不去</li>
+<li>应用层安全：应用程序开发时的安全，比如SQL注入漏洞、上传漏洞等</li>
+</ol>
+</li>
+<li><p>TCP/IP Suite：因特网事实上的国际标准</p>
+</li>
+<li><p>Network Protocols：数据交换的规则、标准或约定</p>
+</li>
+<li><p>网络体系结构：计算机网络各层及其协议的集合</p>
+</li>
+</ol>
+</li>
+<li><p>开放系统信息交换涉及的几个概念：</p>
+<ol>
+<li>实体 entity：交换信息的硬件或软件过程</li>
+<li>协议 protocol：控制两个对等实体通信规则</li>
+<li>服务 service：下层向上层提供服务，上层需要使用下层的服务来实现本层的功能</li>
+<li>服务访问点 SAP：相邻两层实体间交换信息的地方</li>
+</ol>
+</li>
+<li><p>计算机网络五层协议对应的数据单元：</p>
+<ol>
+<li>应用层：应用层</li>
+<li>运输层：运输层报文</li>
+<li>网络层：IP数据报</li>
+<li>数据链路层：数据帧</li>
+<li>物理层：bit，010101</li>
+</ol>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080830574.jpg" alt="QQ图片20210924145427"><br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080830602.jpg" alt="QQ图片20210924145558"></p>
 </li>
 </ol>
 ]]></content>
@@ -1058,222 +1274,6 @@
 <p>​    光纤进入大楼后就转换为电信号，然后用电缆或双绞线分配到各用户</p>
 <p>光纤到路边FTTC：</p>
 <p>​    从路边到各用户可使用星形结构双绞线作为传输媒体（155Mb/s）</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络概述</title>
-    <url>/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h3 id="1-1-计算机网络在信息时代的作用"><a href="#1-1-计算机网络在信息时代的作用" class="headerlink" title="1.1 计算机网络在信息时代的作用"></a>1.1 计算机网络在信息时代的作用</h3><ol>
-<li><p>信息化时代的特征：数字化、网络化、信息化</p>
-<p>数字化是指任何信息都能转化为01串，信息化实现信息交互，二者都离不开网络化</p>
-</li>
-<li><p>网络分为三网：电信网络、计算机网络（因特网、其他网络）、有线电视网络</p>
-</li>
-<li><p>计算机网络的重要功能：</p>
-<p> 连通性：彼此连通，交换信息</p>
-<p> 共享性：信息共享，软硬件共享</p>
-</li>
-</ol>
-<h3 id="1-2-因特网概述"><a href="#1-2-因特网概述" class="headerlink" title="1.2 因特网概述"></a>1.2 因特网概述</h3><ol>
-<li><p>网络（network）、互联网（internet）、因特网（Internet）</p>
-<p> 网络：由结点和链路组成，链路不超过100m,交换机在中心连接着一台台计算机（许多计算机连接在一起）</p>
-<p> 互联网：网络和网络连起来，路由器在中心连接着交换机（许多网络连接在一起）</p>
-<p> 因特网：全球最大的一个互联网，使用的TCP/IP协议</p>
-</li>
-<li><p>互联网发展的三个阶段：</p>
-<ol>
-<li><p>ARPANET向互联网发展，1983年美国国防部发明的TCP/IP协议成为互联网标准协议；因特网起源于1983年，当时并未考虑过多的安全因素，ipv6考虑了安全问题</p>
-</li>
-<li><p>三级结构的因特网，开始于1985年；家庭网、校园网需要用地区网连起来，地区网需要用主干网连起来</p>
-</li>
-<li><p>多层次ISP（Internet服务提供商）结构的因特网。1993年美国政府将Internet交给公司运营</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="1-3-因特网的组成"><a href="#1-3-因特网的组成" class="headerlink" title="1.3 因特网的组成"></a>1.3 因特网的组成</h3><ol>
-<li><p>因特网可以分为边缘部分和核心部分两部分，边缘部分包括客户服务器方式和对等方式，核心部分包括电路交换、报文交换和分组交换</p>
-</li>
-<li><p>能够让计算机进行通信的网络被称为核心部分，接到因特网上的计算机是边缘部分</p>
-</li>
-<li><p>因特网的边缘部分</p>
-<ol>
-<li>主机之间的通信方式<ol>
-<li>客户服务器方式（C/S方式） </li>
-<li>对等方式（P2P方式），每一台计算机既是服务器又是客户</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>因特网的核心部分</p>
-<ol>
-<li><p>数据交换方式</p>
-<ol>
-<li><p>电路交换，由电话交换机和电话组成，连接过程：</p>
-<ol>
-<li>建立连接，申请占用通信资源</li>
-<li>通话，一直占用通信资源</li>
-<li>释放连接，释放通信资源</li>
-</ol>
-<p>电路交换适合于数据量很大的实时性传输：核心路由器之间可以使用电路交换</p>
-</li>
-<li><p>报文交换</p>
-<p>  报文一般比分组长的多，报文交换的时延比较长</p>
-</li>
-<li><p>分组交换，计算机网络使用分组交换实现数据通信。分组交换发送端将报文分成几部分，并且加上地址，接收端将报文去掉地址，组装在一起。路由器有存储转发的功能，可以先将到达路由器的信息进行存储，排队发送。</p>
-<ol>
-<li>优点：高效、灵活、迅速、可靠</li>
-<li>时延（有可能卡）、开销</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>三种交换方式比较：<br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826423.png" alt="QQ图片20210920160324"></p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="1-4-计算机网络在我国的发展"><a href="#1-4-计算机网络在我国的发展" class="headerlink" title="1.4 计算机网络在我国的发展"></a>1.4 计算机网络在我国的发展</h3><ol>
-<li><p>中国在1994年4月20日正式接入互联网</p>
-</li>
-<li><p>计算机网络最简单的定义：一些相互连接的、自治的计算机的集合</p>
-</li>
-<li><p>计算机网络按照作用范围分类：</p>
-<ol>
-<li>广域网WAN 跨城市网络，现在出现了新的定义，使用了广域网技术的网络成为广域网，而不单单从网络覆盖的范围上分类</li>
-<li>局域网LAN 教室或者学校多间教室连起来，现在的定义是应用了局域网技术的网络称为局域网，再远的距离如果使用了局域网技术也成为局域网<br>局域网与广域网区别：</li>
-<li>局域网由企业自己购买设备，自己维护，带宽固定，距离100m以内</li>
-<li>广域网花钱买服务，花钱买带宽</li>
-<li>城域网MAN 覆盖一个城市的网络</li>
-<li>个人区域网PAN 自己两台电脑找交换机连起来</li>
-</ol>
-</li>
-<li><p>按照使用者分类：</p>
-<ol>
-<li>公用网Public Network</li>
-<li>专用网Private Network（政府办公网，公司内网等）</li>
-</ol>
-</li>
-<li><p>按照拓扑结构：</p>
-<p> 总线型（一根线把所有计算机连起来）、环型、星型（所有计算机接到交换机上）、树型（有根交换机和分支交换机）、网状（许多交换机连起来，容错高，挂一个没事）</p>
-</li>
-<li><p>按照交换方式</p>
-<ol>
-<li>电路交换网</li>
-<li>报文交换网</li>
-<li>分组交换网</li>
-</ol>
-</li>
-<li><p>按照工作方式</p>
-<ol>
-<li>资源子网</li>
-<li>通信子网</li>
-<li>接入网<h3 id="1-6-计算机网络的性能"><a href="#1-6-计算机网络的性能" class="headerlink" title="1.6 计算机网络的性能"></a>1.6 计算机网络的性能</h3></li>
-</ol>
-</li>
-<li><p>性能指标：</p>
-<ol>
-<li><p>速率</p>
-<p>  连接在计算机网络上的主机在数字信道上传送数据位数的速率，也成为data rate或bit rate</p>
-<p>  单位是b/s,kb/s,Mb/s,Gb/s</p>
-</li>
-<li><p>带宽</p>
-<p>  数据通信领域中，数字信道所能传送的最高数据率</p>
-<p>  单位是b/s,kb/s,Mb/s,Gb/s</p>
-</li>
-<li><p>吞吐量</p>
-<p>  即在单位时间内通过某个网络的数据量</p>
-<p>  单位b/s，Mb/s等</p>
-</li>
-<li><p>时延</p>
-<ol>
-<li>发送时延</li>
-</ol>
-<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826944.png" alt="QQ图片20210920184505"></p>
-</li>
-<li><p>传播时延</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826303.png" alt="QQ图片20210920184736"></p>
-</li>
-<li><p>处理时延</p>
-<p> 网络结点存储和转发处理时间</p>
-</li>
-<li><p>排队时延</p>
-</li>
-<li><p>时延带宽积</p>
-<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826394.jpg" alt="QQ图片20210920185405"></p>
-</li>
-<li><p>往返时间</p>
-<p>  从发送方发送数据开始，到发送方收到接收方确认</p>
-</li>
-<li><p>利用率</p>
-<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080829914.png" alt="QQ图片20210920190223"></p>
-</li>
-</ol>
-</li>
-<li><p>非性能指标：费用、质量、标准化、可靠性、可扩展性、可升级性、管理与维护</p>
-</li>
-</ol>
-<h3 id="1-7-计算机网络体系结构"><a href="#1-7-计算机网络体系结构" class="headerlink" title="1.7 计算机网络体系结构"></a>1.7 计算机网络体系结构</h3><ol>
-<li><p>几个基本概念：</p>
-<ol>
-<li><p>ISO：国际标准化组织</p>
-</li>
-<li><p>OSI/RM：互联网法律上的国际标准，分七层，每一层都不会影响其他层</p>
-<ol>
-<li>应用层：能够产生网络流量和用户交互的应用程序（暴风影音、qq等）</li>
-<li>表示层：数据通信时要考虑数据是不是要加密或者压缩，ASCII码还是二进制，这是表示层要解决的问题（就比如说一个视频很大，开发程序员想上传的时候需要压缩一下，是开发人员需要考虑的问题）</li>
-<li>会话层：应用程序之间建立的会话/服务和客户端建立的会话，利用会话层可以查看木马（netstat -nb）</li>
-</ol>
-<p>以上是开发人员要考虑的问题，以下是网络工程师要考虑的问题</p>
-<ol start="4">
-<li>传输层：可以进行可靠传输（建立会话，丢包必须重传）、不可靠传输（不建立会话，没必要一直建立连接，一个包就可以解决，会多试几次）、流量控制功能（流量太多传不过来了，告诉服务器暂停一下）</li>
-<li>网络层：负责选择最佳路径、IP地址编址</li>
-<li>数据链路层：数据如何封装、添加物理层地址（MAC地址）</li>
-<li>物理层：电压、接口标准</li>
-<li>网络排错：从底层向高层排错，比如说上不了网了，先看看网线插没插好，再往上看</li>
-</ol>
-</li>
-<li><p>网络安全和OSI参考模型：</p>
-<ol>
-<li>物理层安全：在一个大厦上安装网线，别的人接上网线就可以看到整座楼的网了，就没有安全</li>
-<li>数据链路层安全：ADSL输入账号密码网才能通，AP密码层安全</li>
-<li>网络层安全：在交换机上设置，哪个网段IP可以出去，哪个出不去</li>
-<li>应用层安全：应用程序开发时的安全，比如SQL注入漏洞、上传漏洞等</li>
-</ol>
-</li>
-<li><p>TCP/IP Suite：因特网事实上的国际标准</p>
-</li>
-<li><p>Network Protocols：数据交换的规则、标准或约定</p>
-</li>
-<li><p>网络体系结构：计算机网络各层及其协议的集合</p>
-</li>
-</ol>
-</li>
-<li><p>开放系统信息交换涉及的几个概念：</p>
-<ol>
-<li>实体 entity：交换信息的硬件或软件过程</li>
-<li>协议 protocol：控制两个对等实体通信规则</li>
-<li>服务 service：下层向上层提供服务，上层需要使用下层的服务来实现本层的功能</li>
-<li>服务访问点 SAP：相邻两层实体间交换信息的地方</li>
-</ol>
-</li>
-<li><p>计算机网络五层协议对应的数据单元：</p>
-<ol>
-<li>应用层：应用层</li>
-<li>运输层：运输层报文</li>
-<li>网络层：IP数据报</li>
-<li>数据链路层：数据帧</li>
-<li>物理层：bit，010101</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080830574.jpg" alt="QQ图片20210924145427"><br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080830602.jpg" alt="QQ图片20210924145558"></p>
 </li>
 </ol>
 ]]></content>
