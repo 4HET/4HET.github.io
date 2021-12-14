@@ -156,6 +156,28 @@
       </tags>
   </entry>
   <entry>
+    <title>3.CSS样式</title>
+    <url>/2021/09/20/CSS%E6%A0%B7%E5%BC%8F/</url>
+    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
+<li><p>CSS概述：</p>
+<ol>
+<li>HTML负责网页的内容</li>
+<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
+</ol>
+</li>
+<li><p>CSS语法：</p>
+<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>web前端</category>
+      </categories>
+      <tags>
+        <tag>web前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2.基础</title>
     <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
@@ -302,28 +324,6 @@
 <p> 结构清晰，利于团队开发、维护<br> 有利于搜索引擎理解<br> SEO搜索引擎优化<br> 容易兼容不同设备</p>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>语义化标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">em</span>&gt;</span>强调<span class="tag">&lt;/<span class="name">em</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">i</span>&gt;</span>斜体，无语义<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">strong</span>&gt;</span>重点强调<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">b</span>&gt;</span>粗体，无语义<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>自定义列表<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>超文本标记语言<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>层叠样式表<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
-</ol>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>3.CSS样式</title>
-    <url>/2021/09/20/CSS%E6%A0%B7%E5%BC%8F/</url>
-    <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
-<li><p>CSS概述：</p>
-<ol>
-<li>HTML负责网页的内容</li>
-<li>CSS（层叠样式表）：负责内容的样式，内容和样式相分离，便于修改样式</li>
-</ol>
-</li>
-<li><p>CSS语法：</p>
-<p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
-</li>
 </ol>
 ]]></content>
       <categories>
