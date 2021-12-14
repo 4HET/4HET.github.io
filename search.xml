@@ -1,39 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>AcWing基础算法</title>
-    <url>/2021/09/24/AcWing%20803/</url>
-    <content><![CDATA[<h3 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h3><p><a href="https://www.acwing.com/problem/content/804/">原题链接</a></p>
-<p>离散化核心思想是将很分散的大数经过pair建立映射，通过二分来查找值。本题是先将所有可能访问到的点存下，再将每个点加多少映射到a数组，最后通过query来二分查找起始点。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">300010</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="keyword">int</span> a[N], s[N];</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; alls;</span><br><span class="line">vector&lt;PII&gt; add, query;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">0</span>, r = alls.<span class="built_in">size</span>() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (alls[mid] &gt;= x)</span><br><span class="line">            r = mid;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l + <span class="number">1</span>;<span class="comment">//前缀和下标从1开始，所以要返回l+1</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt;:: <span class="function">iterator <span class="title">unique</span><span class="params">(vector&lt;<span class="keyword">int</span>&gt; &amp;alls)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; alls.<span class="built_in">size</span>(); i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (i != <span class="number">0</span> &amp;&amp; alls[i] != alls[i - <span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            alls[j++] = alls[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> alls.<span class="built_in">begin</span>() + j;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x, c;</span><br><span class="line">        cin &gt;&gt; x &gt;&gt; c;</span><br><span class="line">        add.<span class="built_in">push_back</span>(&#123;x, c&#125;);</span><br><span class="line">        alls.<span class="built_in">push_back</span>(x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> l, r;</span><br><span class="line">        cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        query.<span class="built_in">push_back</span>(&#123;l, r&#125;);</span><br><span class="line">        <span class="comment">//alls里加这个是为了防止l和r找不到</span></span><br><span class="line">        alls.<span class="built_in">push_back</span>(l);</span><br><span class="line">        alls.<span class="built_in">push_back</span>(r);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span>(alls.<span class="built_in">begin</span>(), alls.<span class="built_in">end</span>());</span><br><span class="line">    alls.<span class="built_in">erase</span>(<span class="built_in">unique</span>(alls), alls.<span class="built_in">end</span>());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item: add)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="built_in">find</span>(item.first);</span><br><span class="line">        a[x] += item.second;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= alls.<span class="built_in">size</span>(); i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        s[i] = s[i - <span class="number">1</span>] + a[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item : query)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="built_in">find</span>(item.first);</span><br><span class="line">        <span class="keyword">int</span> r = <span class="built_in">find</span>(item.second);</span><br><span class="line">        cout &lt;&lt; s[r] - s[l - <span class="number">1</span>] &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h3><p><a href="https://www.acwing.com/problem/content/805/">原题链接</a></p>
-<p>本题也可以用贪心求解。区间合并思路是排序后先确定起始的左端点，然后逐个往后找，如果找到一个区间左端点在当前区间右端点的右边，就把当前区间存下来，把下一个区间再当作起始区间。这有一个细节是在merge函数最后要再加个判断，防止最后一组区间没有被存下。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> pair&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; PII;</span><br><span class="line"></span><br><span class="line">vector&lt;PII&gt; segs;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">merge</span><span class="params">(vector&lt;PII&gt; &amp;segs)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    vector&lt;PII&gt; t;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">-2e9</span>, r = <span class="number">-2e9</span>;</span><br><span class="line">    <span class="built_in">sort</span>(segs.<span class="built_in">begin</span>(), segs.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> item: segs)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//合并</span></span><br><span class="line">        <span class="keyword">if</span> (r &gt;= item.first)</span><br><span class="line">        &#123;</span><br><span class="line">            r = <span class="built_in">max</span>(r, item.second);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//新区间</span></span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (l == <span class="number">-2e9</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                l = item.first;</span><br><span class="line">                r = item.second;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                t.<span class="built_in">push_back</span>(&#123;l, r&#125;);</span><br><span class="line">                l = item.first;</span><br><span class="line">                r = item.second;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(l != <span class="number">-2e9</span>) t.<span class="built_in">push_back</span>(&#123;l,r&#125;);</span><br><span class="line">    segs = t;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span> (n --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> l, r;</span><br><span class="line">        cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        segs.<span class="built_in">push_back</span>(&#123;l, r&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">merge</span>(segs);</span><br><span class="line">    cout &lt;&lt; segs.<span class="built_in">size</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>AcWing学习笔记</category>
-      </categories>
-      <tags>
-        <tag>AcWing学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AcWing数据结构</title>
-    <url>/2021/09/24/AcWing%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
-    <content><![CDATA[<p>3</p>
-]]></content>
-      <categories>
-        <category>AcWing学习笔记</category>
-      </categories>
-      <tags>
-        <tag>AcWing学习笔记</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>3.CSS样式</title>
     <url>/2021/09/24/CSS%E6%A0%B7%E5%BC%8F/</url>
     <content><![CDATA[<h3 id="3-1-CSS概述"><a href="#3-1-CSS概述" class="headerlink" title="3.1 CSS概述"></a>3.1 CSS概述</h3><ol>
@@ -46,162 +13,6 @@
 <li><p>CSS语法：</p>
 <p> 选择器p：选择器后面跟着{}，{}内可以添加具体的样式，每个具体样式是用不同的属性来添加的，属性和属性取值之间用：隔开，每一行语句结束用;隔开（可以没有）</p>
 </li>
-</ol>
-]]></content>
-      <categories>
-        <category>web前端</category>
-      </categories>
-      <tags>
-        <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2.基础</title>
-    <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
-<li><p>HTML：“超文本标记语言”，它是制作网页的标准语言，HTML不区分大小写。HTML的标记称为标签</p>
-</li>
-<li><p>标签：由尖括号包围，比如&lt;title&gt;,通常是成对出现的；&lt;title&gt;开始标签，&lt;/title&gt;结束标签；单独出现标签&lt;img&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;由/结束</p>
-<p> 标签注意缩进，外层标签靠外书写，内层标签向右缩进一段距离<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072251967.png" alt="QQ图片20210922170026"></p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252724.png" alt="QQ图片20210922170407"></p>
-</li>
-<li><p>标签、属性：标签内部可以有属性</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252228.png" alt="QQ图片20210922170649"></p>
-</li>
-</ol>
-<h3 id="2-2-HTML文件结构"><a href="#2-2-HTML文件结构" class="headerlink" title="2.2 HTML文件结构"></a>2.2 HTML文件结构</h3><ol>
-<li><p>HTML文件结构：HTML文件后缀要是.htm或.html</p>
-<ol>
-<li>html基本结构<br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252105.png" alt="QQ图片20210922171534"></li>
-<li><!DOCTYPE html>：表示当前文档符合HTML5标准</li>
-<li>lang属性：language属性是提供给搜索引擎的信息，提示当前是英文网页（en）是中文网页（zh）</li>
-<li><meta>：元数据，包含这个网页的一些很基础的信息</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252200.png" alt="QQ图片20210922172602"></p>
-</li>
-<li><p>字符集与编码</p>
-<p> 源文件保存时的编码与源文件声明的编码方式不一致就会出现乱码问题</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252041.png" alt="QQ图片20210922173016"></p>
-</li>
-</ol>
-<h3 id="2-3-HTML标签（1）"><a href="#2-3-HTML标签（1）" class="headerlink" title="2.3 HTML标签（1）"></a>2.3 HTML标签（1）</h3><ol>
-<li><p>标题 h1~h6：一个页面建议只有一个h1</p>
-</li>
-<li><p>段落 p：每个段落都会被换行，多个空格合并为一个空格，多个空行也是合并为一个空格</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253012.png" alt="QQ图片20210922181655"></p>
-</li>
-<li><p>段内换行 br：单独出现的标签，直接结束，&lt;br /&gt;,多个<br />可以产生空行</p>
-</li>
-<li><p>空格字符&amp;nbsp：段内要添加多个空格就是用多个&amp;nbsp;</p>
-</li>
-<li><p>预留格式 pre：定义预格式化的文本，文本中的空格和换行符会被保留；pre标签很适合显示计算机代码</p>
-<p> <a href="https://imagelol.com/image/IF8vfG"><img src="https://s3.jpg.cm/2021/09/22/IF8vfG.png" alt="IF8vfG.png"></a></p>
-</li>
-<li><p>段内分组 span：将需要特殊表示出来的文字放在span标签内，再利用CSS对span标签进行特殊样式设置</p>
-</li>
-<li><p>水平线 hr：hr标签也是单独出现的，&lt;hr /&gt;</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253557.png" alt="QQ图片20210922183613"></p>
-</li>
-<li><p>注释内容:注释可以跨行，&lt;!–这是一段注释–&gt;</p>
-</li>
-</ol>
-<h3 id="2-4-HTML标签（2）"><a href="#2-4-HTML标签（2）" class="headerlink" title="2.4 HTML标签（2）"></a>2.4 HTML标签（2）</h3><ol>
-<li><p>超链接a：包含文字超链接和图片超链接，单击之后可以跳转到新的页面，格式：</p>
-<p> &lt;a href=”网址”&gt;文字或图片</a>（href是超链接的意思）<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253432.png" alt="QQ图片20210922184914"></p>
-</li>
-</ol>
-<h3 id="2-5-HTML标签（3）"><a href="#2-5-HTML标签（3）" class="headerlink" title="2.5 HTML标签（3）"></a>2.5 HTML标签（3）</h3><ol>
-<li><p>图像格式</p>
-<ol>
-<li>网页中常见的图像格式：</li>
-</ol>
-<p> jpg：有损压缩（去掉不关键的信息，保留大部分有用信息），支持色彩丰富图片，不会影响到用户的观看效果，而且文件非常小</p>
-<p> gif：简单动画，背景透明</p>
-<p> png：由gif发展而来，无损压缩（支持有损和无损两种情况）、透明、交错、动画</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253608.jpg" alt="QQ图片20210922201039"></p>
-</li>
-<li><p>img标签&lt;img /&gt;：</p>
-<ol>
-<li><p>src属性：图片的来源，后跟路径名+文件名</p>
-<p>  路径名可以写绝对路径（不推荐）和相对路径，相对路径是以网页文件当前所在文件夹为查找的基准点<br>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254054.png" alt="QQ图片20210922202516"></p>
-<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254969.png" alt="QQ图片20210922202613"></p>
-</li>
-<li><p>alt属性：当因为图片丢失或者其他原因无法打开，浏览器就会找到alt属性，把这个文字显示出来，是图片的替换文本</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="2-6-HTML标签（4）"><a href="#2-6-HTML标签（4）" class="headerlink" title="2.6 HTML标签（4）"></a>2.6 HTML标签（4）</h3><ol>
-<li><p>区域 div：页面上的板块或者简单的元素组合，使用的时候成对使用&lt;div&gt;&lt;/div&gt;</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254084.png" alt="QQ图片20210923164504"></p>
-</li>
-<li><p>无序列表 ul：每个超链接就是一个列表项，整个超链接的组合就是一个无序列表（因为它的每个列表项先后顺序是无关的），ul标签成对出现&lt;ul&gt;&lt;/ul&gt;</p>
-</li>
-<li><p>列表项 li：无序列表内部添加列表项，每个列表项都用li标签对来表示&lt;li&gt;&lt;/li&gt;</p>
-</li>
-<li><p>有序列表 ol：成对出现，&lt;ol&gt;&lt;/ol&gt;，在其内部使用li标签项</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254098.png" alt="QQ图片20210923170033"></p>
-</li>
-<li><p>表格 table tr td：table标签出现就表示要绘制一张表格，tr标签表示有几行，td标签表示一行有几个单元格，要添加数据的时候就把数据加在td标签内就行了</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255455.png" alt="QQ图片20210923170134"></p>
-</li>
-<li><p>表头单元格 th：</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255248.png" alt="QQ图片20210923170520"></p>
-</li>
-<li><p>表格嵌套：</p>
-<p> 表格嵌套实际上是将一个表格插入到一个单元格中，在th标签中本来应该出现文字，现在出现table标签，就实现了标签嵌套</p>
- <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 100%;height: 100%;&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span>界面导航<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;width: 10%;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">&quot;height: 100%;width: 100%;&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://4het.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>我的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://a-c-dream.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://sakuragi01.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>另一个大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://lqh827821562.gitee.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>另二个大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;form.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>表单元素<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;img_vid.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>音视频<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;stu.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>学习笔记<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;img_vid.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>音视频<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;stu.html&quot;</span> <span class="attr">name</span>=<span class="string">&quot;test&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p> ​    最终结果：</p>
-<p> ​    <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072246777.png" alt="image-20211007224647258"></p>
-</li>
-<li><p>单元格的合并：</p>
-<p> 单元格通过添加属性colspan（合并列）以及rowspan（合并行）来实现</p>
-</li>
-</ol>
-<h3 id="2-7-HTML标签（5）"><a href="#2-7-HTML标签（5）" class="headerlink" title="2.7 HTML标签（5）"></a>2.7 HTML标签（5）</h3><ol>
-<li><p>表单与表单元素</p>
-<ol>
-<li>表单：是一个区域，采集用户信息</li>
-<li>表单元素：文本框、按钮、单选、复拉、下拉列表、文本域</li>
-</ol>
-</li>
-<li><p>表单form标签：成对出现&lt;form&gt;&lt;/form&gt;，表单内部可以放置一些表单元素，表单元素是为了收集用户信息的，form标签有一个action属性，表示收集来的数据交由哪个页面处理</p>
-</li>
-<li><p>表单元素input：</p>
-<ol>
-<li><p>利用input标签将type属性设置为text（文本框，所有文本是由明文显示的）或password（密码框，所有文本都是由*显示的）</p>
-</li>
-<li><p>name属性：表单元素通常会带有name属性，当表单元素的属性需要提供给后端界面处理时，后端需要知道这个数据来源于哪个表单元素，这时就是通过name属性读取到的</p>
-</li>
-<li><p>提交按钮submit：需要将type属性设置为submit，value是指按钮上显示的字</p>
-</li>
-<li><p>重置按钮reset：需要将type属性设置为reset，value是指按钮上显示的字</p>
-</li>
-<li><p>单选框radio：只能选择一项，当设置checked=”checked”时，该选项默认被选中，当name被设置为一样的时，只能有一个被选中</p>
-</li>
-<li><p>复选框checkbox：任意选择多项，当设置checked=”checked”时，该选项默认被选中</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162224738.png" alt="QQ图片20210923174322"></p>
-</li>
-</ol>
-</li>
-<li><p>下拉列表框select option：为了节省页面空间时，所有的选项都放在一个下拉列表里，selected=”selected”表示被默认选择的那一项</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162224602.png" alt="QQ图片20210923174738"></p>
-</li>
-<li><p>文本域textarea：成对出现</p>
-<ol>
-<li>rows属性规定行数</li>
-<li>cols属性规定列数</li>
-</ol>
-</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162225714.png" alt="QQ图片20210923182542"><br>6. 小结</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162225944.png" alt="QQ图片20210923182705"></p>
-<h3 id="2-8-web语义化"><a href="#2-8-web语义化" class="headerlink" title="2.8 web语义化"></a>2.8 web语义化</h3><ol>
-<li><p>web语义化：让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容</p>
-<p> 结构清晰，利于团队开发、维护<br> 有利于搜索引擎理解<br> SEO搜索引擎优化<br> 容易兼容不同设备</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>语义化标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">em</span>&gt;</span>强调<span class="tag">&lt;/<span class="name">em</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">i</span>&gt;</span>斜体，无语义<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">strong</span>&gt;</span>重点强调<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">b</span>&gt;</span>粗体，无语义<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>自定义列表<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>超文本标记语言<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>层叠样式表<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
 ]]></content>
       <categories>
@@ -367,138 +178,159 @@
       </tags>
   </entry>
   <entry>
-    <title>我的blog配置</title>
-    <url>/2021/09/05/blog/</url>
-    <content><![CDATA[<h2 id="blog搭建"><a href="#blog搭建" class="headerlink" title="blog搭建"></a>blog搭建</h2><p>blog搭建我采用的是hexo+github，网上随处可找到教程，在搭建完成后自己设置主题，本来使用的是yilia主题，后来觉得有些单调就换成了next主题。</p>
-<h2 id="blog界面美化"><a href="#blog界面美化" class="headerlink" title="blog界面美化"></a>blog界面美化</h2><p>1.设置头像<br>在主题配置找到_config.yml,avater注释去掉，再在images下存入照片，即可设置头像<br><a href="https://imgtu.com/i/hxxXjK"><img src="https://z3.ax1x.com/2021/09/11/hxxXjK.md.png" alt="hxxXjK.md.png"></a><br>2.设置背景<br>进入主题设置source下，新建_data文件，在里面新建styles.styl文件，在里面输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// 背景</span><br><span class="line">body &#123;</span><br><span class="line">    background:url(/images/bk.jpg); // 可以是路径也可以是链接</span><br><span class="line">    background-repeat: no-repeat; // 不重复</span><br><span class="line">    background-attachment:fixed; // 固定住背景图片</span><br><span class="line">    background-position:50% 50%; // 图片位置：居中</span><br><span class="line">    background-size: 100% 100%; // 图片长宽扩充为100%</span><br><span class="line">&#125;</span><br><span class="line">.content-wrap &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.sidebar &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.header-inner &#123;</span><br><span class="line">      </span><br><span class="line">  background: rgba(255,255,255,0.7);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line">.popup &#123;</span><br><span class="line">      </span><br><span class="line">  opacity: 0.9;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>来设置背景以及透明度（source/_data/styles.styl 注释取消掉后我的博客出现格式丢失的问题，我就又把它注释上了）<br><a href="https://imgtu.com/i/hzSgyV"><img src="https://z3.ax1x.com/2021/09/11/hzSgyV.md.png" alt="hzSgyV.md.png"></a></p>
-<p>3.这样设置完后已进入主页就可以看到文章，显得版面有点乱，于是我通过控制首页文章显示字数来使版面整洁。这里有两种方法：一种是在文章开头加上“description:”，后面跟的是显示的内容，另一种是在文章中添加<code>&lt;!--more--&gt;</code>以显示从<code>&lt;!--more--&gt;</code>以前的内容<br><a href="https://imgtu.com/i/hzpD0O"><img src="https://z3.ax1x.com/2021/09/11/hzpD0O.md.png" alt="hzpD0O.md.png"></a></p>
-<p>4.可以看到下面还有分类和标签两个选项，但是自己打开是404，可以通过hexo new page xxx，来创建，这里自己创建了tags（标签）和catagories（分类），再在开头加上（如下），即可。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: c++map/multimap容器简介、构造以及赋值</span><br><span class="line">date: 2021-09-05 16:06:30</span><br><span class="line">tags: C++</span><br><span class="line">description: map与multimap并无太大区别，map/multimap属于关联式容器，底层结构是用二叉树实现。</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-<p><a href="https://imgtu.com/i/hz9bVO"><img src="https://z3.ax1x.com/2021/09/11/hz9bVO.md.png" alt="hz9bVO.md.png"></a><br>但是在设置完后自己遇到了标签大小不一样的问题<br><a href="https://imgtu.com/i/hzPQXt"><img src="https://z3.ax1x.com/2021/09/11/hzPQXt.md.png" alt="hzPQXt.md.png"></a><br>自己有搜索后发现，原来neat主题的设置就是标签云标签的大小与文章数目有关，也确实是很人性化了。</p>
-<h3 id="bug修改"><a href="#bug修改" class="headerlink" title="bug修改"></a>bug修改</h3><p>在自己给自己的博客更新了访问量统计后不知道由于自己的什么操作，导致自己的博客404</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201248677.png" alt="image-20211020124803553"></p>
-<p>通过报错发现是因为自己博客的index.html找不到，于是自己登陆到github仓库，果然自己的index.html不见了，通过查阅资料得知，在git输入npm install hexo-generator-index –save即可，于是index.html就被恢复了</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201251731.png" alt="image-20211020125113526"></p>
+    <title>2.基础</title>
+    <url>/2021/09/20/HTML%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<h3 id="2-1-HTML概述"><a href="#2-1-HTML概述" class="headerlink" title="2.1 HTML概述"></a>2.1 HTML概述</h3><ol>
+<li><p>HTML：“超文本标记语言”，它是制作网页的标准语言，HTML不区分大小写。HTML的标记称为标签</p>
+</li>
+<li><p>标签：由尖括号包围，比如&lt;title&gt;,通常是成对出现的；&lt;title&gt;开始标签，&lt;/title&gt;结束标签；单独出现标签&lt;img&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&gt;由/结束</p>
+<p> 标签注意缩进，外层标签靠外书写，内层标签向右缩进一段距离<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072251967.png" alt="QQ图片20210922170026"></p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252724.png" alt="QQ图片20210922170407"></p>
+</li>
+<li><p>标签、属性：标签内部可以有属性</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252228.png" alt="QQ图片20210922170649"></p>
+</li>
+</ol>
+<h3 id="2-2-HTML文件结构"><a href="#2-2-HTML文件结构" class="headerlink" title="2.2 HTML文件结构"></a>2.2 HTML文件结构</h3><ol>
+<li><p>HTML文件结构：HTML文件后缀要是.htm或.html</p>
+<ol>
+<li>html基本结构<br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252105.png" alt="QQ图片20210922171534"></li>
+<li><!DOCTYPE html>：表示当前文档符合HTML5标准</li>
+<li>lang属性：language属性是提供给搜索引擎的信息，提示当前是英文网页（en）是中文网页（zh）</li>
+<li><meta>：元数据，包含这个网页的一些很基础的信息</li>
+</ol>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252200.png" alt="QQ图片20210922172602"></p>
+</li>
+<li><p>字符集与编码</p>
+<p> 源文件保存时的编码与源文件声明的编码方式不一致就会出现乱码问题</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072252041.png" alt="QQ图片20210922173016"></p>
+</li>
+</ol>
+<h3 id="2-3-HTML标签（1）"><a href="#2-3-HTML标签（1）" class="headerlink" title="2.3 HTML标签（1）"></a>2.3 HTML标签（1）</h3><ol>
+<li><p>标题 h1~h6：一个页面建议只有一个h1</p>
+</li>
+<li><p>段落 p：每个段落都会被换行，多个空格合并为一个空格，多个空行也是合并为一个空格</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253012.png" alt="QQ图片20210922181655"></p>
+</li>
+<li><p>段内换行 br：单独出现的标签，直接结束，&lt;br /&gt;,多个<br />可以产生空行</p>
+</li>
+<li><p>空格字符&amp;nbsp：段内要添加多个空格就是用多个&amp;nbsp;</p>
+</li>
+<li><p>预留格式 pre：定义预格式化的文本，文本中的空格和换行符会被保留；pre标签很适合显示计算机代码</p>
+<p> <a href="https://imagelol.com/image/IF8vfG"><img src="https://s3.jpg.cm/2021/09/22/IF8vfG.png" alt="IF8vfG.png"></a></p>
+</li>
+<li><p>段内分组 span：将需要特殊表示出来的文字放在span标签内，再利用CSS对span标签进行特殊样式设置</p>
+</li>
+<li><p>水平线 hr：hr标签也是单独出现的，&lt;hr /&gt;</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253557.png" alt="QQ图片20210922183613"></p>
+</li>
+<li><p>注释内容:注释可以跨行，&lt;!–这是一段注释–&gt;</p>
+</li>
+</ol>
+<h3 id="2-4-HTML标签（2）"><a href="#2-4-HTML标签（2）" class="headerlink" title="2.4 HTML标签（2）"></a>2.4 HTML标签（2）</h3><ol>
+<li><p>超链接a：包含文字超链接和图片超链接，单击之后可以跳转到新的页面，格式：</p>
+<p> &lt;a href=”网址”&gt;文字或图片</a>（href是超链接的意思）<br> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253432.png" alt="QQ图片20210922184914"></p>
+</li>
+</ol>
+<h3 id="2-5-HTML标签（3）"><a href="#2-5-HTML标签（3）" class="headerlink" title="2.5 HTML标签（3）"></a>2.5 HTML标签（3）</h3><ol>
+<li><p>图像格式</p>
+<ol>
+<li>网页中常见的图像格式：</li>
+</ol>
+<p> jpg：有损压缩（去掉不关键的信息，保留大部分有用信息），支持色彩丰富图片，不会影响到用户的观看效果，而且文件非常小</p>
+<p> gif：简单动画，背景透明</p>
+<p> png：由gif发展而来，无损压缩（支持有损和无损两种情况）、透明、交错、动画</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110072253608.jpg" alt="QQ图片20210922201039"></p>
+</li>
+<li><p>img标签&lt;img /&gt;：</p>
+<ol>
+<li><p>src属性：图片的来源，后跟路径名+文件名</p>
+<p>  路径名可以写绝对路径（不推荐）和相对路径，相对路径是以网页文件当前所在文件夹为查找的基准点<br>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254054.png" alt="QQ图片20210922202516"></p>
+<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254969.png" alt="QQ图片20210922202613"></p>
+</li>
+<li><p>alt属性：当因为图片丢失或者其他原因无法打开，浏览器就会找到alt属性，把这个文字显示出来，是图片的替换文本</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="2-6-HTML标签（4）"><a href="#2-6-HTML标签（4）" class="headerlink" title="2.6 HTML标签（4）"></a>2.6 HTML标签（4）</h3><ol>
+<li><p>区域 div：页面上的板块或者简单的元素组合，使用的时候成对使用&lt;div&gt;&lt;/div&gt;</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254084.png" alt="QQ图片20210923164504"></p>
+</li>
+<li><p>无序列表 ul：每个超链接就是一个列表项，整个超链接的组合就是一个无序列表（因为它的每个列表项先后顺序是无关的），ul标签成对出现&lt;ul&gt;&lt;/ul&gt;</p>
+</li>
+<li><p>列表项 li：无序列表内部添加列表项，每个列表项都用li标签对来表示&lt;li&gt;&lt;/li&gt;</p>
+</li>
+<li><p>有序列表 ol：成对出现，&lt;ol&gt;&lt;/ol&gt;，在其内部使用li标签项</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072254098.png" alt="QQ图片20210923170033"></p>
+</li>
+<li><p>表格 table tr td：table标签出现就表示要绘制一张表格，tr标签表示有几行，td标签表示一行有几个单元格，要添加数据的时候就把数据加在td标签内就行了</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255455.png" alt="QQ图片20210923170134"></p>
+</li>
+<li><p>表头单元格 th：</p>
+<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072255248.png" alt="QQ图片20210923170520"></p>
+</li>
+<li><p>表格嵌套：</p>
+<p> 表格嵌套实际上是将一个表格插入到一个单元格中，在th标签中本来应该出现文字，现在出现table标签，就实现了标签嵌套</p>
+ <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">table</span> <span class="attr">align</span>=<span class="string">&quot;left&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">style</span>=<span class="string">&quot;width: 100%;height: 100%;&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">th</span> <span class="attr">colspan</span>=<span class="string">&quot;2&quot;</span>&gt;</span>界面导航<span class="tag">&lt;/<span class="name">th</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span> <span class="attr">style</span>=<span class="string">&quot;width: 10%;&quot;</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">table</span> <span class="attr">style</span>=<span class="string">&quot;height: 100%;width: 100%;&quot;</span> <span class="attr">border</span>=<span class="string">&quot;1&quot;</span> <span class="attr">cellspacing</span>=<span class="string">&quot;0&quot;</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://4het.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>我的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://a-c-dream.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://sakuragi01.github.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>另一个大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;https://lqh827821562.gitee.io/&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>另二个大佬的博客<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;form.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>表单元素<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;img_vid.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>音视频<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;stu.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>学习笔记<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">&quot;img_vid.html&quot;</span> <span class="attr">target</span>=<span class="string">&quot;test&quot;</span>&gt;</span>音视频<span class="tag">&lt;/<span class="name">a</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;<span class="name">iframe</span> <span class="attr">src</span>=<span class="string">&quot;stu.html&quot;</span> <span class="attr">name</span>=<span class="string">&quot;test&quot;</span> <span class="attr">width</span>=<span class="string">&quot;100%&quot;</span> <span class="attr">height</span>=<span class="string">&quot;100%&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">iframe</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p> ​    最终结果：</p>
+<p> ​    <img src="https://gitee.com/s4het/picgo/raw/master/img/202110072246777.png" alt="image-20211007224647258"></p>
+</li>
+<li><p>单元格的合并：</p>
+<p> 单元格通过添加属性colspan（合并列）以及rowspan（合并行）来实现</p>
+</li>
+</ol>
+<h3 id="2-7-HTML标签（5）"><a href="#2-7-HTML标签（5）" class="headerlink" title="2.7 HTML标签（5）"></a>2.7 HTML标签（5）</h3><ol>
+<li><p>表单与表单元素</p>
+<ol>
+<li>表单：是一个区域，采集用户信息</li>
+<li>表单元素：文本框、按钮、单选、复拉、下拉列表、文本域</li>
+</ol>
+</li>
+<li><p>表单form标签：成对出现&lt;form&gt;&lt;/form&gt;，表单内部可以放置一些表单元素，表单元素是为了收集用户信息的，form标签有一个action属性，表示收集来的数据交由哪个页面处理</p>
+</li>
+<li><p>表单元素input：</p>
+<ol>
+<li><p>利用input标签将type属性设置为text（文本框，所有文本是由明文显示的）或password（密码框，所有文本都是由*显示的）</p>
+</li>
+<li><p>name属性：表单元素通常会带有name属性，当表单元素的属性需要提供给后端界面处理时，后端需要知道这个数据来源于哪个表单元素，这时就是通过name属性读取到的</p>
+</li>
+<li><p>提交按钮submit：需要将type属性设置为submit，value是指按钮上显示的字</p>
+</li>
+<li><p>重置按钮reset：需要将type属性设置为reset，value是指按钮上显示的字</p>
+</li>
+<li><p>单选框radio：只能选择一项，当设置checked=”checked”时，该选项默认被选中，当name被设置为一样的时，只能有一个被选中</p>
+</li>
+<li><p>复选框checkbox：任意选择多项，当设置checked=”checked”时，该选项默认被选中</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162224738.png" alt="QQ图片20210923174322"></p>
+</li>
+</ol>
+</li>
+<li><p>下拉列表框select option：为了节省页面空间时，所有的选项都放在一个下拉列表里，selected=”selected”表示被默认选择的那一项</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162224602.png" alt="QQ图片20210923174738"></p>
+</li>
+<li><p>文本域textarea：成对出现</p>
+<ol>
+<li>rows属性规定行数</li>
+<li>cols属性规定列数</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162225714.png" alt="QQ图片20210923182542"><br>6. 小结</p>
+<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110162225944.png" alt="QQ图片20210923182705"></p>
+<h3 id="2-8-web语义化"><a href="#2-8-web语义化" class="headerlink" title="2.8 web语义化"></a>2.8 web语义化</h3><ol>
+<li><p>web语义化：让页面具有良好的结构与含义，从而让人和机器都能快速理解网页内容</p>
+<p> 结构清晰，利于团队开发、维护<br> 有利于搜索引擎理解<br> SEO搜索引擎优化<br> 容易兼容不同设备</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>语义化标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">em</span>&gt;</span>强调<span class="tag">&lt;/<span class="name">em</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">i</span>&gt;</span>斜体，无语义<span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">strong</span>&gt;</span>重点强调<span class="tag">&lt;/<span class="name">strong</span>&gt;</span>  <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">b</span>&gt;</span>粗体，无语义<span class="tag">&lt;/<span class="name">b</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>自定义列表<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>HTML<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>超文本标记语言<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dt</span>&gt;</span>CSS<span class="tag">&lt;/<span class="name">dt</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">dd</span>&gt;</span>层叠样式表<span class="tag">&lt;/<span class="name">dd</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
       <categories>
-        <category>blog配置</category>
+        <category>web前端</category>
       </categories>
       <tags>
-        <tag>blog</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++ memset</title>
-    <url>/2021/10/20/c++%20memset/</url>
-    <content><![CDATA[<h3 id="memset函数及其用法"><a href="#memset函数及其用法" class="headerlink" title="memset函数及其用法"></a>memset函数及其用法</h3><p>memset函数是初始化内存的万能函数，它是直接操作内存空间，mem是memory的意思，该函数原型是：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> *<span class="title">memset</span><span class="params">(<span class="keyword">void</span> *s, <span class="keyword">int</span> c, <span class="keyword">unsigned</span> <span class="keyword">long</span> n)</span></span>;</span><br></pre></td></tr></table></figure>
-
-<p>函数的功能是：将指针变量 s 所指向的前 n 字节的内存单元用一个“整数” c 替换，注意 c 是 int 型。s 是 void* 型的指针变量，所以它可以为任何类型的数据进行初始化。</p>
-<p>memset() 的作用是在一段内存块中填充某个给定的值。因为它只能填充一个值，所以该函数的初始化为原始初始化，无法将变量初始化为程序中需要的数据。</p>
-<p>memset 一般使用“0”初始化内存单元，而且通常是给数组或结构体进行初始化。一般的变量如 char、int、float、double 等类型的变量直接初始化即可，没有必要用 memset。如果用 memset 的话反而显得麻烦。</p>
-<p>当然，数组也可以直接进行初始化，但 memset 是对较大的数组或结构体进行清零初始化的最快方法，因为它是直接对内存进行操作的。</p>
-<p>这时有人会问：“字符串数组不是最好用’\0’进行初始化吗？那么可以用 memset 给字符串数组进行初始化吗？也就是说参数 c 可以赋值为’\0’吗？”</p>
-<p>可以的。虽然参数 c 要求是一个整数，但是整型和字符型是互通的。但是赋值为 ‘\0’ 和 0 是等价的，因为字符 ‘\0’ 在内存中就是 0。所以在 memset 中初始化为 0 也具有结束标志符 ‘\0’ 的作用，所以通常我们就写“0”。</p>
-<p>memset 函数的第三个参数 n 的值一般用 sizeof() 获取，这样比较专业。注意，如果是对指针变量所指向的内存单元进行清零初始化，那么一定要先对这个指针变量进行初始化，即一定要先让它指向某个有效的地址。而且用memset给指针变量如p所指向的内存单元进行初始化时，n 千万别写成 sizeof(p)，这是新手经常会犯的错误。因为 p 是指针变量，不管 p 指向什么类型的变量，sizeof(p) 的值都是 4。</p>
-<h3 id="sizeof函数及其用法"><a href="#sizeof函数及其用法" class="headerlink" title="sizeof函数及其用法"></a>sizeof函数及其用法</h3><p><strong>sizeof</strong> 是一个关键字，它是一个编译时运算符，用于判断变量或数据类型的字节大小。</p>
-<p>sizeof 运算符可用于获取类、结构、共用体和其他用户自定义数据类型的大小。</p>
-<p>使用 sizeof 的语法如下：</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="built_in"><span class="keyword">sizeof</span></span> (data type)</span><br></pre></td></tr></table></figure>
-
-<p>其中，data type 是要计算大小的数据类型，包括类、结构、共用体和其他用户自定义数据类型。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Size of char : &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">char</span>) &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Size of int : &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>) &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Size of short int : &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">short</span> <span class="keyword">int</span>) &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Size of long int : &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">long</span> <span class="keyword">int</span>) &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Size of float : &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">float</span>) &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Size of double : &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">double</span>) &lt;&lt; endl;</span><br><span class="line">   cout &lt;&lt; <span class="string">&quot;Size of wchar_t : &quot;</span> &lt;&lt; <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">wchar_t</span>) &lt;&lt; endl;</span><br><span class="line">   <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Size of char : 1</span><br><span class="line">Size of int : 4</span><br><span class="line">Size of short int : 2</span><br><span class="line">Size of long int : 4</span><br><span class="line">Size of float : 4</span><br><span class="line">Size of double : 8</span><br><span class="line">Size of wchar_t : 4</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>ACM</category>
-      </categories>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hadoop学习笔记-hdfs</title>
-    <url>/2021/09/20/hadoop3/</url>
-    <content><![CDATA[<h3 id="1-hdfs概述"><a href="#1-hdfs概述" class="headerlink" title="1.hdfs概述"></a>1.hdfs概述</h3><h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1.介绍"></a>1.介绍</h3><p>在现代的企业环境中，单机容量往往无法存储大量数据。统一管理分布在集群上的文件系统统称为分布式文件系统。</p>
-<p>HDFS（Hadoop Distributed File System）是Apache Hadoop项目的一个子项目。Hadoop非常适合于存储大型数据（比如TB和PB），其就是使用HDFS作为存储系统。HDFS使用多台计算机存储文件，并且提供统一的访问接口，像是访问一个普通文件系统一样使用分布式文件系统。</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110121502393.png" alt="image-20211012150255295"></p>
-<h4 id="2-历史"><a href="#2-历史" class="headerlink" title="2 历史"></a>2 历史</h4><p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110121459301.png" alt="image-20211012145902165"></p>
-<h3 id="2-HDFS应用场景"><a href="#2-HDFS应用场景" class="headerlink" title="2. HDFS应用场景"></a>2. HDFS应用场景</h3><h4 id="1-适合的应用场景"><a href="#1-适合的应用场景" class="headerlink" title="1. 适合的应用场景"></a>1. 适合的应用场景</h4><p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110121501195.png" alt="image-20211012150111085"></p>
-<h4 id="2-不适合的应用场景"><a href="#2-不适合的应用场景" class="headerlink" title="2. 不适合的应用场景"></a>2. 不适合的应用场景</h4><p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110121505662.png" alt="image-20211012150553545"></p>
-<h3 id="3-HDFS的架构"><a href="#3-HDFS的架构" class="headerlink" title="3. HDFS的架构"></a>3. HDFS的架构</h3><p>HDFS是一个主/从（Master/Slave）体系结构</p>
-<p>HDFS由四部分组成：</p>
-<ol>
-<li>HDFS Client（HDFS客户端）</li>
-<li>NameNode（HDFS主节点）</li>
-<li>DataNode（从节点）</li>
-<li>Secondary NameNode（对namenode做一些辅助性管理）</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110121511231.png" alt="image-20211012151116121"></p>
-<ol>
-<li><p>Client：就是客户端</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110121514682.png" alt="image-20211012151411609"></p>
-</li>
-<li><p>NameNode：就是master，它是一个主管、管理者</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110121527123.png" alt="image-20211012152756059"></p>
-</li>
-<li><p>DataNode：就是Slave。NameNode下达命令，DataNode执行实际操作</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110131415229.png" alt="image-20211013141541104"></p>
-</li>
-<li><p>Secondary NameNode：并非NameNode的热备。当NameNode挂掉的时候，它并不能马上替换NameNode并提供服务</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110131418905.png" alt="image-20211013141828748"></p>
-</li>
-</ol>
-<h3 id="4-NameNode和DataNode"><a href="#4-NameNode和DataNode" class="headerlink" title="4. NameNode和DataNode"></a>4. NameNode和DataNode</h3><h4 id="1-Namenode作用"><a href="#1-Namenode作用" class="headerlink" title="1. Namenode作用"></a>1. Namenode作用</h4><ul>
-<li>NameNode在内存中保存着整个文件系统的名称、空间和文件数据块的地址映射</li>
-<li>整个HDFS可存储的文件数受限于NameNode的内存大小</li>
-</ul>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110131427512.png" alt="image-20211013142717151"></p>
-<h4 id="2-DataNode作用"><a href="#2-DataNode作用" class="headerlink" title="2. DataNode作用"></a>2. DataNode作用</h4><p>提供真实文件数据的存储服务</p>
-<ol>
-<li>DataNode以数据块的形式存储HDFS文件</li>
-<li>DataNode响应HDFS客户端读写请求</li>
-<li>DataNode周期性向NameNode汇报心跳信息</li>
-<li>DataNode周期性向NameNode汇报数据块信息</li>
-<li>DataNode周期性向NameNode汇报缓存数据块信息</li>
-</ol>
-<h3 id="5-HDFS的副本机制和机架感知"><a href="#5-HDFS的副本机制和机架感知" class="headerlink" title="5. HDFS的副本机制和机架感知"></a>5. HDFS的副本机制和机架感知</h3><h4 id="1-HDFS文件副本机制"><a href="#1-HDFS文件副本机制" class="headerlink" title="1. HDFS文件副本机制"></a>1. HDFS文件副本机制</h4><p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110131506846.png" alt="image-20211013150644596"></p>
-<p>一个数据块一般放3个副本，在hdfs-site.xml中可以设置</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201306449.png" alt="image-20211020130646363"></p>
-<h4 id="2-机架（rack）感知"><a href="#2-机架（rack）感知" class="headerlink" title="2. 机架（rack）感知"></a>2. 机架（rack）感知</h4><p>HDFS分布式文件系统的内部有一个副本存放策略：以默认的副本数=3为例：</p>
-<p>如果客户端和当前主机在同一个机架里面，会在客户端所在机架挑选一台主机，存放block作为第一个副本；然后在同一个机架上挑选另一台主机存放第二个副本；第三个会在本机架以外再挑选一个机架和服务器，存放第三个副本</p>
-<h3 id="6-hdfs的命令行使用"><a href="#6-hdfs的命令行使用" class="headerlink" title="6. hdfs的命令行使用"></a>6. hdfs的命令行使用</h3><p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201322064.png" alt="image-20211020132248968"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201330373.png" alt="image-20211020133025293"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201334194.png" alt="image-20211020133411123"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201336883.png" alt="image-20211020133602788"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110201337991.png" alt="image-20211020133708906"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260832631.png" alt="image-20211026083251498"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260835884.png" alt="image-20211026083517800"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260836337.png" alt="image-20211026083622244"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260838422.png" alt="image-20211026083858330"></p>
-<ul>
-<li>hadoop:hadoop前一个是指的用户名，后一个是所属用户组</li>
-</ul>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260909491.png" alt="image-20211026090933423"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260911677.png" alt="image-20211026091143620"></p>
-<h3 id="7-hdfs的高级使用命令"><a href="#7-hdfs的高级使用命令" class="headerlink" title="7.hdfs的高级使用命令"></a>7.hdfs的高级使用命令</h3><p>HDFS文件限额配置</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260919522.png" alt="image-20211026091949408"></p>
-<ol>
-<li><p>数量限额</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110260920780.png" alt="image-20211026092018702"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>hadoop</category>
-      </categories>
-      <tags>
-        <tag>hadoop</tag>
+        <tag>web前端</tag>
       </tags>
   </entry>
   <entry>
@@ -553,851 +385,6 @@
 ]]></content>
       <tags>
         <tag>web前端</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++string容器</title>
-    <url>/2021/09/05/c++string%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="c-string"><a href="#c-string" class="headerlink" title="c++string"></a>c++string</h1><h2 id="string与c语言char-区别"><a href="#string与c语言char-区别" class="headerlink" title="string与c语言char*区别"></a>string与c语言char*区别</h2><p>  char*是一个指针，而string是一个类，里面封装了char*。并且string类内部封装了很多成员方法，例如查找find，拷贝copy，删除delete，替换replace，插入insert。string不用担心复制越界和取值越界。</p>
-<span id="more"></span>
-
-<h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>   灵活使用即可。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span> </span></span><br><span class="line"></span><br><span class="line">string s1;<span class="comment">//默认构造</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">char</span> *str = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"><span class="function">string <span class="title">s2</span><span class="params">(s1)</span></span>;<span class="comment">//c语言风格字符串定义string</span></span><br><span class="line"></span><br><span class="line"><span class="function">string <span class="title">s3</span><span class="params">(s2)</span></span>;<span class="comment">//c++语言风格定义string </span></span><br><span class="line"></span><br><span class="line"><span class="function">string <span class="title">s4</span><span class="params">(<span class="number">10</span>,<span class="string">&#x27;a&#x27;</span>)</span></span>;<span class="comment">//输出十个a </span></span><br></pre></td></tr></table></figure>
-<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>  有两种方式，一种是等号赋值，另一种是assign赋值</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span> </span></span><br><span class="line"></span><br><span class="line">string str1;</span><br><span class="line">str1 = <span class="string">&quot;hello world&quot;</span>;</span><br><span class="line"></span><br><span class="line">string str2 = str1;</span><br><span class="line"></span><br><span class="line">string str3;</span><br><span class="line">str3.<span class="built_in">assign</span>(<span class="string">&quot;hello world&quot;</span>);<span class="comment">//使用assign赋值字符串</span></span><br><span class="line"></span><br><span class="line">string str4;</span><br><span class="line">str4.<span class="built_in">assign</span>(<span class="string">&quot;hello world&quot;</span>,<span class="number">5</span>);<span class="comment">//将前五个赋值给str4(hello)</span></span><br><span class="line"> </span><br><span class="line">string str5;</span><br><span class="line">str5.<span class="built_in">assign</span>(str4);<span class="comment">//拷贝构造 </span></span><br><span class="line"></span><br><span class="line">string str6;</span><br><span class="line">str6.<span class="built_in">assign</span>(<span class="number">10</span>,<span class="string">&quot;a&quot;</span>);<span class="comment">//输出十个a </span></span><br></pre></td></tr></table></figure>
-<h2 id="字符串拼接"><a href="#字符串拼接" class="headerlink" title="字符串拼接"></a>字符串拼接</h2><p>有两种方式，第一种直接使用+=，第二种使用成员函数append</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line">string str1 = <span class="string">&quot;my-&gt;&quot;</span>;</span><br><span class="line">str1 += <span class="string">&quot;4HET&quot;</span>;<span class="comment">//输出str1&quot;my-&gt;4HET&quot;</span></span><br><span class="line"></span><br><span class="line">string str2 = <span class="string">&quot;player&quot;</span>;</span><br><span class="line">str1 += str2;<span class="comment">//输出str1&quot;my-&gt;4HETplayer&quot;</span></span><br><span class="line"></span><br><span class="line">string str3 = <span class="string">&quot;ur&quot;</span>;</span><br><span class="line">str3.<span class="built_in">append</span>(<span class="string">&quot;bbr&quot;</span>);<span class="comment">//输出str3&quot;urbbr&quot;</span></span><br><span class="line"></span><br><span class="line">string str4;</span><br><span class="line">str4.<span class="built_in">append</span>(<span class="string">&quot;urbbrcroun&quot;</span>,<span class="number">5</span>);<span class="comment">//将urbbrcroun前三个字母加进去 </span></span><br><span class="line"></span><br><span class="line">string str5;</span><br><span class="line">str5.<span class="built_in">append</span>(str4);<span class="comment">//将str4加进str5</span></span><br><span class="line"></span><br><span class="line">string str6;</span><br><span class="line">str6.<span class="built_in">append</span>(str5,<span class="number">0</span>,<span class="number">3</span>);<span class="comment">//将str5的0个字符开始，截3个字符进去</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="字符串查找与替换"><a href="#字符串查找与替换" class="headerlink" title="字符串查找与替换"></a>字符串查找与替换</h2><p>查找：查找指定字符是否存在<br>替换：在指定位置替换字符串</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//查找 </span></span><br><span class="line">string str1 = <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line">str1.<span class="built_in">find</span>(<span class="string">&quot;de&quot;</span>);<span class="comment">//默认从零开始(从左往右)查找第一次出现的位置(3) </span></span><br><span class="line">str1.<span class="built_in">find</span>(<span class="string">&quot;de&quot;</span>,<span class="number">1</span>);<span class="comment">//从第一个开始查找,若没找到返回-1</span></span><br><span class="line"></span><br><span class="line">str1.<span class="built_in">rfind</span>(<span class="string">&quot;de&quot;</span>);<span class="comment">//从最后一个(从右往左)开始查找,但仍从左往右计算下标</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//替换</span></span><br><span class="line">string str2 = <span class="string">&quot;abcdefg&quot;</span>;</span><br><span class="line">str2.<span class="built_in">replace</span>(<span class="number">1</span>,<span class="number">3</span>,<span class="string">&quot;1111&quot;</span>);<span class="comment">//输出&quot;a1111efg&quot;,将1后三个数替换成&quot;1111&quot;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="string字符串比较"><a href="#string字符串比较" class="headerlink" title="string字符串比较"></a>string字符串比较</h2><p>比较方式是按字符的ASCII码进行对比，=返回 0，&gt;返回 1，&lt;返回 -1。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string str1 = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">	string str2 = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">	<span class="keyword">if</span> (str1.<span class="built_in">compare</span>(str2) == <span class="number">0</span>)&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;str1等于str2&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<h2 id="string字符存取"><a href="#string字符存取" class="headerlink" title="string字符存取"></a>string字符存取</h2><p>string中单个字符存取方式有两种，第一种是通过[]方式取字符，第二种是通过at方法获取字符。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string str = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">	<span class="comment">//通过[]访问单个字符 </span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; str.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		cout &lt;&lt; str[i] &lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//通过at方式访问单个字符</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; str.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">		cout &lt;&lt; str.<span class="built_in">at</span>(i) &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	<span class="comment">//修改单个字符</span></span><br><span class="line">	str[<span class="number">0</span>] =  <span class="string">&#x27;x&#x27;</span>;</span><br><span class="line">	cout &lt;&lt; str &lt;&lt; endl;<span class="comment">//xello</span></span><br><span class="line">	str.<span class="built_in">at</span>(<span class="number">1</span>) = <span class="string">&#x27;x&#x27;</span>;</span><br><span class="line">	cout &lt;&lt; str &lt;&lt; endl;<span class="comment">//xxllo</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<h2 id="string插入和删除"><a href="#string插入和删除" class="headerlink" title="string插入和删除"></a>string插入和删除</h2><p>插入和删除的起始坐标都是从0开始。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string str = <span class="string">&quot;hello&quot;</span>;</span><br><span class="line">	<span class="comment">//插入</span></span><br><span class="line">	str.<span class="built_in">insert</span>(<span class="number">1</span>,<span class="string">&quot;1111&quot;</span>);</span><br><span class="line">	cout &lt;&lt; str &lt;&lt; endl;<span class="comment">//h1111ello</span></span><br><span class="line">	<span class="comment">//删除</span></span><br><span class="line">	str.<span class="built_in">erase</span>(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line">	cout &lt;&lt;str &lt;&lt; endl;<span class="comment">//hello</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-<h2 id="string子串"><a href="#string子串" class="headerlink" title="string子串"></a>string子串</h2><p>功能：从字符串中获得想要的子串。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	string str = <span class="string">&quot;abcdef&quot;</span>;</span><br><span class="line">	string substring = str.<span class="built_in">substr</span>(<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">	cout &lt;&lt; substring &lt;&lt; endl;<span class="comment">//bcd</span></span><br><span class="line">&#125; </span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hello World</title>
-    <url>/2021/12/13/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-      <categories>
-        <category>测试文档</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2021/9/19/icpc网络赛补题</title>
-    <url>/2021/09/20/icpc%E7%BD%91%E7%BB%9C%E8%B5%9B9.19%E8%A1%A5%E9%A2%98/</url>
-    <content><![CDATA[<h3 id="I题"><a href="#I题" class="headerlink" title="I题"></a>I题</h3><p>这个题刚开始自己补的时候，自己想用getline+stringstream，结果发现将字符串转化为一个个小字符串后，还是需要再转化为数字，时间复杂度大，所以采用了看到数字就相加然后遇到空格就计下一个数字的方法。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> LL;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e8</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> x, n = <span class="number">0</span>, num = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">int</span> a[N];</span><br><span class="line"></span><br><span class="line">string s;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">getline</span>(cin, s);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; s.<span class="built_in">length</span>(); i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (s[i] == <span class="string">&#x27; &#x27;</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            a[n++] = num;</span><br><span class="line">            num = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            num = num * <span class="number">10</span> + s[i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> o, r;</span><br><span class="line">    cin &gt;&gt; o &gt;&gt; r;</span><br><span class="line">    <span class="keyword">bool</span> stu = <span class="literal">false</span>;</span><br><span class="line">    <span class="built_in">sort</span>(a, a + n, cmp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">abs</span>(a[i] - o) &lt;= r)</span><br><span class="line">        &#123;</span><br><span class="line">            stu = <span class="literal">true</span>;</span><br><span class="line">            cout &lt;&lt; a[i] &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="F题"><a href="#F题" class="headerlink" title="F题"></a>F题</h3><p>签到题</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    <span class="keyword">int</span> flag = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;t);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        ll a, b, r;</span><br><span class="line"></span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; r;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (r &gt; b)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Case #%d: %.2f&quot;</span>, flag++, <span class="number">2.0</span> * a - r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Case #%d: %.2f&quot;</span>, flag++, <span class="number">2.0</span> * <span class="built_in">sqrt</span>(a * a + (b - r) * (b - r)) - r);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (t) <span class="built_in">puts</span>(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>ACM补题</category>
-      </categories>
-      <tags>
-        <tag>ACM补题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2021/9/25/icpc网络赛补题</title>
-    <url>/2021/09/20/icpc_9_25/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>ACM补题</category>
-      </categories>
-      <tags>
-        <tag>ACM补题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>icpc第二场网络赛补题</title>
-    <url>/2021/09/20/icpc%E7%AC%AC%E4%BA%8C%E5%9C%BA%E7%BD%91%E7%BB%9C%E8%B5%9B%E8%A1%A5%E9%A2%98/</url>
-    <content><![CDATA[<h3 id="G题"><a href="#G题" class="headerlink" title="G题"></a>G题</h3><p>这个题属于签到题，用洛必达求导然后直接进行计算就行了，但是当时由于我们队求导求错了，而且wa的时候也没往这方面想，一直以为是特判，就没做出来</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> g[<span class="number">15</span>];</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">100005</span>], b[<span class="number">100005</span>];</span><br><span class="line"><span class="keyword">int</span> t, n, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">    cin &gt;&gt; n &gt;&gt; t;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(t == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        cout &lt;&lt; <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; a[i] &gt;&gt; b[i];</span><br><span class="line">        g[<span class="number">1</span>] += a[i]*b[i];</span><br><span class="line">        g[<span class="number">2</span>] += a[i]*b[i]*b[i]*<span class="number">-1</span>;</span><br><span class="line">        g[<span class="number">3</span>] += a[i]*b[i]*b[i]*b[i];</span><br><span class="line">        g[<span class="number">4</span>] += a[i]*b[i]*b[i]*b[i]*b[i]*<span class="number">-1</span>;</span><br><span class="line">        g[<span class="number">5</span>] += a[i]*b[i]*b[i]*b[i]*b[i]*b[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; t; i ++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(g[i] != <span class="number">0</span>)&#123;</span><br><span class="line">            cout &lt;&lt; <span class="string">&quot;infinity&quot;</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; g[t]/t;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="J题"><a href="#J题" class="headerlink" title="J题"></a>J题</h3><p>这题大意就是房顶有很多区域，高度为0表示漏水，水会从高往低流，求每个区域漏水的多少。实际上只要排序完然后模拟就好了</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">int</span> h[<span class="number">505</span>][<span class="number">505</span>],cnt,n,m;</span><br><span class="line"><span class="keyword">double</span> s[<span class="number">505</span>][<span class="number">505</span>];</span><br><span class="line"><span class="keyword">int</span> x[<span class="number">5</span>]=&#123;<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>&#125;;</span><br><span class="line"><span class="keyword">int</span> y[<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> i,j,h;</span><br><span class="line">    <span class="keyword">bool</span> <span class="keyword">operator</span> &lt; (<span class="keyword">const</span> node p)&#123;</span><br><span class="line">        <span class="keyword">return</span> h&gt;p.h;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;a[<span class="number">300005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">judge</span><span class="params">(node t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> di=t.i+x[i];</span><br><span class="line">        <span class="keyword">int</span> dj=t.j+y[i];</span><br><span class="line">        <span class="keyword">if</span>(di&gt;<span class="number">0</span>&amp;&amp;di&lt;=n&amp;&amp;dj&gt;<span class="number">0</span>&amp;&amp;dj&lt;=n&amp;&amp;h[t.i][t.j]&gt;h[di][dj])&#123;</span><br><span class="line">            sum++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sum)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> di=t.i+x[i];</span><br><span class="line">            <span class="keyword">int</span> dj=t.j+y[i];</span><br><span class="line">            <span class="keyword">if</span>(di&gt;<span class="number">0</span>&amp;&amp;di&lt;=n&amp;&amp;dj&gt;<span class="number">0</span>&amp;&amp;dj&lt;=n&amp;&amp;h[t.i][t.j]&gt;h[di][dj])&#123;</span><br><span class="line">                s[di][dj]+=s[t.i][t.j]/sum;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            cin&gt;&gt;h[i][j];</span><br><span class="line">            cnt++;</span><br><span class="line">            a[cnt].i=i;</span><br><span class="line">            a[cnt].j=j;</span><br><span class="line">            a[cnt].h=h[i][j];</span><br><span class="line">            s[i][j]=m;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> maxn=n*n;</span><br><span class="line">    <span class="built_in">sort</span>(a+<span class="number">1</span>,a+maxn+<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=maxn;i++)&#123;</span><br><span class="line">        <span class="built_in">judge</span>(a[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(h[i][j]!=<span class="number">0</span>)&#123;</span><br><span class="line">                cout&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="string">&quot; &quot;</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%.6lf &quot;</span>,s[i][j]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout&lt;&lt;endl;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>ACM补题</category>
-      </categories>
-      <tags>
-        <tag>ACM补题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>c++map/multimap容器简介、构造以及赋值</title>
-    <url>/2021/09/05/multimap%E5%AE%B9%E5%99%A8/</url>
-    <content><![CDATA[<h1 id="c-map-multimap容器简介、构造以及赋值"><a href="#c-map-multimap容器简介、构造以及赋值" class="headerlink" title="c++map/multimap容器简介、构造以及赋值"></a>c++map/multimap容器简介、构造以及赋值</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>1.map中所以元素都是pair(两两的)。<br>2.pair中第一个元素为key(键值)，起到索引作用，第二个元素为value(实值)。<br>3.所有元素都会根据元素的键值自动排序。</p>
-<h2 id="本质"><a href="#本质" class="headerlink" title="本质"></a>本质</h2><p>map/multimap属于关联式容器，底层结构是用二叉树实现。</p>
-<h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><p>可以根据key值快速找到value值。</p>
-<h2 id="map与multimap区别"><a href="#map与multimap区别" class="headerlink" title="map与multimap区别"></a>map与multimap区别</h2><p>1.map不允许容器中有重复key值元素。<br>2.multimap允许容器中有重复key值元素。</p>
-<h2 id="map构造和赋值"><a href="#map构造和赋值" class="headerlink" title="map构造和赋值"></a>map构造和赋值</h2><p>map中所有元素都是成对出现，插入数据的时候要使用对组。</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//默认构造 </span></span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1;<span class="comment">//map默认构造函数 </span></span><br><span class="line">	<span class="comment">//插入</span></span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>, <span class="number">10</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>, <span class="number">20</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>, <span class="number">30</span>));</span><br><span class="line">	m1.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">4</span>, <span class="number">40</span>));</span><br><span class="line">	<span class="built_in">printmap</span>(m1);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//拷贝构造</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;<span class="built_in">m2</span>(m1);</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//赋值</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m3; </span><br><span class="line">	m3 = m2;</span><br><span class="line">	<span class="built_in">printmap</span>(m3);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map大小和交换"><a href="#map大小和交换" class="headerlink" title="map大小和交换"></a>map大小和交换</h2><p>函数原型</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">size</span>();<span class="comment">//返回容器中元素的数目</span></span><br><span class="line"><span class="built_in">empty</span>();<span class="comment">//判断容器是否为空</span></span><br><span class="line"><span class="built_in">swap</span>();<span class="comment">//交换两个集合容器 </span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//大小</span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m;</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>) );</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>,<span class="number">20</span>) );</span><br><span class="line">	m.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>,<span class="number">30</span>) );</span><br><span class="line">	<span class="keyword">if</span> (m.<span class="built_in">empty</span>())&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m为空&quot;</span> &lt;&lt; endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m不为空&quot;</span> &lt;&lt;endl;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;m的大小为：&quot;</span> &lt;&lt; m.<span class="built_in">size</span>() &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//交换 </span></span><br><span class="line">	map &lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt; m2;</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">4</span>,<span class="number">100</span>) );</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">5</span>,<span class="number">200</span>) );</span><br><span class="line">	m2.<span class="built_in">insert</span>( pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">6</span>,<span class="number">300</span>) );</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换前：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">	m.<span class="built_in">swap</span>(m2);</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;交换后：&quot;</span> &lt;&lt; endl;</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	<span class="built_in">printmap</span>(m2);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map插入和删除"><a href="#map插入和删除" class="headerlink" title="map插入和删除"></a>map插入和删除</h2><p>函数原型</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">insert</span>();<span class="comment">//在容器中插入元素</span></span><br><span class="line"><span class="built_in">clear</span>();<span class="comment">//清除所有元素</span></span><br><span class="line"><span class="built_in">erase</span>(pos);<span class="comment">//返回pos迭代器所指的元素，返回下一个元素的迭代器</span></span><br><span class="line"><span class="built_in">erase</span>(beg,end);<span class="comment">//删除区间[beg,end)中所有的元素，返回下一个元素的迭代器</span></span><br><span class="line"><span class="built_in">erase</span>(key);<span class="comment">//删除容器中值位可以的元素 </span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">printmap</span><span class="params">(map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m1)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator it = m1.<span class="built_in">begin</span>();it != m1.<span class="built_in">end</span>();it++)&#123;</span><br><span class="line">		<span class="comment">//两种输出方式 </span></span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;key = &quot;</span> &lt;&lt; (*it).first &lt;&lt; <span class="string">&quot; value = &quot;</span> &lt;&lt; it-&gt;second &lt;&lt;endl;</span><br><span class="line">	&#125;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;</span><br><span class="line">	<span class="comment">//插入</span></span><br><span class="line">	<span class="comment">//第一种</span></span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>));</span><br><span class="line">	<span class="comment">//第二种</span></span><br><span class="line">	m.<span class="built_in">insert</span>(<span class="built_in">make_pair</span>(<span class="number">2</span>,<span class="number">20</span>));<span class="comment">//不用写模板参数</span></span><br><span class="line">	<span class="comment">//第三种</span></span><br><span class="line">	m[<span class="number">4</span>] = <span class="number">40</span>;</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//删除</span></span><br><span class="line">	m.<span class="built_in">erase</span>(m.<span class="built_in">begin</span>());</span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">erase</span>(<span class="number">3</span>);<span class="comment">//按照key删除,没有就不删 </span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">erase</span>(m.<span class="built_in">begin</span>(),m.<span class="built_in">end</span>());<span class="comment">//按照区间删</span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">	</span><br><span class="line">	m.<span class="built_in">clear</span>();<span class="comment">//清空容器 </span></span><br><span class="line">	<span class="built_in">printmap</span>(m);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map查找和统计"><a href="#map查找和统计" class="headerlink" title="map查找和统计"></a>map查找和统计</h2><p>函数原型</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//函数原型</span></span><br><span class="line"><span class="built_in">find</span>(key);<span class="comment">//查找key是否存在，若存在，返回 该键元素的迭代器，若不存在，返回set.end();</span></span><br><span class="line"><span class="built_in">count</span>(key);<span class="comment">//统计key的元素个数</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">//查找</span></span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;m;</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">1</span>,<span class="number">10</span>));</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">2</span>,<span class="number">20</span>));</span><br><span class="line">	m.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;(<span class="number">3</span>,<span class="number">30</span>));</span><br><span class="line">	</span><br><span class="line">	map&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;::iterator pos = m.<span class="built_in">find</span>(<span class="number">3</span>);</span><br><span class="line">	<span class="keyword">if</span> (pos != m.<span class="built_in">end</span>())&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;找到了key：&quot;</span> &lt;&lt; (*pos).first &lt;&lt; <span class="string">&quot;找到了value：&quot;</span> &lt;&lt; (*pos).second;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		cout &lt;&lt; <span class="string">&quot;未找到元素&quot;</span>; </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">//统计 </span></span><br><span class="line">	<span class="keyword">int</span> num = m.<span class="built_in">count</span>(<span class="number">3</span>);</span><br><span class="line">	cout &lt;&lt; num &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="map容器排序"><a href="#map容器排序" class="headerlink" title="map容器排序"></a>map容器排序</h2><p>map容器默认排序规则为按照key值进行从小到大排序，利用仿函数可以改变排序规则。</p>
-]]></content>
-      <categories>
-        <category>C++</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>shell学习笔记</title>
-    <url>/2021/10/15/shell%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<h3 id="shell脚本"><a href="#shell脚本" class="headerlink" title="shell脚本"></a>shell脚本</h3><p>日常运维工作大部分是一些繁琐的重复的工作，每天80%的工作就是重复干昨天的事，而且工作量还比较大，因此运维有两个选择：</p>
-<ul>
-<li>自己搞定一切</li>
-<li>让机器搞定一切</li>
-</ul>
-<p>学习shell分为几个阶段：</p>
-<ol>
-<li> 能看懂shell脚本</li>
-<li>能改shell脚本</li>
-<li>能自己写shell脚本</li>
-<li>能优化shell脚本</li>
-</ol>
-<h3 id="shell介绍"><a href="#shell介绍" class="headerlink" title="shell介绍"></a>shell介绍</h3><ol>
-<li><p>什么是shell</p>
-<p>shell是一个程序，采用c语言编写，是用户和linux内核沟通的桥梁。它既是一种命令语言，又是一种解释性的编程语言。通过一个图表来查看一下shell的作用：</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151040955.png" alt="image-20211015104057796"></p>
-<p>kernel：为软件服务，接收用户或软件指令驱动硬件，完成工作，只能识别01</p>
-<p>shell：命令解释器，会将用户的高级语言转化为二进制</p>
-<p>user：用户接口，对接用户</p>
-</li>
-<li><p>shell的功能</p>
-<ul>
-<li>命令行解释功能</li>
-<li>启动程序</li>
-<li>输入输出重定向</li>
-<li>管道连接</li>
-<li>文件名置换（echo/*）</li>
-<li>变量维护</li>
-<li>环境控制</li>
-<li>shell编程</li>
-</ul>
-</li>
-</ol>
-<h3 id="shell语法"><a href="#shell语法" class="headerlink" title="shell语法"></a>shell语法</h3><p>shell脚本就是将完成一个任务的所有命令按照执行先后的顺序，自上而下写入到一个文本文件中，然后给予执行权限</p>
-<ol>
-<li><p>如何书写一个shell脚本</p>
-<ol>
-<li><p>shell脚本命名：</p>
-<p>名字要有意义，最好不要用a、b、c、1、2、3这种方式命名；虽然linux系统中，文件没有扩展名的概念，仍然建议用.sh结尾；名字不要太长，最好能30个自己以内解决</p>
-</li>
-<li><p>shell脚本格式：</p>
-<ul>
-<li><p>shell脚本开头必须指定脚本运行环境，以 #! 这个特殊符号组合来组成。如： #!/bin/bash 指定该脚本是运行解析有/bin/bash来完成的</p>
-</li>
-<li><p>#代表注释</p>
-</li>
-<li><p>在脚本中加上：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">Author: xxx 作者</span></span><br><span class="line"><span class="meta">#</span><span class="bash">Created Time: xxxx/xx/xx xx:xx 创建时间</span></span><br><span class="line"><span class="meta">#</span><span class="bash">Release: xx 脚本版本</span></span><br><span class="line"><span class="meta">#</span><span class="bash">Script Description: xxxxxx 脚本描述</span></span><br></pre></td></tr></table></figure></li>
-<li><p>脚本组成</p>
-<p>解释环境：也可以这样写：#! /usr/bin/env bash |python|perl</p>
-<p>注释说明</p>
-<p>执行代码</p>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-<li><p>如何运行shell脚本</p>
-<ol>
-<li><p>给执行权限</p>
-<p>chmod 700 filename + ./xxx.sh</p>
-</li>
-<li><p>解释器直接运行，不需要给权限</p>
-<p>sh xxx.sh</p>
-</li>
-</ol>
-</li>
-<li><p>shell中的特殊符号</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151210019.png" alt="image-20211015121054893"></p>
-<p>注：</p>
-<p>​    !表示上个指令，!!表示上上个指令，也可以通过history查看历史命令的序号，通过!+序号来执行历史命令</p>
-</li>
-<li><p>shell中的管道运用</p>
-<p>| 管道符在shell中是使用最多的，很多组合命令都需要通过组合命令来完成输出。管道符其实就是下一个命令对上一个命令的输出做处理</p>
-</li>
-<li><p>重定向</p>
-<p>&gt;重定向输入，覆盖</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>shell</category>
-      </categories>
-      <tags>
-        <tag>shell</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>test</title>
-    <url>/2021/09/05/test/</url>
-    <content><![CDATA[<h1 id="first"><a href="#first" class="headerlink" title="first"></a>first</h1><h2 id="second"><a href="#second" class="headerlink" title="second"></a>second</h2><h3 id="third"><a href="#third" class="headerlink" title="third"></a>third</h3><h4 id="forth"><a href="#forth" class="headerlink" title="forth"></a>forth</h4><h5 id="fifth"><a href="#fifth" class="headerlink" title="fifth"></a>fifth</h5><hr>
-<ul>
-<li>这是无序列表</li>
-</ul>
-<p>文本之间必须加空行，不然会被认为是一段</p>
-<p>1.这是有序列表</p>
-<hr>
-<p><strong>黑体</strong></p>
-<p><em>斜体</em></p>
-<hr>
-<p>这样会被认为是代码或者纯文本</p>
-<hr>
-<blockquote>
-<p>这样是引用</p>
-</blockquote>
-<p><code>print(&#39;hello&#39;)</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">test</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;hello&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>测试文档</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ACM基础算法（三）</title>
-    <url>/2021/09/20/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95%EF%BC%88%E4%B8%89%EF%BC%89/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>ACM</category>
-      </categories>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>排序</title>
-    <url>/2021/09/05/%E6%8E%92%E5%BA%8F/</url>
-    <content><![CDATA[<h1 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h1><h2 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h2><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; n; i ++)</span><br><span class="line">        cin &gt;&gt; a[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i; j ++)</span><br><span class="line">            <span class="keyword">if</span> (a[i] &gt; a[j])</span><br><span class="line">                <span class="built_in">swap</span>(a[i], a[j]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="插入排序"><a href="#插入排序" class="headerlink" title="插入排序"></a>插入排序</h2><p>插入排序就像摸牌一样，将数列从第二个数开始逐个插入应该存在的位置，时间复杂度与冒泡排序相当。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//升序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">isort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> t = a[i];</span><br><span class="line">		<span class="keyword">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (t &lt; a[j] &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		a[j+<span class="number">1</span>] = t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//降序 </span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">isort</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>;i &lt; n;i++)&#123;</span><br><span class="line">		<span class="keyword">int</span> t = a[i];</span><br><span class="line">		<span class="keyword">int</span> j = i - <span class="number">1</span>;</span><br><span class="line">		<span class="keyword">while</span> (t &gt; a[j] &amp;&amp; j &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">			a[j+<span class="number">1</span>] = a[j];</span><br><span class="line">			j--;</span><br><span class="line">		&#125;</span><br><span class="line">		a[j+<span class="number">1</span>] = t;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>ACM</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>my new blog</title>
-    <url>/2021/09/05/my-new-blog/</url>
-    <content><![CDATA[<p>first</p>
-<p>second</p>
-]]></content>
-      <categories>
-        <category>测试文档</category>
-      </categories>
-      <tags>
-        <tag>test</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>服务器</title>
-    <url>/2021/10/26/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<h3 id="LAMP环境搭建"><a href="#LAMP环境搭建" class="headerlink" title="LAMP环境搭建"></a>LAMP环境搭建</h3><p>一个很nb的代码：在终端输入apt-get install -y wget &amp;&amp; wget -O install.sh <a href="http://download.bt.cn/install/install_6.0.sh">http://download.bt.cn/install/install_6.0.sh</a> &amp;&amp; sh install.sh然后无脑安装LAMP环境就配好了</p>
-]]></content>
-      <categories>
-        <category>服务器</category>
-      </categories>
-      <tags>
-        <tag>服务器</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>物理层</title>
-    <url>/2021/09/24/%E7%89%A9%E7%90%86%E5%B1%82/</url>
-    <content><![CDATA[<h3 id="2-1-物理层的基本概念"><a href="#2-1-物理层的基本概念" class="headerlink" title="2.1 物理层的基本概念"></a>2.1 物理层的基本概念</h3><ol>
-<li>物理层解决如何在连接各种计算机的传输媒体上传输数据比特流而不是指任何具体的传输媒体</li>
-<li>物理层的主要任务描述为：确定与传输媒体的接口上的一些特性，即：<ol>
-<li>机械特性：例如接口形状、大小、引线数目</li>
-<li>电气特性：例如规定电压范围</li>
-<li>功能特性：例如规定-5V表示0，+5V表示1</li>
-<li>过程特性：也称规程特性，规定建立连接时各个相关部件的工作步骤</li>
-</ol>
-</li>
-</ol>
-<h3 id="2-2-数据通信的基础知识"><a href="#2-2-数据通信的基础知识" class="headerlink" title="2.2 数据通信的基础知识"></a>2.2 数据通信的基础知识</h3><ol>
-<li>典型的数据通信模型（通过电话网实现）：</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110071927011.jpg" alt="wuli01"></p>
-<ol start="2">
-<li><p>数据通信相关术语（通信的目的是传送消息）：</p>
-<ol>
-<li>数据（data）：运送消息的实体（数据不一定有实际意义，但当很多数据组成消息就具有实际意义）</li>
-<li>信号（signal）：数据的电气或电磁的表现（红绿灯、电压高低等）</li>
-<li>模拟信号：代表消息的参数的取值是连续的（声波）</li>
-<li>数字信号：代表消息的参数的取值是离散的</li>
-<li>码元（code）：在使用时间域的波形（在一个时间段内）表示数字信号时，则代表不同离散数据值的基本波形就称为码元</li>
-</ol>
-<p> 在数字通信中常常用时间间隔相同的符号来表示一个二进制数字，这样的时间间隔内的信号称为二进制码元。而这个时间间隔被称为码元长度。1码元可以携带nbit的信息量</p>
-</li>
-<li><p>有关信道的几个概念：</p>
-<p> 信道一般表示向一个方向传送信息的媒体。所以咱们说平常的通信线路往往包含一条发送信息的信道和一条接受信息的信道</p>
-<ol>
-<li>单向通信（单工通信）：只能有一个方向的通信而没有反方向的交互</li>
-<li>双向交替通信(半双工通信)：通信双方都可以发送信息，但不能双方同时发送，也不没能同时接收</li>
-<li>双向同时通信（全双工通信）：通信双方可以同时发送和接收信息</li>
-<li>基带信号（baseband即基本频带信号）：来自信源的信号。像计算机输出的代表各种文字或图像文件的数据信号都属于基带信号。基带信号就是发出的直接表达了要传输的信息的信号，比如我们说话的声波就是基带信号</li>
-<li>带通信号（band pass）：把基带信号经过载波调制后，把信号的频率范围搬移到较高的频段以便在信道中传输(即仅在一段频率范围内能供通过信道)</li>
-</ol>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/QQ%E5%9B%BE%E7%89%8720210924155212.jpg" alt="QQ图片20210924155212"></p>
-<p> 因此在传输距离较近时，计算机网络都采用基带传输方式。由于在近距离范围内基带信号的衰减不大，从而信号内容不会发生变化。因此在传输距离较近时，计算机网络都采用基带传输方式。如从计算机到监视器、打印机等外设的信号就是几代传输的。</p>
-</li>
-<li><p>几种最基本的调制方法：</p>
-<ol>
-<li>调幅（AM）：载波的振幅随基带数字信号变化而变化</li>
-<li>调频（FM）：载波的频率随基带数字信号而变化</li>
-<li>调相（PM）：载波的初始相位随基带数字信号而变化</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/QQ%E5%9B%BE%E7%89%8720210924160059.png" alt="QQ图片20210924160059"></p>
-</li>
-<li><p>常用编码：</p>
-<p> 单极性不归零码：</p>
-<p> ​    只使用一个电压值，用高电平表示1，没电压表示0</p>
-<p> 双极性不归零码：</p>
-<p> ​    用正电平和负电平分别表示二进制的0和1，正负幅值相等</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110081415704.png" alt="image-20211008141501366"></p>
-<p> 双极性归零码：</p>
-<p> ​    正负零三个电平，信号本身携带同步信息</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110081416403.png" alt="image-20211008141620212"></p>
-<p> ​    这几种编码方式无法识别一堆0信号和无信号，于是出现了曼彻斯特编码</p>
-<p> 曼彻斯特编码</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110081421152.png" alt="image-20211008142122836"></p>
-<p> 差分曼彻斯特编码</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110081422064.png" alt="image-20211008142247620"></p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110081426630.png" alt="image-20211008142602178"></p>
-</li>
-<li><p>信道的极限容量</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081429848.png" alt="image-20211008142954545"></p>
-<ol>
-<li><p>奈氏准则</p>
-<ol>
-<li><p>1924年，奈奎斯特推导出了著名的奈氏准则。他给出了在假定的理想条件下，为避免码间串扰，码元的传输速率的上限值</p>
-<p>在任何信道中，码元传输的速率都是有上限的，否则就会出现码间串扰的问题，使接收端对码元的判决（即识别）成为不可能</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081435554.png" alt="image-20211008143522408"></p>
-</li>
-<li><p>波特和bit的区别</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081437316.png" alt="image-20211008143714029"></p>
-</li>
-</ol>
-</li>
-<li><p>香农公式</p>
-<p>香农用信息论的理论推导出了带宽受限且有高斯白噪声干扰的信道的极限、无差错的信息传输速率</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081442600.png" alt="image-20211008144249305"></p>
-</li>
-<li><p>奈氏准则和香农公式的应用范围</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081446952.png" alt="image-20211008144638679"></p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="2-3-物理层下面的传输媒体"><a href="#2-3-物理层下面的传输媒体" class="headerlink" title="2.3 物理层下面的传输媒体"></a>2.3 物理层下面的传输媒体</h3><p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081506079.png" alt="image-20211008150652642"></p>
-<ol>
-<li><p>导向传输媒体</p>
-<p>导向传输媒体中，电磁波沿着固体媒体传播。</p>
-<ol>
-<li><p>双绞线</p>
-<p>屏蔽双绞线 STP（外边有金属层，抗干扰强）</p>
-<p>无屏蔽双绞线 UTP</p>
-<p>铜线电阻对网速有影响</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081515638.png" alt="image-20211008151509372"></p>
-</li>
-<li><p>同轴电缆</p>
-<p>50Ω同轴电缆：用于数字传输，由于多用于基带传输，也叫基带同轴电缆</p>
-<p>70Ω同轴电缆：用于模拟传输，即宽带同轴电缆</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081513704.png" alt="image-20211008151358543"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081516739.png" alt="image-20211008151600349"></p>
-</li>
-<li><p>光纤</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081516563.png" alt="image-20211008151651879"></p>
-<ol>
-<li>光线在光纤中的折射</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081520185.png" alt="image-20211008152040916"></p>
-<ol start="2">
-<li><p>光纤的工作原理：光纤靠全反射传递信号</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081522083.png" alt="image-20211008152242926"></p>
-</li>
-<li><p>多模光纤与单模光纤</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081524791.png" alt="image-20211008152446290"></p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>非导向传输媒体</p>
-<p>非导向传输媒体就是指自由空间，其中的电磁波传输被称为无线传输</p>
-<p>无线传输所使用的频段很广</p>
-<p>短波通信主要是靠电离层的反射，但短波信道的通信质量较差。</p>
-<p>微波在空间主要是直线传播，因为地球是圆的，所以微波传输需要建立一定高度的接收塔</p>
-</li>
-<li><p>物理层设备—集线器</p>
-<p>工作特点：它在网络中只起到信号放大和重发作用，其目的是扩大网络的传输范围，而不具备信号的定向传送能力</p>
-<p>最大传输距离：100m</p>
-<p>集线器是一个很大的冲突域，在一段时间内只允许一条信道通信（半双工），现在很少见了，都被交换机替代了</p>
-</li>
-</ol>
-<h3 id="2-4-信道复用技术"><a href="#2-4-信道复用技术" class="headerlink" title="2.4 信道复用技术"></a>2.4 信道复用技术</h3><p>复用是通信技术中的基本概念</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081536696.png" alt="image-20211008153637421"></p>
-<ol>
-<li><p>频分复用 FDM：用户在分配到一定的频带后，在通信过程中自始至终都占用着这个频带。</p>
-<p>频分复用的所有用户在同样的时间占用不同的宽带资源（请注意，这里的“带宽”是频率带宽而不是数据发送的速率）</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081541230.png" alt="image-20211008154153964"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081542696.png" alt="image-20211008154237466"></p>
-<ol>
-<li><p>频分复用打电话时每个人的声音用不同的频率进行调制，生成的波经过设备叠加形成总波，到接收方有个分离器，用各自的频率截得波形，调制解调得到原来的声波</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081543503.png" alt="image-20211008154329133"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081547966.png" alt="image-20211008154736589"></p>
-</li>
-<li><p>频分复用的例子：打电话</p>
-<p>复用的部分称为干道电路</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081602381.png" alt="image-20211008160222962"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081604025.png" alt="image-20211008160451709"></p>
-</li>
-</ol>
-</li>
-<li><p>时分复用 TDM</p>
-<p>一边按照1234顺序给，另一边按照1234的顺序接收</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081607027.png" alt="image-20211008160758755"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081609202.png" alt="image-20211008160911991"></p>
-<p>时分复用缺点：时分复用可能会造成线路资源的浪费。使用时分复用系统传送计算机数据时，由于计算机数据的突发性质，用户对分配到的子信道的利用率一般是不高的（只能按照1234来传输，如果1没有信息，其他三个用户也不能用1的信道）</p>
-</li>
-<li><p>统计时分复用</p>
-<p>每个用户往干道放信息时加个标记，不按顺序，谁来谁放，最后按标记收集再把标记去掉</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081615470.png" alt="image-20211008161538213"></p>
-</li>
-<li><p>波分复用 WDM</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081617103.png" alt="image-20211008161745674"></p>
-</li>
-<li><p>码分复用 CDM</p>
-<p>常用的名词是码分多址 CDMA，各用户使用经过特殊挑选的不同码型，因此彼此不会造成干扰。这种系统发送的信号有很强的抗干扰能力，其频谱类似于白噪声，不易被敌人发现。</p>
-<p>每一个比特时间划分为m个短的间隔，称为码片</p>
-<ol>
-<li><p>CDMA的工作原理</p>
-<p>每个站被指派一个唯一的m bit码片序列，如果发送比特1，则发送自己的m bit码片序列；如果发送比特0，则发送该码片序列的二进制反码</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110081629378.png" alt="image-20211008162917849"></p>
-<p>如果一部手机接收到信号，需要用自己的码片进行格式化内积运算，以得到要接收的信号，不同手机的码片序列必须正交</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151406707.png" alt="image-20211015140605553"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151406443.png" alt="image-20211015140632243"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151407882.png" alt="image-20211015140734778"></p>
-</li>
-<li><p>码分复用缺点：发送一个数据码元比特需要m个码片</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="2-5-数字传输系统"><a href="#2-5-数字传输系统" class="headerlink" title="2.5 数字传输系统"></a>2.5 数字传输系统</h3><p>脉码调制PCM体制最初是为了在电话局之间的中继线上传送多路电话。由于历史的原因，PCM有两个互不兼容的国际标准，即北美的24路PCM（简称为T1）和欧洲的30路PCM（简称为E1）.我国采用的是欧洲的E1标准。</p>
-<p>E1的速率是2.048Mb/s，而T1的速率是1.544Mb/s，当需要有更高的数据率时，可采用复用的方法</p>
-<h3 id="2-6-宽带接入技术"><a href="#2-6-宽带接入技术" class="headerlink" title="2.6 宽带接入技术"></a>2.6 宽带接入技术</h3><ol>
-<li><p>xDSL（用数字技术对现有的模拟电话用户进行）</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151421383.png" alt="image-20211015142125220"></p>
-<p>标准模拟电话信号的频带被限制在300~3400Hz的范围内，但用户线本身实际可通过的信号频率仍然超过1MHz</p>
-<p>xDSL技术就把0~4kHz低端频谱留给传统电话使用，而把原来没有被利用的高端频谱留给用户上网使用</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151426938.png" alt="image-20211015142604768"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151426478.png" alt="image-20211015142644271"></p>
-</li>
-<li><p>光纤同轴混合网HFC</p>
-<p>HFC网是在目前覆盖面很广的有限电视网CATV的基础上开发的一种居民宽带接入网</p>
-<p>HFC网除可传送CATV外，还提供电话、数据和其他宽带交互型业务</p>
-<p>现有的CATV网是树形拓扑结构的同轴电缆网络，它采用模拟技术的频分复用对电视节目进行单向传输。而HFC网则需要对CATV网进行改造</p>
-<p>HFC网采用结点体系结构</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151430776.png" alt="image-20211015143002296"></p>
-</li>
-<li><p>FTTx技术</p>
-<p>FTT也是一种实现宽带居民接入网的方案。这里的字母x可代表不同的意思。</p>
-<p>光纤到家FTTH：</p>
-<p>​    光纤一直铺设到用户家庭可能是居民接入网最后的解决方法（155Mb/s）</p>
-<p>光纤到大楼FTTB：</p>
-<p>​    光纤进入大楼后就转换为电信号，然后用电缆或双绞线分配到各用户</p>
-<p>光纤到路边FTTC：</p>
-<p>​    从路边到各用户可使用星形结构双绞线作为传输媒体（155Mb/s）</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据链路层</title>
-    <url>/2021/10/15/%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/</url>
-    <content><![CDATA[<h3 id="数据链路层的几个概念"><a href="#数据链路层的几个概念" class="headerlink" title="数据链路层的几个概念"></a>数据链路层的几个概念</h3><ol>
-<li><p>数据发送模型</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151445882.png" alt="image-20211015144459603"></p>
-<p>本章只从链路层观察帧的流动</p>
-</li>
-<li><p>数据链路层的信道类型</p>
-<p>数据链路层使用的信道主要有一下两种类型：</p>
-<ul>
-<li>点对点信道。这种信道使用一对一的点对点通信方式</li>
-<li>广播信道。这种信道使用一对多的广播通信方式，因此过程比较复杂。广播信道上连接的主机很多，因此必须使用专用的共享信道协议来协调这些主机的数据发送</li>
-</ul>
-</li>
-<li><p>链路与数据链路</p>
-<p>链路是一条点到点的物理线路段，一条链路只是一条通路的一个部分</p>
-<p>数据链路除了物理链路外，还必须有通信协议来控制这些数据的传输。若把实现这些协议的硬件和软件加到链路上，就构成了数据链路</p>
-<ul>
-<li>现最常用的方法是使用适配器（即网卡）来实现这些协议的硬件和软件</li>
-<li>一般的适配器都包括了数据链路层和物理层这两层的功能</li>
-</ul>
-</li>
-<li><p>帧</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151521023.png" alt="image-20211015152138720"></p>
-</li>
-<li><p>数据链路层像个数字管道</p>
-<p>常常在两个对等的数据链路层之间画出一个数字管道，而在这条数字管道上传输的数据单位是帧</p>
-</li>
-</ol>
-<h3 id="三个基本问题"><a href="#三个基本问题" class="headerlink" title="三个基本问题"></a>三个基本问题</h3><ol>
-<li><p>封装成帧</p>
-<ul>
-<li><p>封装成帧就是在一段数据的前后分别添加首部和尾部，然后就构成了一个帧。确定帧的界限</p>
-</li>
-<li><p>首部和尾部的一个重要作用就是进行帧界定</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151534389.png" alt="image-20211015153451076"></p>
-<p>MTU：最大传输单元，在以太网中最大不超过1500字节</p>
-</li>
-<li><p>用控制字符进行帧定界的方法举例：</p>
-<p>帧还未发送完，发送端出了问题，只能重发该帧。接收端却接收到了前面的”半截子帧“，他由于没有找到帧结束符，会抛弃掉</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151538727.png" alt="image-20211015153855510"></p>
-</li>
-</ul>
-</li>
-<li><p>透明传输</p>
-<p>若传输的数据是ASCII码中的”可打印字符（共95个）“集时，若传输的数据不是仅由“可打印字符”组成时，就会出问题（帧开始符和帧结束符由不可打印字符组成），如下：</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151539409.png" alt="image-20211015153958099"></p>
-<ol>
-<li><p>用字节填充法解决透明传输的问题</p>
-<p>发送端的数据链路层在数据中出现控制字符“SOH”或“EOT”的前面插入转义字符字符“ESC”（其十六进制编码是1B）</p>
-<p>字节填充或字符填充–接收端的数据链路层在将数据送往网络层之前删除插入的转义字符</p>
-<p>如果转义字符也出现在数据当中，那么应在转义字符前插入一个转义字符。当接收端收到连续两个转义字符时，就删除其中前面的一个</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151548105.png" alt="image-20211015154810739"></p>
-</li>
-</ol>
-</li>
-<li><p>差错控制</p>
-<p>传输过程中可能会产生比特差错：1可能会变成0而0也可能变成1。</p>
-<p>在一段时间内，传输错误的比特占所传输比特总数的比率称为误码率BER（bit error rate）</p>
-<p>误码率与信噪比有很大的关系</p>
-<p>为保证数据传输的可靠性，在计算机网络传输数据时，必须采用各种差错检测措施</p>
-<ol>
-<li><p>循环冗余检验CRC</p>
-<p>在数据链路层传送的帧中，广泛使用了循环冗余检验CRC的技术</p>
-<p>在发送端，先把数据划分为组。假设每组k个比特</p>
-<p>假设待传送的一组数据M=101001（现在k=6）。我们在M后面再添加供差错检测的n位冗余码一起发送</p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151616545.png" alt="image-20211015161632378"></p>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110151617368.png" alt="image-20211015161714103"></p>
-<p>计算方法：11得0，01得1，最后传数据M+R，也就是101001001，到接收端用（M+R）/P，如果余数为0则表示没有出错，否则表示数据出错要扔掉（数据链路层决定除数p以及加多少位0）</p>
-</li>
-</ol>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>计算机网络概述</title>
-    <url>/2021/09/20/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E8%BF%B0/</url>
-    <content><![CDATA[<h3 id="1-1-计算机网络在信息时代的作用"><a href="#1-1-计算机网络在信息时代的作用" class="headerlink" title="1.1 计算机网络在信息时代的作用"></a>1.1 计算机网络在信息时代的作用</h3><ol>
-<li><p>信息化时代的特征：数字化、网络化、信息化</p>
-<p>数字化是指任何信息都能转化为01串，信息化实现信息交互，二者都离不开网络化</p>
-</li>
-<li><p>网络分为三网：电信网络、计算机网络（因特网、其他网络）、有线电视网络</p>
-</li>
-<li><p>计算机网络的重要功能：</p>
-<p> 连通性：彼此连通，交换信息</p>
-<p> 共享性：信息共享，软硬件共享</p>
-</li>
-</ol>
-<h3 id="1-2-因特网概述"><a href="#1-2-因特网概述" class="headerlink" title="1.2 因特网概述"></a>1.2 因特网概述</h3><ol>
-<li><p>网络（network）、互联网（internet）、因特网（Internet）</p>
-<p> 网络：由结点和链路组成，链路不超过100m,交换机在中心连接着一台台计算机（许多计算机连接在一起）</p>
-<p> 互联网：网络和网络连起来，路由器在中心连接着交换机（许多网络连接在一起）</p>
-<p> 因特网：全球最大的一个互联网，使用的TCP/IP协议</p>
-</li>
-<li><p>互联网发展的三个阶段：</p>
-<ol>
-<li><p>ARPANET向互联网发展，1983年美国国防部发明的TCP/IP协议成为互联网标准协议；因特网起源于1983年，当时并未考虑过多的安全因素，ipv6考虑了安全问题</p>
-</li>
-<li><p>三级结构的因特网，开始于1985年；家庭网、校园网需要用地区网连起来，地区网需要用主干网连起来</p>
-</li>
-<li><p>多层次ISP（Internet服务提供商）结构的因特网。1993年美国政府将Internet交给公司运营</p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="1-3-因特网的组成"><a href="#1-3-因特网的组成" class="headerlink" title="1.3 因特网的组成"></a>1.3 因特网的组成</h3><ol>
-<li><p>因特网可以分为边缘部分和核心部分两部分，边缘部分包括客户服务器方式和对等方式，核心部分包括电路交换、报文交换和分组交换</p>
-</li>
-<li><p>能够让计算机进行通信的网络被称为核心部分，接到因特网上的计算机是边缘部分</p>
-</li>
-<li><p>因特网的边缘部分</p>
-<ol>
-<li>主机之间的通信方式<ol>
-<li>客户服务器方式（C/S方式） </li>
-<li>对等方式（P2P方式），每一台计算机既是服务器又是客户</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>因特网的核心部分</p>
-<ol>
-<li><p>数据交换方式</p>
-<ol>
-<li><p>电路交换，由电话交换机和电话组成，连接过程：</p>
-<ol>
-<li>建立连接，申请占用通信资源</li>
-<li>通话，一直占用通信资源</li>
-<li>释放连接，释放通信资源</li>
-</ol>
-<p>电路交换适合于数据量很大的实时性传输：核心路由器之间可以使用电路交换</p>
-</li>
-<li><p>报文交换</p>
-<p>  报文一般比分组长的多，报文交换的时延比较长</p>
-</li>
-<li><p>分组交换，计算机网络使用分组交换实现数据通信。分组交换发送端将报文分成几部分，并且加上地址，接收端将报文去掉地址，组装在一起。路由器有存储转发的功能，可以先将到达路由器的信息进行存储，排队发送。</p>
-<ol>
-<li>优点：高效、灵活、迅速、可靠</li>
-<li>时延（有可能卡）、开销</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>三种交换方式比较：<br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826423.png" alt="QQ图片20210920160324"></p>
-</li>
-</ol>
-</li>
-</ol>
-<h3 id="1-4-计算机网络在我国的发展"><a href="#1-4-计算机网络在我国的发展" class="headerlink" title="1.4 计算机网络在我国的发展"></a>1.4 计算机网络在我国的发展</h3><ol>
-<li><p>中国在1994年4月20日正式接入互联网</p>
-</li>
-<li><p>计算机网络最简单的定义：一些相互连接的、自治的计算机的集合</p>
-</li>
-<li><p>计算机网络按照作用范围分类：</p>
-<ol>
-<li>广域网WAN 跨城市网络，现在出现了新的定义，使用了广域网技术的网络成为广域网，而不单单从网络覆盖的范围上分类</li>
-<li>局域网LAN 教室或者学校多间教室连起来，现在的定义是应用了局域网技术的网络称为局域网，再远的距离如果使用了局域网技术也成为局域网<br>局域网与广域网区别：</li>
-<li>局域网由企业自己购买设备，自己维护，带宽固定，距离100m以内</li>
-<li>广域网花钱买服务，花钱买带宽</li>
-<li>城域网MAN 覆盖一个城市的网络</li>
-<li>个人区域网PAN 自己两台电脑找交换机连起来</li>
-</ol>
-</li>
-<li><p>按照使用者分类：</p>
-<ol>
-<li>公用网Public Network</li>
-<li>专用网Private Network（政府办公网，公司内网等）</li>
-</ol>
-</li>
-<li><p>按照拓扑结构：</p>
-<p> 总线型（一根线把所有计算机连起来）、环型、星型（所有计算机接到交换机上）、树型（有根交换机和分支交换机）、网状（许多交换机连起来，容错高，挂一个没事）</p>
-</li>
-<li><p>按照交换方式</p>
-<ol>
-<li>电路交换网</li>
-<li>报文交换网</li>
-<li>分组交换网</li>
-</ol>
-</li>
-<li><p>按照工作方式</p>
-<ol>
-<li>资源子网</li>
-<li>通信子网</li>
-<li>接入网<h3 id="1-6-计算机网络的性能"><a href="#1-6-计算机网络的性能" class="headerlink" title="1.6 计算机网络的性能"></a>1.6 计算机网络的性能</h3></li>
-</ol>
-</li>
-<li><p>性能指标：</p>
-<ol>
-<li><p>速率</p>
-<p>  连接在计算机网络上的主机在数字信道上传送数据位数的速率，也成为data rate或bit rate</p>
-<p>  单位是b/s,kb/s,Mb/s,Gb/s</p>
-</li>
-<li><p>带宽</p>
-<p>  数据通信领域中，数字信道所能传送的最高数据率</p>
-<p>  单位是b/s,kb/s,Mb/s,Gb/s</p>
-</li>
-<li><p>吞吐量</p>
-<p>  即在单位时间内通过某个网络的数据量</p>
-<p>  单位b/s，Mb/s等</p>
-</li>
-<li><p>时延</p>
-<ol>
-<li>发送时延</li>
-</ol>
-<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826944.png" alt="QQ图片20210920184505"></p>
-</li>
-<li><p>传播时延</p>
-<p> <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826303.png" alt="QQ图片20210920184736"></p>
-</li>
-<li><p>处理时延</p>
-<p> 网络结点存储和转发处理时间</p>
-</li>
-<li><p>排队时延</p>
-</li>
-<li><p>时延带宽积</p>
-<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080826394.jpg" alt="QQ图片20210920185405"></p>
-</li>
-<li><p>往返时间</p>
-<p>  从发送方发送数据开始，到发送方收到接收方确认</p>
-</li>
-<li><p>利用率</p>
-<p>  <img src="https://gitee.com/s4het/picgo/raw/master/img/202110080829914.png" alt="QQ图片20210920190223"></p>
-</li>
-</ol>
-</li>
-<li><p>非性能指标：费用、质量、标准化、可靠性、可扩展性、可升级性、管理与维护</p>
-</li>
-</ol>
-<h3 id="1-7-计算机网络体系结构"><a href="#1-7-计算机网络体系结构" class="headerlink" title="1.7 计算机网络体系结构"></a>1.7 计算机网络体系结构</h3><ol>
-<li><p>几个基本概念：</p>
-<ol>
-<li><p>ISO：国际标准化组织</p>
-</li>
-<li><p>OSI/RM：互联网法律上的国际标准，分七层，每一层都不会影响其他层</p>
-<ol>
-<li>应用层：能够产生网络流量和用户交互的应用程序（暴风影音、qq等）</li>
-<li>表示层：数据通信时要考虑数据是不是要加密或者压缩，ASCII码还是二进制，这是表示层要解决的问题（就比如说一个视频很大，开发程序员想上传的时候需要压缩一下，是开发人员需要考虑的问题）</li>
-<li>会话层：应用程序之间建立的会话/服务和客户端建立的会话，利用会话层可以查看木马（netstat -nb）</li>
-</ol>
-<p>以上是开发人员要考虑的问题，以下是网络工程师要考虑的问题</p>
-<ol start="4">
-<li>传输层：可以进行可靠传输（建立会话，丢包必须重传）、不可靠传输（不建立会话，没必要一直建立连接，一个包就可以解决，会多试几次）、流量控制功能（流量太多传不过来了，告诉服务器暂停一下）</li>
-<li>网络层：负责选择最佳路径、IP地址编址</li>
-<li>数据链路层：数据如何封装、添加物理层地址（MAC地址）</li>
-<li>物理层：电压、接口标准</li>
-<li>网络排错：从底层向高层排错，比如说上不了网了，先看看网线插没插好，再往上看</li>
-</ol>
-</li>
-<li><p>网络安全和OSI参考模型：</p>
-<ol>
-<li>物理层安全：在一个大厦上安装网线，别的人接上网线就可以看到整座楼的网了，就没有安全</li>
-<li>数据链路层安全：ADSL输入账号密码网才能通，AP密码层安全</li>
-<li>网络层安全：在交换机上设置，哪个网段IP可以出去，哪个出不去</li>
-<li>应用层安全：应用程序开发时的安全，比如SQL注入漏洞、上传漏洞等</li>
-</ol>
-</li>
-<li><p>TCP/IP Suite：因特网事实上的国际标准</p>
-</li>
-<li><p>Network Protocols：数据交换的规则、标准或约定</p>
-</li>
-<li><p>网络体系结构：计算机网络各层及其协议的集合</p>
-</li>
-</ol>
-</li>
-<li><p>开放系统信息交换涉及的几个概念：</p>
-<ol>
-<li>实体 entity：交换信息的硬件或软件过程</li>
-<li>协议 protocol：控制两个对等实体通信规则</li>
-<li>服务 service：下层向上层提供服务，上层需要使用下层的服务来实现本层的功能</li>
-<li>服务访问点 SAP：相邻两层实体间交换信息的地方</li>
-</ol>
-</li>
-<li><p>计算机网络五层协议对应的数据单元：</p>
-<ol>
-<li>应用层：应用层</li>
-<li>运输层：运输层报文</li>
-<li>网络层：IP数据报</li>
-<li>数据链路层：数据帧</li>
-<li>物理层：bit，010101</li>
-</ol>
-<p><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080830574.jpg" alt="QQ图片20210924145427"><br><img src="https://gitee.com/s4het/picgo/raw/master/img/202110080830602.jpg" alt="QQ图片20210924145558"></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>计算机网络</category>
-      </categories>
-      <tags>
-        <tag>计算机网络</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>选拔赛补题</title>
-    <url>/2021/09/24/%E9%80%89%E6%8B%94%E8%B5%9B%E8%A1%A5%E9%A2%98/</url>
-    <content><![CDATA[<h4 id="组队经验"><a href="#组队经验" class="headerlink" title="组队经验"></a>组队经验</h4><p>本次比赛我发挥的不太好，D题自己写完一直wa，也找不出问题所在；队友帮忙调试很久也没有找到问题所在。这道题严重影响我的自信，导致此题以后自己甚至读不下去题。在平时的训练中自己要锻炼自己的心态，防止以后再有这样的事情发生。同时，读题最好一起读，这样可以避免理解错误。</p>
-<h2 id="A题"><a href="#A题" class="headerlink" title="A题"></a>A题</h2><p>A题属于签到题，大意是给一个数字，统计能拆成两个小于6的数的个数，直接暴力即可</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        <span class="keyword">if</span> (n == <span class="number">1</span>)</span><br><span class="line">            cout &lt;&lt; <span class="string">&#x27;0&#x27;</span> &lt;&lt; endl;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> a[<span class="number">20</span>] = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n/<span class="number">2</span>; i ++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (a[i] == <span class="number">0</span> &amp;&amp; a[n - i] == <span class="number">0</span> &amp;&amp; i &lt;= <span class="number">6</span> &amp;&amp; n - i &lt;= <span class="number">6</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    a[i] = <span class="number">1</span>;</span><br><span class="line">                    a[n - i] = <span class="number">1</span>;</span><br><span class="line">                    cnt++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            cout &lt;&lt; cnt &lt;&lt; endl;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="H题"><a href="#H题" class="headerlink" title="H题"></a>H题</h2><p>这个题大意是给出字符串后缀，要求换成指定的字符串后缀，但要注意题目中说的“ikimasu”的特判。这个题直接模拟就行</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">while</span> (n --)</span><br><span class="line">    &#123;</span><br><span class="line">        string s;</span><br><span class="line">        cin &gt;&gt; s;</span><br><span class="line">        <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;chimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;chimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">7</span>);</span><br><span class="line">            s += <span class="string">&quot;tte&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;rimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;rimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">6</span>);</span><br><span class="line">            s += <span class="string">&quot;tte&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;mimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;mimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">6</span>);</span><br><span class="line">            s += <span class="string">&quot;nde&quot;</span>;         </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;bimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;bimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">6</span>);</span><br><span class="line">            s += <span class="string">&quot;nde&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;nimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;nimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">6</span>);</span><br><span class="line">            s += <span class="string">&quot;nde&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;kimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (s == <span class="string">&quot;ikimasu&quot;</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                s = <span class="string">&quot;itte&quot;</span>;</span><br><span class="line">                cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;kimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">6</span>);</span><br><span class="line">            s += <span class="string">&quot;ite&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;gimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;gimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">6</span>);</span><br><span class="line">            s += <span class="string">&quot;ide&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (s.<span class="built_in">find</span>(<span class="string">&quot;shimasu&quot;</span>) != <span class="number">-1</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> pos = s.<span class="built_in">find</span>(<span class="string">&quot;shimasu&quot;</span>);</span><br><span class="line">            s.<span class="built_in">erase</span>(pos, <span class="number">7</span>);</span><br><span class="line">            s += <span class="string">&quot;shite&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; s &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="K题"><a href="#K题" class="headerlink" title="K题"></a>K题</h2><p>k题大意是给出n和d，也就是一个序列1，2。。。n以及公差，让重新排列这个序列，使得满足pi+d=pi+1的最多。我的做法是类似素数筛，开一个布尔数组存下当前数字k有没有被用过，没被用过的话k+d肯定也没被用过，直接输出这串序列，输出到最后再返回第一个数的下一个数进行判断</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e6</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, d;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; d;</span><br><span class="line">    <span class="keyword">if</span> (d &gt;= n)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">            cout &lt;&lt; i &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (!st[i])</span><br><span class="line">                cout &lt;&lt; i &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">            st[i] = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">int</span> cnt = i + d;</span><br><span class="line">            <span class="keyword">while</span> (cnt &lt;= n &amp;&amp; !st[cnt])</span><br><span class="line">            &#123;</span><br><span class="line">                cout &lt;&lt; cnt &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">                st[cnt] = <span class="literal">true</span>;</span><br><span class="line">                cnt += d;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="D题"><a href="#D题" class="headerlink" title="D题"></a>D题</h2><p>D题比赛的时候自己写完样例能过，但是提交之后就wa，自己在跟队友讲了自己的思路后他们也觉得思路没问题，看代码也看不出哪错了，于是我们在wode代码上找bug找了很久，最后按我的思路另一个队友重写ac了。赛后我继续找是哪错了，最后由lzd大佬告诉我了一个细节：p2 -= _min(p2, r1);r1 -= _min(p2, r1);这串代码最后r1的值不会是预期的值。因为这一个问题我们队浪费了很多时间和精力</p>
-<h3 id="WA代码"><a href="#WA代码" class="headerlink" title="WA代码"></a>WA代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line">ll _min(ll a, ll b)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> a &lt; b ? a : b;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t --)</span><br><span class="line">    &#123;</span><br><span class="line">        ll sum = <span class="number">0</span>;</span><br><span class="line">        ll r1, p1, s1;</span><br><span class="line">        ll r2, p2, s2;</span><br><span class="line">        cin &gt;&gt; r1 &gt;&gt; p1 &gt;&gt; s1;</span><br><span class="line">        cin &gt;&gt; r2 &gt;&gt; p2 &gt;&gt; s2;</span><br><span class="line">        <span class="comment">//2出布，1出石头，2赢</span></span><br><span class="line">        <span class="keyword">if</span> (p2 != <span class="number">0</span> &amp;&amp; r1 != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += _min(p2, r1);</span><br><span class="line">            p2 -= _min(p2, r1);</span><br><span class="line">            r1 -= _min(p2, r1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2剪刀，1出布，2赢</span></span><br><span class="line">        <span class="keyword">if</span> (s2 != <span class="number">0</span> &amp;&amp; p1 != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            sum += _min(s2, p1);</span><br><span class="line">            s2 -= _min(s2, p1);</span><br><span class="line">            p1 -= _min(s2, p1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2出石头，1出剪刀，2赢</span></span><br><span class="line">        <span class="keyword">if</span> (r2 != <span class="number">0</span> &amp;&amp; s1 != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            sum += _min(r2, s1);</span><br><span class="line">            r2 -= _min(r2, s1);</span><br><span class="line">            s1 -= _min(r2, s1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2出布，平</span></span><br><span class="line">        <span class="keyword">if</span> (p2 != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            p2 -= _min(p1, p2);</span><br><span class="line">            p1 -= _min(p1, p2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2出剪刀，平</span></span><br><span class="line">        <span class="keyword">if</span> (s2 != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            s2 -= _min(s1, s2);</span><br><span class="line">            s1 -= _min(s1, s2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//2出石头，平</span></span><br><span class="line">        <span class="keyword">if</span> (r2 != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            r2 -= _min(r1, r2);</span><br><span class="line">            r1 -= _min(r1, r2);</span><br><span class="line">        &#125;</span><br><span class="line">        sum -= (p2 + r2 + s2);</span><br><span class="line">        cout &lt;&lt; sum;</span><br><span class="line">        <span class="keyword">if</span> (t != <span class="number">0</span>)</span><br><span class="line">            cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="AC代码"><a href="#AC代码" class="headerlink" title="AC代码"></a>AC代码</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t --)</span><br><span class="line">    &#123;</span><br><span class="line">        ll sum = <span class="number">0</span>;</span><br><span class="line">        ll r1, p1, s1;</span><br><span class="line">        ll r2, p2, s2;</span><br><span class="line">        cin &gt;&gt; r1 &gt;&gt; p1 &gt;&gt; s1;</span><br><span class="line">        cin &gt;&gt; r2 &gt;&gt; p2 &gt;&gt; s2;</span><br><span class="line">        <span class="comment">//2出布，1出石头，2赢</span></span><br><span class="line"><span class="comment">//         if (p2 != 0 &amp;&amp; r1 != 0)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line">            <span class="keyword">int</span> p = <span class="built_in">min</span>(p2, r1);</span><br><span class="line">            sum += p;</span><br><span class="line">            p2 -= p;</span><br><span class="line">            r1 -= p;</span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//2剪刀，1出布，2赢</span></span><br><span class="line"><span class="comment">//         if (s2 != 0 &amp;&amp; p1 != 0)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line">            p = <span class="built_in">min</span>(s2, p1);</span><br><span class="line">            sum += p;</span><br><span class="line">            s2 -= p;</span><br><span class="line">            p1 -= p;</span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//2出石头，1出剪刀，2赢</span></span><br><span class="line"><span class="comment">//         if (r2 != 0 &amp;&amp; s1 != 0)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line">            p = <span class="built_in">min</span>(r2, s1);</span><br><span class="line">            sum += p;</span><br><span class="line">            r2 -= p;</span><br><span class="line">            s1 -= p;</span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//2出布，平</span></span><br><span class="line"><span class="comment">//         if (p2 != 0)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line">            p = <span class="built_in">min</span>(p1, p2);</span><br><span class="line">            p2 -= p;</span><br><span class="line">            p1 -= p;</span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//2出剪刀，平</span></span><br><span class="line"><span class="comment">//         if (s2 != 0)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line">            p = <span class="built_in">min</span>(s1, s2);</span><br><span class="line">            s2 -= p;</span><br><span class="line">            s1 -= p;</span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        <span class="comment">//2出石头，平</span></span><br><span class="line"><span class="comment">//         if (r2 != 0)</span></span><br><span class="line"><span class="comment">//         &#123;</span></span><br><span class="line">            p = <span class="built_in">min</span>(r1, r2);</span><br><span class="line">            r2 -= p;</span><br><span class="line">            r1 -= p;</span><br><span class="line"><span class="comment">//         &#125;</span></span><br><span class="line">        sum -= (p2 + r2 + s2);</span><br><span class="line">        cout &lt;&lt; sum;</span><br><span class="line"><span class="comment">//         if (t != 0)</span></span><br><span class="line">            cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="B题"><a href="#B题" class="headerlink" title="B题"></a>B题</h2><p>B题与前面几道题相比稍微有点难度，题目大意是有n个人，每个人喜欢某种口味的食物，现在开始移动，如果锅里有他喜欢的口味，就全部吃掉，快乐值+1；否则就往锅里放入这个口味的食物，求最后每个人的快乐值。</p>
-<p>看数据范围1e9，如果是模拟的话必然超时，那么这个题就是一个找规律的题了。分别列出奇偶的情况就可找到规律。</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt[N], id[N], a[N];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t;</span><br><span class="line">    cin &gt;&gt; t;</span><br><span class="line">    <span class="keyword">while</span> (t --)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n, k, m;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; k &gt;&gt; m;</span><br><span class="line">        <span class="built_in">memset</span>(cnt, <span class="number">0</span>, (k + <span class="number">1</span>) * <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>));</span><br><span class="line">        <span class="built_in">memset</span>(cnt, <span class="number">0</span>, (k + <span class="number">1</span>) * <span class="built_in"><span class="keyword">sizeof</span></span>(<span class="keyword">int</span>));</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            cin &gt;&gt; a[i];</span><br><span class="line">            cnt[a[i]] ++;</span><br><span class="line">            id[i] = cnt[a[i]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i - <span class="number">1</span>)</span><br><span class="line">                cout &lt;&lt; <span class="string">&#x27; &#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span> (cnt[a[i]] % <span class="number">2</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (id[i] % <span class="number">2</span>)</span><br><span class="line">                    cout &lt;&lt; m / n / <span class="number">2</span> + ((m % (<span class="number">2</span> * n)) &gt;= (n + i));</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    cout &lt;&lt; m / n / <span class="number">2</span> + ((m % (<span class="number">2</span> * n)) &gt;= i);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span> (id[i] % <span class="number">2</span>)</span><br><span class="line">                    cout &lt;&lt; <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    cout &lt;&lt; m / n + ((m % n) &gt;= i);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="M题"><a href="#M题" class="headerlink" title="M题"></a>M题</h3><p>这个题是赶飞机问题，有n个人，飞机会在某时间宣布延误，但是人们在宣布延误之前如果正常到不了机场，他们就不会动，求最后几个人到</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">9</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line">ll v[N], at[N], t[N];</span><br><span class="line"><span class="keyword">bool</span> h[N];</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(ll a, ll b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a &gt; b;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ll ans = <span class="number">0</span>;</span><br><span class="line">    ll n, k, x, p0;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%lld%lld%lld%lld&quot;</span>, &amp;n, &amp;k, &amp;x, &amp;p0);</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, v + i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(v, v + n, cmp);</span><br><span class="line">    <span class="keyword">int</span> idx = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//使用for循环找会超时</span></span><br><span class="line">    <span class="keyword">while</span>(idx&lt;n&amp;&amp;p0*v[idx]&gt;=x)</span><br><span class="line">    &#123;</span><br><span class="line">        idx++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, at + i);</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, t + i);</span><br><span class="line">    ll lasta = <span class="number">0</span>, lastt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (ll i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        p0 = t[i]-at[i];</span><br><span class="line">        lasta = at[i];</span><br><span class="line">        lastt = t[i];</span><br><span class="line">        <span class="keyword">while</span>(idx&lt;n&amp;&amp; p0 * v[idx] &gt;= x)</span><br><span class="line">        &#123;</span><br><span class="line">            idx++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; idx &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="L题"><a href="#L题" class="headerlink" title="L题"></a>L题</h3><p>一道bfs的题目，当时队友看出来了bfs的思路，但是已经没人有脑力写下去了，比赛就没写</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">1e5</span> + <span class="number">9</span>, M = <span class="number">109</span>;</span><br><span class="line"><span class="keyword">int</span> e[N * <span class="number">2</span>], ne[N * <span class="number">2</span>], h[N], idx;</span><br><span class="line"><span class="keyword">int</span> w[N];</span><br><span class="line"><span class="keyword">int</span> d[N][M];</span><br><span class="line"><span class="keyword">bool</span> st[N];</span><br><span class="line"><span class="keyword">int</span> n, m, q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[idx] = b, ne[idx] = h[a], h[a] = idx++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">(<span class="keyword">int</span> s)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    queue&lt;<span class="keyword">int</span>&gt; q;</span><br><span class="line">    <span class="built_in">memset</span>(st, <span class="literal">false</span>, <span class="keyword">sizeof</span> st);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="keyword">if</span> (w[i] == s)</span><br><span class="line">        &#123;</span><br><span class="line">            q.<span class="built_in">push</span>(i);</span><br><span class="line">            st[i] = <span class="literal">true</span>;</span><br><span class="line">            d[i][s] = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">while</span> (q.<span class="built_in">size</span>())</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> t = q.<span class="built_in">front</span>();</span><br><span class="line">        q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = h[t]; i != <span class="number">-1</span>; i = ne[i])</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> j = e[i];</span><br><span class="line">            <span class="keyword">if</span> (st[j])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            d[j][s] = d[t][s] + <span class="number">1</span>;</span><br><span class="line">            q.<span class="built_in">push</span>(j);</span><br><span class="line">            st[j] = <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;q);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;w[i]);  </span><br><span class="line">	</span><br><span class="line">	<span class="built_in">memset</span>(h,<span class="number">-1</span>,<span class="keyword">sizeof</span> h);  </span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;a,&amp;b);</span><br><span class="line">		<span class="keyword">if</span>(a==b) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="built_in">add</span>(a,b);<span class="built_in">add</span>(b,a);   </span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">memset</span>(d,<span class="number">-1</span>,<span class="keyword">sizeof</span> d);    </span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=<span class="number">100</span>;i++)  </span><br><span class="line">	<span class="built_in">bfs</span>(i);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">while</span>(q--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> p,a;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;p,&amp;a);</span><br><span class="line">		<span class="keyword">int</span> minn=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=a;i++)</span><br><span class="line">		<span class="keyword">if</span>(d[p][i]!=<span class="number">-1</span>) </span><br><span class="line">			minn=<span class="built_in">min</span>(minn,d[p][i]);  </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span>(minn==<span class="number">0x3f3f3f3f</span>) minn=<span class="number">-1</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,minn);</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>ACM补题</category>
-      </categories>
-      <tags>
-        <tag>ACM补题</tag>
       </tags>
   </entry>
 </search>
