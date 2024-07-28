@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>note of MiniLLM</title>
+    <title>Note of MiniLLM</title>
     <url>/2024/07/26/MiniLLM/</url>
     <content><![CDATA[<h2 id="MiniLLm"><a href="#MiniLLm" class="headerlink" title="MiniLLm"></a><a href="https://arxiv.org/abs/2306.08543">MiniLLm</a></h2><p>Forward KLD: average value</p>
 <p>Reverse KLD: peak value</p>
