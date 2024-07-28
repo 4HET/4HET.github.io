@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>note of MiniLLM</title>
+    <url>/2024/07/26/MiniLLM/</url>
+    <content><![CDATA[<h2 id="MiniLLm"><a href="#MiniLLm" class="headerlink" title="MiniLLm"></a><a href="https://arxiv.org/abs/2306.08543">MiniLLm</a></h2><p>Forward KLD: average value</p>
+<p>Reverse KLD: peak value</p>
+<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240728173130306.png" alt="The toy experiment. We fit a Gaussian mixture distribution with a single Gaussian distribution using forward KLD and reverse KLD."></p>
+]]></content>
+      <categories>
+        <category>Distillation</category>
+        <category>Model Compression</category>
+        <category>Inference Acceleration</category>
+      </categories>
+  </entry>
+  <entry>
     <title>ACM代码模板</title>
     <url>/2024/07/26/%E6%9D%BF%E5%AD%90/</url>
     <content><![CDATA[<h1 id="头文件"><a href="#头文件" class="headerlink" title="头文件"></a>头文件</h1><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> endl <span class="meta-string">&#x27;\n&#x27;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> x first </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> y second</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ios (ios::sync_with_stdio(false),cin.tie(0),cout.tie(0))</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// ios;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> T;</span><br><span class="line">    cin &gt;&gt; T;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (T -- )</span><br><span class="line">        <span class="built_in">solve</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -116,19 +129,6 @@
 ]]></content>
       <categories>
         <category>programming</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>note of MiniLLM</title>
-    <url>/2024/07/26/MiniLLM/</url>
-    <content><![CDATA[<h2 id="MiniLLm"><a href="#MiniLLm" class="headerlink" title="MiniLLm"></a><a href="https://arxiv.org/abs/2306.08543">MiniLLm</a></h2><p>Forward KLD: average value</p>
-<p>Reverse KLD: peak value</p>
-<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240728173130306.png" alt="The toy experiment. We fit a Gaussian mixture distribution with a single Gaussian distribution using forward KLD and reverse KLD."></p>
-]]></content>
-      <categories>
-        <category>Distillation</category>
-        <category>Model Compression</category>
-        <category>Inference Acceleration</category>
       </categories>
   </entry>
 </search>
