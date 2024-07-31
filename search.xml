@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title></title>
+    <url>/2024/07/31/%E4%BB%A3%E7%A0%81%E5%A4%8D%E7%8E%B0/</url>
+    <content><![CDATA[<ol>
+<li>按照<code>run_eval.sh</code>中的要求，创建<code>/PATH/TO</code>的路径，并且把相关包移到对应的位置</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194008434.png" alt="image-20240731194008434"></p>
+<ol start="2">
+<li>运行<code>bash scripts/llama/eval/run_eval.sh /PATH/TO/MiniLLM</code>报<code>ImportError: cannot import name &#39;mpu&#39; from &#39;transformers&#39;</code>，奇奇怪怪，<code>mpu</code>这个包换了好几个<code>transformers</code>都没找到，查看代码后发现是设置并行的，于是注释掉</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194222344.png" alt="image-20240731194222344"></p>
+<ol start="3">
+<li><code>utils</code>库出问题了，找不到<code>initialize</code>包。后面发现这是一个自定义的包，在IDE中运行正确，但是使用shell脚本运行会找不到。解决方法是：<code>export PYTHONPATH=/PATH/TO/MiniLLM bash scripts/llama/eval/run_eval.sh /PATH/TO/MiniLLM</code>。先指定环境变量再运行</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194722016.png" alt="image-20240731194722016"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Note of MiniLLM</title>
     <url>/2024/07/26/MiniLLM/</url>
     <content><![CDATA[<h2 id="MiniLLm"><a href="#MiniLLm" class="headerlink" title="MiniLLm"></a><a href="https://arxiv.org/abs/2306.08543">MiniLLm</a></h2><p>Forward KLD: average value</p>
