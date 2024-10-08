@@ -1,6 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Note of MiniLLM</title>
+    <url>/2024/07/26/MiniLLM/</url>
+    <content><![CDATA[<h2 id="MiniLLm"><a href="#MiniLLm" class="headerlink" title="MiniLLm"></a><a href="https://arxiv.org/abs/2306.08543">MiniLLm</a></h2><p>Forward KLD: average value</p>
+<p>Reverse KLD: peak value</p>
+<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240728173130306.png" alt="The toy experiment. We fit a Gaussian mixture distribution with a single Gaussian distribution using forward KLD and reverse KLD."></p>
+]]></content>
+      <categories>
+        <category>Distillation</category>
+        <category>Model Compression</category>
+        <category>Inference Acceleration</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>RelayAttention</title>
+    <url>/2024/10/08/RelayAttention/</url>
+    <content><![CDATA[<h2 id="一、Modifying-the-code-of-VLLM"><a href="#一、Modifying-the-code-of-VLLM" class="headerlink" title="一、Modifying the code of VLLM"></a>一、Modifying the code of VLLM</h2><ol>
+<li>benchmark_throughput.py</li>
+</ol>
+<p>I modify the part of run_vllm. Vllm hadn’t declared the variable “enable_relay_attention”, so I add it.</p>
+<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20241008113528281.png" alt="image-20241008113528281"></p>
+<p>Then RelayAttention has a prefix check. if  shared_prefix is not none and relayAttention is started using, KV Cache prefix will be filled.</p>
+<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20241008114050040.png" alt="image-20241008114050040"></p>
+]]></content>
+      <categories>
+        <category>VLLM</category>
+        <category>Inference Acceleration</category>
+        <category>pageAttention</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>Efficient LLM Scheduling by Learning to Rank</title>
+    <url>/2024/10/03/Efficient%20LLM%20Scheduling%20by%20Learning%20to%20Rank/</url>
+    <content><![CDATA[<h2 id="1-Background"><a href="#1-Background" class="headerlink" title="1. Background"></a>1. Background</h2><p>​    Most LLM serving systems employ a simple First-come-first-serve (FCFS) scheduling strategy, leading to Head-Of-Line (HOL) blocking and reduced throughput and service quality.This paper develops a novel scheduler for LLM inference and serving that can approximate the shortest-job-first (SJF) schedule better than existing approaches. </p>
+<h2 id="2-Abstract"><a href="#2-Abstract" class="headerlink" title="2. Abstract"></a>2. Abstract</h2><p>​    The authors propose using a ranking-based scheduler that predicts the relative generation lengths of LLM requests, thereby approximating Shortest-Job-First (SJF) and Shortest-Remaining-Time-First (SRTF) scheduling algorithms. The results has 2.8x lower latency in chatbot serving and 6.5x higher throughput in synthetic data generation.</p>
+<h2 id="3-Method"><a href="#3-Method" class="headerlink" title="3. Method"></a>3. Method</h2><ul>
+<li><p>This paper applys Kendall’s Tau as an effective measure of the similarity between an LLM schedule and the ideal SJF/SRTF schedule, and shows a higher similiary indicated by Kendall’s Tau usually translates to lower latency and high throughput in practice.</p>
+</li>
+<li><p>This paper employs learning-to-rank to optimize the schedule and show that our method is simple and enables on-the-fly scheduling at a per-iteration basis with negligible overhead.</p>
+</li>
+<li><p>The steps are as follows:</p>
+</li>
+<li><p>Ranking Predictor: A small OPT model serves as the backbone predictor, taking natural language prompts as input and generating scores that represent the predicted ranking based on generation lengths.</p>
+</li>
+<li><p>Training Data Preparation: To train the ranking predictor, the model is fed prompts into a target LLM (e.g., Llama-3) to obtain complete outputs and their corresponding generation lengths. The lengths are then bucketed into categories to enhance robustness against noise.</p>
+</li>
+<li><p>ListMLE Loss Function: The ranking predictor is trained using the ListMLE loss function, which evaluates the entire list of predicted rankings simultaneously, ensuring that the model learns to order the requests correctly.</p>
+</li>
+<li><p>Scheduling Algorithm: During each scheduling iteration, new requests are scored and sorted based on their predicted rankings. A running batch is formed under memory and batch size constraints while incorporating mechanisms to prevent starvation of longer requests.</p>
+</li>
+<li><p>Starvation Prevention: The algorithm includes a mechanism to monitor and promote requests that are at risk of starvation, ensuring that longer requests do not experience excessive delays.</p>
+</li>
+</ul>
+<h2 id="4-Experimental-results"><a href="#4-Experimental-results" class="headerlink" title="4. Experimental results"></a>4. Experimental results</h2><p>​    This paper implements a rank scheduler on top of vLLM, and shows significant improvement under different tasks: 2.8x lower latency in chatbot serving and 6.5x higher throughput in synthetic data generation. Due to the simplicity and low cost of our method, the author believes it can be easily incorporated into production-level LLM serving systems to reduce the serving cost and improve the quality of services.</p>
+]]></content>
+      <categories>
+        <category>VLLM</category>
+        <category>Inference Acceleration</category>
+      </categories>
+  </entry>
+  <entry>
     <title></title>
     <url>/2024/07/31/%E4%BB%A3%E7%A0%81%E5%A4%8D%E7%8E%B0/</url>
     <content><![CDATA[<ol>
@@ -15,18 +75,17 @@
 <li><code>utils</code>库出问题了，找不到<code>initialize</code>包。后面发现这是一个自定义的包，在IDE中运行正确，但是使用shell脚本运行会找不到。解决方法是：<code>export PYTHONPATH=/PATH/TO/MiniLLM bash scripts/llama/eval/run_eval.sh /PATH/TO/MiniLLM</code>。先指定环境变量再运行</li>
 </ol>
 <p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194722016.png" alt="image-20240731194722016"></p>
+<ol start="4">
+<li>在<code>transformers</code>中导入包错误，一直显示不能导入。开始以为是<code>transformers</code>版本有问题，所以一直在查什么版本有这个包，后面发现环境配置的命令是<code>pip3 install -e transformers/</code>，这个实际上在<code>transformers</code>的父目录执行这个命令就可以。执行完该错误就解决了<img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240801180414872.png"></li>
+</ol>
 ]]></content>
   </entry>
   <entry>
-    <title>Note of MiniLLM</title>
-    <url>/2024/07/26/MiniLLM/</url>
-    <content><![CDATA[<h2 id="MiniLLm"><a href="#MiniLLm" class="headerlink" title="MiniLLm"></a><a href="https://arxiv.org/abs/2306.08543">MiniLLm</a></h2><p>Forward KLD: average value</p>
-<p>Reverse KLD: peak value</p>
-<p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240728173130306.png" alt="The toy experiment. We fit a Gaussian mixture distribution with a single Gaussian distribution using forward KLD and reverse KLD."></p>
-]]></content>
+    <title>Search for Efficient Large Language Models</title>
+    <url>/2024/10/04/Search%20for%20Efficient%20Large%20Language%20Models/</url>
+    <content><![CDATA[]]></content>
       <categories>
-        <category>Distillation</category>
-        <category>Model Compression</category>
+        <category>VLLM</category>
         <category>Inference Acceleration</category>
       </categories>
   </entry>

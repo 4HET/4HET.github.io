@@ -30,8 +30,9 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194008434.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194222344.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194722016.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/4HET/pic/main/image-20240801180414872.png">
 <meta property="article:published_time" content="2024-07-31T11:37:48.719Z">
-<meta property="article:modified_time" content="2024-07-31T13:41:38.776Z">
+<meta property="article:modified_time" content="2024-08-01T10:06:42.986Z">
 <meta property="article:author" content="4HET">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194008434.png">
@@ -186,10 +187,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-07-31 19:37:48 / 修改时间：21:41:38" itemprop="dateCreated datePublished" datetime="2024-07-31T19:37:48+08:00">2024-07-31</time>
+              <time title="创建时间：2024-07-31 19:37:48" itemprop="dateCreated datePublished" datetime="2024-07-31T19:37:48+08:00">2024-07-31</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-08-01 18:06:42" itemprop="dateModified" datetime="2024-08-01T18:06:42+08:00">2024-08-01</time>
+              </span>
 
           
 
@@ -214,6 +221,9 @@
 <li><code>utils</code>库出问题了，找不到<code>initialize</code>包。后面发现这是一个自定义的包，在IDE中运行正确，但是使用shell脚本运行会找不到。解决方法是：<code>export PYTHONPATH=/PATH/TO/MiniLLM bash scripts/llama/eval/run_eval.sh /PATH/TO/MiniLLM</code>。先指定环境变量再运行</li>
 </ol>
 <p><img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240731194722016.png" alt="image-20240731194722016"></p>
+<ol start="4">
+<li>在<code>transformers</code>中导入包错误，一直显示不能导入。开始以为是<code>transformers</code>版本有问题，所以一直在查什么版本有这个包，后面发现环境配置的命令是<code>pip3 install -e transformers/</code>，这个实际上在<code>transformers</code>的父目录执行这个命令就可以。执行完该错误就解决了<img src="https://raw.githubusercontent.com/4HET/pic/main/image-20240801180414872.png"></li>
+</ol>
 
     </div>
 
@@ -232,7 +242,10 @@
     <a href="/2024/07/26/MiniLLM/" rel="prev" title="Note of MiniLLM">
       <i class="fa fa-chevron-left"></i> Note of MiniLLM
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2024/10/03/Efficient%20LLM%20Scheduling%20by%20Learning%20to%20Rank/" rel="next" title="Efficient LLM Scheduling by Learning to Rank">
+      Efficient LLM Scheduling by Learning to Rank <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -306,14 +319,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
